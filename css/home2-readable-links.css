@@ -1,0 +1,15 @@
+/* Improve contrast for the two identified Home 2 story links in dark mode. */
+html[data-theme="dark"] body.home2-page .h2-story-link-contrast,
+html[data-theme="dark"] body.home2-page .h2-story-link-contrast:visited {
+    color: #f3f6f3 !important;
+}
+
+html[data-theme="dark"] body.home2-page .h2-story-link-contrast svg {
+    color: #e0ad43 !important;
+    stroke: currentColor;
+}
+
+html[data-theme="dark"] body.home2-page .h2-story-link-contrast:hover,
+html[data-theme="dark"] body.home2-page .h2-story-link-contrast:focus-visible {
+    color: #e0ad43 !important;
+}

@@ -1,0 +1,405 @@
+/* Home 2 only: editorial copy-and-image care CTA. */
+.home2-page .h2-pricing-editorial {
+    padding-block: clamp(48px, 7vw, 88px);
+    overflow: hidden;
+}
+
+.home2-page .h2-pricing-editorial-card {
+    display: grid;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    align-items: stretch;
+    gap: clamp(28px, 5vw, 72px);
+    min-height: 430px;
+    padding: clamp(18px, 2vw, 24px);
+    overflow: hidden;
+    direction: ltr;
+    text-align: left;
+    border: 1px solid color-mix(in srgb, var(--secondary) 55%, var(--border));
+    border-radius: 30px;
+    background: linear-gradient(132deg, var(--surface-2) 0%, var(--surface) 58%, var(--surface-2) 100%);
+    box-shadow: 0 24px 64px rgba(18, 43, 29, 0.13);
+}
+
+.home2-page .h2-pricing-editorial-copy {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    padding: clamp(24px, 4vw, 58px);
+    direction: ltr;
+    text-align: left;
+}
+
+.home2-page .h2-pricing-editorial-copy::before {
+    position: absolute;
+    z-index: -1;
+    top: 12%;
+    left: 5%;
+    width: 180px;
+    aspect-ratio: 1;
+    border: 1px solid color-mix(in srgb, var(--secondary) 18%, transparent);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+.home2-page .h2-pricing-editorial-copy > .eyebrow,
+.home2-page .h2-pricing-editorial-copy h2,
+.home2-page .h2-pricing-editorial-copy p {
+    align-self: flex-start;
+    max-width: 100%;
+    margin-inline: 0;
+    text-align: left;
+}
+
+.home2-page .h2-pricing-editorial-copy h2 {
+    max-width: 11ch;
+    margin-block: 18px 14px;
+    font-size: clamp(2.4rem, 4.4vw, 4rem);
+    line-height: 1.06;
+    text-wrap: balance;
+}
+
+.home2-page .h2-pricing-editorial-copy p {
+    max-width: 440px;
+    line-height: 1.8;
+}
+
+.home2-page .h2-pricing-editorial-copy > .btn {
+    align-self: flex-start;
+    flex: 0 0 auto !important;
+    margin: 24px 0 0;
+}
+
+.home2-page .h2-pricing-editorial-image {
+    position: relative;
+    min-width: 0;
+    min-height: 390px;
+    margin: 0;
+    overflow: hidden;
+    border: 5px solid rgba(255, 255, 255, 0.72);
+    border-radius: 24px;
+    background: var(--surface-2);
+    box-shadow: 0 18px 42px rgba(18, 43, 29, 0.16);
+    isolation: isolate;
+}
+
+.home2-page .h2-pricing-editorial-image::after {
+    position: absolute;
+    inset: 0;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: inherit;
+    content: "";
+    pointer-events: none;
+}
+
+.home2-page .h2-pricing-editorial-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 390px;
+    object-fit: cover;
+    object-position: center 54%;
+    transform: scale(1.015);
+    transition: transform 900ms cubic-bezier(0.2, 0.75, 0.25, 1), filter 500ms ease;
+}
+
+.home2-page .h2-pricing-editorial-card:hover .h2-pricing-editorial-image img {
+    transform: scale(1.065);
+    filter: saturate(1.06);
+}
+
+html[data-theme="dark"] body.home2-page .h2-pricing-editorial-card {
+    border-color: rgba(178, 123, 13, 0.58);
+    background: linear-gradient(132deg, #18201c 0%, #202b24 58%, #18201c 100%);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.34);
+}
+
+html[data-theme="dark"] body.home2-page .h2-pricing-editorial-image {
+    border-color: rgba(243, 246, 243, 0.82);
+}
+
+@media (max-width: 800px) {
+    .home2-page .h2-pricing-editorial-card {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 16px;
+        min-height: 360px;
+        padding: 14px;
+    }
+
+    .home2-page .h2-pricing-editorial-copy {
+        padding: clamp(18px, 3vw, 30px);
+    }
+
+    .home2-page .h2-pricing-editorial-copy h2 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .home2-page .h2-pricing-editorial-image,
+    .home2-page .h2-pricing-editorial-image img {
+        min-height: 330px;
+    }
+}
+
+@media (max-width: 620px) {
+    .home2-page .h2-pricing-editorial {
+        padding-block: 32px;
+    }
+
+    .home2-page .h2-pricing-editorial-card {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+        padding: 12px;
+        border-radius: 24px;
+    }
+
+    .home2-page .h2-pricing-editorial-copy {
+        padding: 24px 16px 18px;
+    }
+
+    .home2-page .h2-pricing-editorial-copy h2 {
+        max-width: 12ch;
+        font-size: clamp(2.2rem, 10vw, 3rem);
+    }
+
+    .home2-page .h2-pricing-editorial-copy > .btn {
+        margin-top: 18px;
+    }
+
+    .home2-page .h2-pricing-editorial-image,
+    .home2-page .h2-pricing-editorial-image img {
+        min-height: 0;
+        height: clamp(230px, 68vw, 360px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home2-page .h2-pricing-editorial-image img {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* Keep the editorial copy/photo block as a regular content section, not a CTA card. */
+.home2-page .h2-pricing-editorial-card {
+    min-height: 0;
+    padding: 0;
+    overflow: visible;
+    gap: clamp(32px, 6vw, 84px);
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.home2-page .h2-pricing-editorial-copy {
+    padding: clamp(24px, 3vw, 42px) 0;
+}
+
+.home2-page .h2-pricing-editorial-copy::before,
+.home2-page .h2-pricing-editorial-image::after {
+    display: none;
+}
+
+.home2-page .h2-pricing-editorial-copy h2 {
+    max-width: 16ch;
+    margin-block: 16px 14px;
+    font-size: clamp(2.5rem, 4.2vw, 3.8rem);
+    line-height: 1.12;
+}
+
+.home2-page .h2-pricing-editorial-copy p {
+    max-width: 44ch;
+}
+
+.home2-page .h2-pricing-editorial-copy > .h2-pricing-editorial-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    align-self: flex-start;
+    width: auto;
+    max-width: none;
+    min-height: 0;
+    margin: 18px 0 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.home2-page .h2-pricing-editorial-link svg {
+    width: 18px;
+    height: 18px;
+    transition: transform 220ms ease;
+}
+
+.home2-page .h2-pricing-editorial-link:hover svg,
+.home2-page .h2-pricing-editorial-link:focus-visible svg {
+    transform: translateX(4px);
+}
+
+.home2-page .h2-pricing-editorial-image {
+    min-height: 420px;
+    border: 0;
+    border-radius: 20px;
+    box-shadow: none;
+}
+
+.home2-page .h2-pricing-editorial-image img {
+    min-height: 420px;
+    transform: none;
+}
+
+.home2-page .h2-pricing-editorial-card:hover .h2-pricing-editorial-image img {
+    transform: scale(1.035);
+}
+
+html[data-theme="dark"] body.home2-page .h2-pricing-editorial-card {
+    background: transparent;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] body.home2-page .h2-pricing-editorial-link {
+    color: #e0ad43;
+}
+
+html[data-theme="dark"] body.home2-page .h2-pricing-editorial-image {
+    border: 0;
+    box-shadow: none;
+}
+
+@media (max-width: 800px) {
+    .home2-page .h2-pricing-editorial-card {
+        min-height: 0;
+        gap: 24px;
+    }
+
+    .home2-page .h2-pricing-editorial-copy {
+        padding-block: 12px;
+    }
+
+    .home2-page .h2-pricing-editorial-copy h2 {
+        max-width: 15ch;
+        font-size: clamp(2.1rem, 4.7vw, 3rem);
+    }
+
+    .home2-page .h2-pricing-editorial-image,
+    .home2-page .h2-pricing-editorial-image img {
+        min-height: 330px;
+    }
+}
+
+@media (max-width: 620px) {
+    .home2-page .h2-pricing-editorial-card {
+        gap: 14px;
+        padding: 0;
+    }
+
+    .home2-page .h2-pricing-editorial-copy {
+        padding: 14px 0 8px;
+    }
+
+    .home2-page .h2-pricing-editorial-copy h2 {
+        max-width: 16ch;
+        font-size: clamp(2.2rem, 9vw, 2.8rem);
+    }
+
+    .home2-page .h2-pricing-editorial-image,
+    .home2-page .h2-pricing-editorial-image img {
+        height: clamp(230px, 68vw, 360px);
+        min-height: 0;
+        border-radius: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home2-page .h2-pricing-editorial-link svg {
+        transition: none;
+    }
+}
+
+/* Final guard: this is a plain content section with no card frame or panel. */
+.home2-page .h2-pricing-editorial {
+    border: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.home2-page .h2-pricing-editorial-card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr) !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    gap: clamp(32px, 6vw, 84px) !important;
+    border: none !important;
+    outline: none !important;
+    border-radius: 0 !important;
+    background: none !important;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+.home2-page .h2-pricing-editorial-copy {
+    padding: clamp(24px, 4vw, 54px) 20px !important;
+}
+
+.home2-page .h2-pricing-editorial-copy h2 {
+    width: 100%;
+    max-width: 18ch !important;
+    font-size: clamp(2.5rem, 4vw, 3.6rem) !important;
+}
+
+.home2-page .h2-pricing-editorial-image {
+    min-height: 410px;
+    border: 0 !important;
+    outline: 0 !important;
+    border-radius: 18px;
+    background: transparent;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] body.home2-page .h2-pricing-editorial,
+html[data-theme="dark"] body.home2-page .h2-pricing-editorial-card {
+    border: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+@media (max-width: 800px) {
+    .home2-page .h2-pricing-editorial-card {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+        gap: 24px !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .home2-page .h2-pricing-editorial-card {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 14px !important;
+    }
+
+    .home2-page .h2-pricing-editorial-copy {
+        padding: 20px 6px 10px !important;
+    }
+
+    .home2-page .h2-pricing-editorial-copy h2 {
+        max-width: 16ch !important;
+    }
+
+    .home2-page .h2-pricing-editorial-image,
+    .home2-page .h2-pricing-editorial-image img {
+        height: clamp(230px, 68vw, 360px);
+        min-height: 0;
+        border-radius: 16px;
+    }
+}

@@ -1,0 +1,1318 @@
+/* ==================================================
+   PAW HAVEN — FACILITIES PAGE STYLESHEET
+   Dedicated stylesheet for facilities.html
+   Shared design tokens & globals are in css/global.css
+================================================== */
+
+/* --------------------------------------------------
+   1. HERO SECTION
+-------------------------------------------------- */
+
+.facilities-hero {
+    position: relative;
+    padding: 60px 0 70px;
+    background: linear-gradient(135deg,
+            #f0f5ec 0%,
+            #fbfaf6 55%,
+            #f6ecd5 100%);
+    overflow: hidden;
+}
+
+[data-theme="dark"] .facilities-hero {
+    background: linear-gradient(135deg,
+            #0c1712 0%,
+            #14221b 55%,
+            #1d2e24 100%);
+}
+
+.facilities-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: center;
+    gap: 48px;
+}
+
+/* Image on the left */
+
+.facilities-hero-media {
+    position: relative;
+    grid-column: 1;
+    grid-row: 1;
+    min-width: 0;
+}
+
+/* Text on the right */
+
+.facilities-hero-copy {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+}
+
+.facilities-hero-copy h1 {
+    font-size: clamp(2.4rem, 4.4vw, 4rem);
+    margin: 16px 0 20px;
+    line-height: 1.15;
+}
+
+.facilities-hero-copy h1 .accent {
+    color: var(--amber);
+    font-style: italic;
+}
+
+.facilities-hero-copy p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 520px;
+    margin-bottom: 28px;
+}
+
+.facilities-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.facilities-hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.facilities-hero-img {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 44% 44% 28px 28px;
+    box-shadow: var(--shadow);
+    transition: transform 0.4s ease;
+}
+
+.facilities-hero-media:hover .facilities-hero-img {
+    transform: scale(1.02);
+}
+
+.facility-floating-pill {
+    position: absolute;
+    bottom: -18px;
+    right: -18px;
+    left: auto;
+    background: var(--white);
+    padding: 16px 22px;
+    border-radius: 20px;
+    border: 1px solid var(--line);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.facility-floating-pill strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--forest);
+}
+
+.facility-floating-pill small {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+/* --------------------------------------------------
+   2. SECTION 1: ARCHITECTURAL HIGHLIGHTS
+-------------------------------------------------- */
+
+.fac-spec-section {
+    padding: 95px 0;
+}
+
+.fac-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 26px;
+    margin-top: 45px;
+}
+
+.fac-spec-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    padding: 34px 28px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.fac-spec-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    border-color: var(--amber);
+}
+
+.fac-spec-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--soft);
+    color: var(--forest);
+    display: grid;
+    place-items: center;
+    margin-bottom: 22px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.fac-spec-icon i {
+    width: 26px;
+    height: 26px;
+}
+
+.fac-spec-card:hover .fac-spec-icon {
+    background: var(--amber);
+    color: #fff;
+}
+
+.fac-spec-card h3 {
+    font-size: 1.3rem;
+    margin: 0 0 12px;
+}
+
+.fac-spec-card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* --------------------------------------------------
+   3. SPLIT LAYOUT SECTIONS
+-------------------------------------------------- */
+
+.fac-split-section {
+    padding: 90px 0;
+}
+
+.fac-split-section.alt-bg {
+    background: var(--soft);
+}
+
+.fac-split-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(32px, 6vw, 70px);
+}
+
+.fac-split-grid.reverse {
+    direction: ltr;
+}
+
+.fac-split-grid.reverse .fac-content-col {
+    order: 1;
+}
+
+.fac-split-grid.reverse .fac-image-col {
+    order: 2;
+}
+
+.fac-image-col {
+    position: relative;
+    min-width: 0;
+}
+
+.fac-image-col img {
+    display: block;
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.35s ease;
+}
+
+.fac-image-col:hover img {
+    transform: translateY(-4px);
+}
+
+.fac-image-tag {
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    background: rgba(18, 63, 42, 0.92);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    backdrop-filter: blur(8px);
+}
+
+.fac-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 30px;
+    display: grid;
+    gap: 14px;
+}
+
+.fac-feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.98rem;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.fac-feature-list li i {
+    width: 20px;
+    height: 20px;
+    color: var(--amber);
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.fac-feature-list li strong {
+    color: var(--ink);
+}
+
+/* --------------------------------------------------
+   4. GALLERY OF SPACES
+-------------------------------------------------- */
+
+.fac-gallery-section {
+    padding: 95px 0;
+    background: var(--white);
+}
+
+.fac-gallery-heading {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 50px;
+}
+
+.fac-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.fac-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    height: 300px;
+}
+
+.fac-gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.fac-gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+.fac-gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 24px 20px 18px;
+    background: linear-gradient(to top,
+            rgba(18, 63, 42, 0.92) 0%,
+            rgba(18, 63, 42, 0.3) 70%,
+            transparent 100%);
+    color: #fff;
+}
+
+.fac-gallery-overlay h4 {
+    margin: 0 0 4px;
+    font-size: 1.15rem;
+    color: #fff;
+}
+
+.fac-gallery-overlay p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+/* --------------------------------------------------
+   5. CAMPUS COMPARISON METRICS
+-------------------------------------------------- */
+
+.fac-stats-section {
+    background: var(--soft);
+    padding: 85px 0;
+}
+
+.fac-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.fac-metric-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 30px 24px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.fac-metric-card:hover {
+    transform: translateY(-5px);
+}
+
+.fac-metric-num {
+    font: 900 2.8rem var(--display);
+    color: var(--forest);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.fac-metric-label {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--amber);
+    margin-bottom: 6px;
+}
+
+.fac-metric-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* --------------------------------------------------
+   6. RESPONSIVE BREAKPOINTS
+-------------------------------------------------- */
+
+@media (max-width: 992px) {
+    .facilities-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 40px;
+    }
+
+    /* Keep image first and text second on tablet */
+
+    .facilities-hero-media {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .facilities-hero-copy {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .facilities-hero-img {
+        height: 380px;
+    }
+
+    .fac-split-grid,
+    .fac-split-grid.reverse {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 36px;
+    }
+
+    .fac-split-grid.reverse .fac-content-col {
+        order: 2;
+    }
+
+    .fac-split-grid.reverse .fac-image-col {
+        order: 1;
+    }
+
+    .fac-spec-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .fac-gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .fac-metrics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 580px) {
+    .facilities-hero {
+        padding: 42px 0 50px;
+    }
+
+    .facilities-hero-grid {
+        gap: 28px;
+    }
+
+    .facilities-hero-img {
+        height: 320px;
+    }
+
+    .facilities-hero-copy h1 {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+
+    .facilities-hero-copy p {
+        font-size: 1rem;
+    }
+
+    .facilities-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .facilities-hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .fac-gallery-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .fac-metrics-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .facility-floating-pill {
+        display: none;
+    }
+}
+
+/* --------------------------------------------------
+   7. CTA SECTION BUTTONS
+-------------------------------------------------- */
+
+.cta-inner .hero-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: stretch;
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.cta-inner .hero-actions .btn {
+    white-space: nowrap;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    box-shadow: 0 6px 18px rgba(18, 63, 42, 0.18);
+}
+
+@media (min-width: 992px) {
+    .cta-inner .hero-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 16px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .cta-inner .hero-actions {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* --------------------------------------------------
+   8. FACILITIES HERO FINAL LAYOUT
+-------------------------------------------------- */
+
+.facilities-hero-grid {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+}
+
+.facilities-hero-copy {
+    max-width: 620px;
+}
+
+.facilities-hero-copy p {
+    max-width: 500px;
+    font-size: 1.02rem;
+    margin-bottom: 22px;
+}
+
+.facilities-hero-badges {
+    display: none;
+}
+
+.facilities-hero-img {
+    object-position: center;
+}
+
+/* Image left, text right on mobile too */
+
+@media (max-width: 768px) {
+    .facilities-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .facilities-hero-media {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .facilities-hero-copy {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .facility-floating-pill {
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        width: auto;
+    }
+}
+
+/* Facilities hero: force image left and text right */
+
+.facilities-hero .facilities-hero-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr) !important;
+    align-items: center;
+    gap: 48px;
+}
+
+.facilities-hero .facilities-hero-media {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    order: 0 !important;
+}
+
+.facilities-hero .facilities-hero-copy {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    order: 0 !important;
+}
+
+@media (max-width: 992px) {
+    .facilities-hero .facilities-hero-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    .facilities-hero .facilities-hero-media {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+    }
+
+    .facilities-hero .facilities-hero-copy {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+    }
+}
+
+/* Facilities hero — dark mode button visibility */
+[data-theme="dark"] .facilities-hero-actions .btn:not(:first-child) {
+    background: #f5f2e9 !important;
+    color: #123f2a !important;
+    border: 1px solid #f5f2e9 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+[data-theme="dark"] .facilities-hero-actions .btn:not(:first-child):hover {
+    background: #b27b0d !important;
+    color: #111b15 !important;
+    border-color: #b27b0d !important;
+}
+
+/* Move hero text slightly to the right */
+@media (min-width: 993px) {
+    .facilities-hero .facilities-hero-copy {
+        padding-left: 18px;
+    }
+}
+
+@media (max-width: 992px) {
+    .facilities-hero .facilities-hero-copy {
+        padding-left: 0;
+    }
+}
+
+/* =========================================
+   PAW HAVEN BRAND FIX
+   ========================================= */
+
+.site-header .brand,
+.site-footer .brand-logo {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    min-width: 0;
+    text-decoration: none;
+    direction: ltr;
+}
+
+.site-header .brand-mark,
+.site-footer .brand-mark {
+    display: block;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    object-fit: contain;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.site-header .brand-text,
+.site-footer .brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.site-header .brand-name,
+.site-footer .brand-name {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+    margin: 0;
+    white-space: nowrap;
+    font-family: var(--display, "Playfair Display", serif);
+    font-size: clamp(1.25rem, 1.6vw, 1.6rem);
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.site-header .brand-first,
+.site-footer .brand-first {
+    color: #123F2A;
+}
+
+.site-header .brand-second,
+.site-footer .brand-second {
+    color: #B27B0D;
+}
+
+.site-header .brand-tagline,
+.site-footer .brand-tagline {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted, #66756B);
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+/* =========================================
+   FOOTER SOCIAL MEDIA ICONS
+   Primary: Forest Green
+   Hover: Warm Amber
+   ========================================= */
+
+.site-footer .footer-icons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.site-footer .footer-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    color: #123F2A;
+    background: transparent;
+    border: 1px solid #123F2A;
+    border-radius: 50%;
+    text-decoration: none;
+    transition:
+        color 0.25s ease,
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.site-footer .footer-icons a i {
+    color: inherit;
+    font-size: 17px;
+    line-height: 1;
+}
+
+.site-footer .footer-icons a:hover,
+.site-footer .footer-icons a:focus-visible {
+    color: #FFFFFF;
+    background: #B27B0D;
+    border-color: #B27B0D;
+    transform: translateY(-3px);
+}
+
+.site-footer .footer-icons a:focus-visible {
+    outline: 2px solid #B27B0D;
+    outline-offset: 4px;
+}
+
+/* =========================================
+   DARK MODE — BRAND AND BUTTON VISIBILITY
+   ========================================= */
+
+html[data-theme="dark"] .site-header .brand-first,
+html[data-theme="dark"] .site-footer .brand-first,
+body[data-theme="dark"] .site-header .brand-first,
+body[data-theme="dark"] .site-footer .brand-first {
+    color: #8FC5A1;
+}
+
+html[data-theme="dark"] .site-header .brand-second,
+html[data-theme="dark"] .site-footer .brand-second,
+body[data-theme="dark"] .site-header .brand-second,
+body[data-theme="dark"] .site-footer .brand-second {
+    color: #E3B653;
+}
+
+html[data-theme="dark"] .site-header .brand-tagline,
+html[data-theme="dark"] .site-footer .brand-tagline,
+body[data-theme="dark"] .site-header .brand-tagline,
+body[data-theme="dark"] .site-footer .brand-tagline {
+    color: #D0D8D1;
+}
+
+/* Keep social icons green in dark mode too. */
+
+html[data-theme="dark"] .site-footer .footer-icons a,
+body[data-theme="dark"] .site-footer .footer-icons a {
+    color: #8FC5A1;
+    border-color: #8FC5A1;
+    background: transparent;
+}
+
+html[data-theme="dark"] .site-footer .footer-icons a:hover,
+html[data-theme="dark"] .site-footer .footer-icons a:focus-visible,
+body[data-theme="dark"] .site-footer .footer-icons a:hover,
+body[data-theme="dark"] .site-footer .footer-icons a:focus-visible {
+    color: #FFFFFF;
+    background: #B27B0D;
+    border-color: #B27B0D;
+}
+
+/* Ensure buttons remain visible in dark mode. */
+
+html[data-theme="dark"] .btn-primary,
+body[data-theme="dark"] .btn-primary {
+    color: #171711;
+    background: #B27B0D;
+    border-color: #B27B0D;
+}
+
+html[data-theme="dark"] .btn-outline,
+body[data-theme="dark"] .btn-outline {
+    color: #F5F2E9;
+    background: #202B24;
+    border: 1px solid #637368;
+}
+
+html[data-theme="dark"] .btn-secondary,
+body[data-theme="dark"] .btn-secondary {
+    color: #F5F2E9;
+    background: #26372B;
+    border-color: #637368;
+}
+
+html[data-theme="dark"] .btn-primary:hover,
+html[data-theme="dark"] .btn-outline:hover,
+html[data-theme="dark"] .btn-secondary:hover,
+body[data-theme="dark"] .btn-primary:hover,
+body[data-theme="dark"] .btn-outline:hover,
+body[data-theme="dark"] .btn-secondary:hover {
+    color: #171711;
+    background: #B27B0D;
+    border-color: #B27B0D;
+}
+
+/* Responsive brand sizing */
+
+@media (max-width: 768px) {
+    .site-header .brand-mark,
+    .site-footer .brand-mark {
+        flex-basis: 52px;
+        width: 52px;
+        height: 52px;
+    }
+
+    .site-header .brand,
+    .site-footer .brand-logo {
+        gap: 9px;
+    }
+
+    .site-header .brand-tagline,
+    .site-footer .brand-tagline {
+        font-size: 0.65rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .site-header .brand-mark,
+    .site-footer .brand-mark {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .site-header .brand,
+    .site-footer .brand-logo {
+        gap: 7px;
+    }
+
+    .site-header .brand-name,
+    .site-footer .brand-name {
+        font-size: 1.1rem;
+    }
+
+    .site-header .brand-tagline,
+    .site-footer .brand-tagline {
+        font-size: 0.58rem;
+    }
+}
+
+
+/* Requested final brand consistency: larger logo on every page */
+.site-header .brand-mark,
+.site-header .brand-logo-image,
+.site-header .brand-symbol img,
+.site-footer .brand-mark,
+.site-footer .brand-logo-image,
+.site-footer .brand-symbol img,
+body .sidebar .brand-mark,
+body .sidebar .brand-logo-image,
+body.login-page .brand-logo,
+body.signup-page .signup-logo {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    flex: 0 0 56px !important;
+    object-fit: contain !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* RTL: wordmark reads Haven Paw and the logo image sits on its right */
+html[dir="rtl"] body .brand,
+html[dir="rtl"] body .signup-brand,
+html[dir="rtl"] body .site-header .brand,
+html[dir="rtl"] body .site-footer .brand-logo {
+    flex-direction: row-reverse !important;
+}
+
+/* Preserve the original brand colors in both directions */
+body .brand-name .brand-first,
+body .signup-brand-name .brand-first { color: #123F2A !important; }
+body .brand-name .brand-second,
+body .signup-brand-name .brand-second { color: #B27B0D !important; }
+
+/* Smooth transitions for brand and controls */
+body .brand, body .signup-brand, body .brand-logo, body .signup-logo,
+body .brand-name, body .signup-brand-name,
+body [data-theme-toggle], body [data-direction-toggle] {
+    transition: color 350ms ease, background-color 350ms ease, border-color 350ms ease, transform 350ms ease;
+}
+
+/* Facilities gallery cards: keep captions beneath each photograph. */
+.facilities-page .fac-gallery-item {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: var(--white);
+    box-shadow: 0 12px 30px rgba(22, 45, 32, .09);
+    transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+.facilities-page .fac-gallery-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--amber);
+    box-shadow: 0 20px 42px rgba(22, 45, 32, .15);
+}
+
+.facilities-page .fac-gallery-item img {
+    flex: 0 0 auto;
+    width: 100%;
+    height: clamp(210px, 20vw, 280px);
+    object-fit: cover;
+}
+
+.facilities-page .fac-gallery-item:hover img { transform: scale(1.035); }
+
+.facilities-page .fac-gallery-overlay {
+    position: static;
+    inset: auto;
+    flex: 1 0 auto;
+    padding: 20px 22px 22px;
+    background: var(--white);
+    color: var(--text);
+}
+
+.facilities-page .fac-gallery-overlay h4 {
+    margin: 0 0 7px;
+    color: var(--text);
+    font-size: 1.18rem;
+    line-height: 1.3;
+}
+
+.facilities-page .fac-gallery-overlay p {
+    margin: 0;
+    color: var(--muted);
+    font-size: .92rem;
+    line-height: 1.65;
+}
+
+/* A warm, pet-themed campus-tour CTA with a soft raised-card shadow. */
+.facilities-page .facilities-final-cta {
+    padding-block: clamp(44px, 6vw, 82px);
+}
+
+.facilities-page .facilities-final-cta .cta-inner {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(28px, 5vw, 68px);
+    overflow: hidden;
+    padding: clamp(34px, 5.5vw, 68px);
+    border: 1px solid rgba(178, 123, 13, .35);
+    border-radius: 28px 10px 28px 10px;
+    background:
+        radial-gradient(circle at 92% 14%, rgba(214, 168, 77, .23), transparent 27%),
+        linear-gradient(120deg, #fffdf8 0%, #f5efe2 56%, #eee5d3 100%);
+    color: #17291f;
+    box-shadow: 0 24px 56px rgba(18, 63, 42, .14), 0 5px 14px rgba(18, 63, 42, .07);
+}
+
+.facilities-page .facilities-final-cta .cta-inner::before {
+    position: absolute;
+    z-index: -1;
+    right: 29%;
+    bottom: -132px;
+    width: 290px;
+    height: 290px;
+    border: 1px solid rgba(18, 63, 42, .12);
+    border-radius: 50%;
+    content: "";
+}
+
+.facilities-page .facilities-final-cta .cta-inner > div:first-of-type {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+}
+
+.facilities-page .facilities-final-cta .eyebrow { color: #9b6808; }
+.facilities-page .facilities-final-cta .eyebrow::before { background: #b27b0d; }
+
+.facilities-page .facilities-final-cta h2 {
+    max-width: 18ch;
+    margin: 12px 0;
+    color: #17291f;
+    font-size: clamp(2rem, 3.7vw, 3.1rem);
+    line-height: 1.12;
+}
+
+.facilities-page .facilities-final-cta p {
+    max-width: 58ch;
+    margin: 0;
+    color: #637268;
+    line-height: 1.75;
+}
+
+.facilities-page .facilities-cta-paw {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 53%;
+    color: rgba(18, 63, 42, .12);
+    transform: translate(-50%, -50%) rotate(-16deg);
+}
+
+.facilities-page .facilities-cta-paw svg {
+    width: clamp(110px, 15vw, 190px);
+    height: auto;
+    stroke-width: 1.1;
+}
+
+.facilities-page .facilities-final-cta .hero-actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    min-width: 205px;
+    margin: 0;
+}
+
+.facilities-page .facilities-final-cta .hero-actions .btn {
+    justify-content: center;
+    min-height: 50px;
+    padding: 13px 22px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform .2s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.facilities-page .facilities-final-cta .hero-actions .btn:hover { transform: translateY(-2px); }
+.facilities-page .facilities-final-cta .hero-actions .btn-primary { box-shadow: 0 10px 22px rgba(18, 63, 42, .18); }
+.facilities-page .facilities-final-cta .hero-actions .btn-outline { background: rgba(255, 255, 255, .66); }
+
+.facilities-page[data-theme="dark"] .facilities-final-cta .cta-inner,
+html[data-theme="dark"] .facilities-page .facilities-final-cta .cta-inner {
+    border-color: rgba(214, 168, 77, .4);
+    background:
+        radial-gradient(circle at 92% 14%, rgba(214, 168, 77, .16), transparent 27%),
+        linear-gradient(120deg, #172820 0%, #13231b 58%, #0e1d16 100%);
+    color: #f5f1e7;
+    box-shadow: 0 24px 56px rgba(0, 0, 0, .28);
+}
+
+html[data-theme="dark"] .facilities-page .facilities-final-cta h2 { color: #f5f1e7; }
+html[data-theme="dark"] .facilities-page .facilities-final-cta p { color: #c4cec6; }
+html[data-theme="dark"] .facilities-page .facilities-final-cta .eyebrow { color: #dfb453; }
+html[data-theme="dark"] .facilities-page .facilities-cta-paw { color: rgba(237, 221, 182, .12); }
+
+@media (max-width: 760px) {
+    .facilities-page .facilities-final-cta .cta-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: clamp(28px, 7vw, 42px);
+    }
+
+    .facilities-page .facilities-final-cta .hero-actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .facilities-page .facilities-final-cta .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .facilities-page .fac-gallery-item,
+    .facilities-page .fac-gallery-item img,
+    .facilities-page .facilities-final-cta .hero-actions .btn { transition: none; }
+}
+
+/* Campus-tour CTA pet photo and high-contrast dashboard action. */
+.facilities-page .facilities-final-cta .cta-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(190px, 250px) auto;
+}
+
+.facilities-page .facilities-cta-photo {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, .82);
+    border-radius: 24px 8px 24px 8px;
+    box-shadow: 0 16px 34px rgba(18, 63, 42, .2);
+    transform: rotate(-2deg);
+}
+
+.facilities-page .facilities-cta-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 52% 48%;
+}
+
+.facilities-page .facilities-final-cta .hero-actions .btn-outline {
+    border-color: rgba(18, 63, 42, .32);
+    background: rgba(255, 253, 248, .94);
+    color: #123f2a !important;
+}
+
+.facilities-page .facilities-final-cta .hero-actions .btn-outline:hover,
+.facilities-page .facilities-final-cta .hero-actions .btn-outline:focus-visible {
+    border-color: #b27b0d;
+    background: #b27b0d;
+    color: #fff !important;
+}
+
+@media (max-width: 900px) {
+    .facilities-page .facilities-final-cta .cta-inner {
+        grid-template-columns: minmax(0, 1fr) minmax(170px, 220px);
+    }
+
+    .facilities-page .facilities-final-cta .hero-actions { grid-column: 1 / -1; flex-direction: row; }
+}
+
+@media (max-width: 760px) {
+    .facilities-page .facilities-final-cta .cta-inner { grid-template-columns: minmax(0, 1fr); }
+    .facilities-page .facilities-cta-photo { width: min(100%, 360px); height: 190px; }
+    .facilities-page .facilities-final-cta .hero-actions { grid-column: auto; }
+}
+
+/* Use the campus dog photo as the full Facilities CTA background. */
+.facilities-page .facilities-final-cta .cta-inner {
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    background-image:
+        linear-gradient(100deg, rgba(255, 252, 244, .94) 0%, rgba(255, 252, 244, .85) 49%, rgba(255, 252, 244, .68) 100%),
+        url("../images/daycare.png");
+    background-position: center, center 48%;
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+}
+
+.facilities-page .facilities-final-cta .hero-actions { grid-column: auto; }
+
+html[data-theme="dark"] .facilities-page .facilities-final-cta .cta-inner {
+    background-image:
+        linear-gradient(100deg, rgba(10, 28, 19, .92) 0%, rgba(10, 28, 19, .78) 52%, rgba(10, 28, 19, .62) 100%),
+        url("../images/daycare.png");
+    background-position: center, center 48%;
+    background-size: cover, cover;
+    background-repeat: no-repeat, no-repeat;
+}
+
+html[data-theme="dark"] .facilities-page .facilities-final-cta h2 { color: #fffaf0; }
+html[data-theme="dark"] .facilities-page .facilities-final-cta p { color: #e0e8e2; }
+
+@media (max-width: 760px) {
+    .facilities-page .facilities-final-cta .cta-inner {
+        grid-template-columns: minmax(0, 1fr) !important;
+        background-position: center, 58% center;
+    }
+}
+
+/* Facilities hero: gold gallery action with green hover, matching brand buttons. */
+body.facilities-page .facilities-hero-actions .btn.btn-outline {
+    background: #B27B0D !important;
+    border: 1px solid #B27B0D !important;
+    color: #fff !important;
+}
+body.facilities-page .facilities-hero-actions .btn.btn-outline:hover,
+body.facilities-page .facilities-hero-actions .btn.btn-outline:focus-visible,
+html[data-theme="dark"] body.facilities-page .facilities-hero-actions .btn.btn-outline {
+    background: #B27B0D !important;
+    border-color: #B27B0D !important;
+    color: #fff !important;
+}
+body.facilities-page .facilities-hero-actions .btn.btn-outline:hover,
+body.facilities-page .facilities-hero-actions .btn.btn-outline:focus-visible {
+    background: #123F2A !important;
+    border-color: #123F2A !important;
+    color: #fff !important;
+}
+
+/* Keep the Facilities CTA actions compact and the same size as hero buttons. */
+body.facilities-page .facilities-final-cta .hero-actions {
+    width: min(260px, 100%);
+    min-width: 0;
+    align-items: stretch;
+}
+body.facilities-page .facilities-final-cta .hero-actions .btn {
+    box-sizing: border-box !important;
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: 56px !important;
+    min-height: 56px !important;
+    max-height: 56px !important;
+    padding: 0 22px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 12px !important;
+    color: #fff !important;
+}
+body.facilities-page .facilities-final-cta .hero-actions .btn-primary {
+    background: #123F2A !important;
+    border: 1px solid #123F2A !important;
+}
+body.facilities-page .facilities-final-cta .hero-actions .btn-outline {
+    background: #B27B0D !important;
+    border: 1px solid #B27B0D !important;
+}
+body.facilities-page .facilities-final-cta .hero-actions .btn-primary:hover,
+body.facilities-page .facilities-final-cta .hero-actions .btn-primary:focus-visible {
+    background: #B27B0D !important;
+    border-color: #B27B0D !important;
+}
+body.facilities-page .facilities-final-cta .hero-actions .btn-outline:hover,
+body.facilities-page .facilities-final-cta .hero-actions .btn-outline:focus-visible {
+    background: #123F2A !important;
+    border-color: #123F2A !important;
+}
+
+/* Facilities dark mode: use one primary button color; reserve gold for hover. */
+html[data-theme="dark"] body.facilities-page main .btn,
+body[data-theme="dark"].facilities-page main .btn {
+    background: #123F2A !important;
+    border-color: #123F2A !important;
+    color: #fff !important;
+}
+html[data-theme="dark"] body.facilities-page main .btn:hover,
+html[data-theme="dark"] body.facilities-page main .btn:focus-visible,
+body[data-theme="dark"].facilities-page main .btn:hover,
+body[data-theme="dark"].facilities-page main .btn:focus-visible {
+    background: #B27B0D !important;
+    border-color: #B27B0D !important;
+    color: #fff !important;
+}
+html[data-theme="dark"] body.facilities-page main .btn svg,
+html[data-theme="dark"] body.facilities-page main .btn i,
+body[data-theme="dark"].facilities-page main .btn svg,
+body[data-theme="dark"].facilities-page main .btn i {
+    color: inherit !important;
+    stroke: currentColor;
+}
+
+/* Dark-mode Facilities buttons stay clean and shadow-free. */
+html[data-theme="dark"] body.facilities-page main .btn,
+html[data-theme="dark"] body.facilities-page main .btn:hover,
+html[data-theme="dark"] body.facilities-page main .btn:focus-visible,
+body[data-theme="dark"].facilities-page main .btn,
+body[data-theme="dark"].facilities-page main .btn:hover,
+body[data-theme="dark"].facilities-page main .btn:focus-visible {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+/* Add a little more breathing room between the Facilities hero image and copy. */
+@media (min-width: 993px) {
+    body.facilities-page .facilities-hero .facilities-hero-grid {
+        column-gap: clamp(56px, 5vw, 68px) !important;
+    }
+}
+
+/* Nudge only the desktop Facilities hero copy slightly to the right. */
+@media (min-width: 993px) {
+    body.facilities-page .facilities-hero .facilities-hero-copy {
+        padding-left: 30px !important;
+    }
+}

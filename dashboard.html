@@ -1,0 +1,682 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pet Owner Dashboard | Paw Haven Pet Boarding & Daycare">
+    <title>Pet Owner Dashboard | Paw Haven</title>
+
+    <link rel="icon" href="images/paw-haven-logo.png" type="image/png">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/migrated-inline.css">
+    <link rel="stylesheet" href="css/responsive-fixes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/requested-refinements.css">
+    <link rel="stylesheet" href="css/final-requested-refinements.css">
+    <link rel="stylesheet" href="css/rtl-shared-layout.css?v=20261026-box-buttons-v2">
+    <link rel="stylesheet" href="css/dashboard-visibility-fixes.css">
+    <link rel="stylesheet" href="css/dashboard-interactions.css">
+</head>
+
+<body class="dashboard-body">
+
+    <div class="dash-shell">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" data-sidebar>
+
+            <a class="brand" href="index.html" aria-label="Paw Haven home">
+                <img
+                    src="images/paw-haven-logo.png"
+                    alt="Paw Haven logo"
+                    class="brand-mark"
+                >
+
+                <span class="brand-text">
+                    <span class="brand-name">
+                        <span class="brand-first">Paw</span>
+                        <span class="brand-second">Haven</span>
+                    </span>
+
+                    <small class="brand-tagline">Pet Boarding &amp; Daycare</small>
+                </span>
+            </a>
+
+            <!-- OWNER SUMMARY CARD REMOVED -->
+
+            <nav class="side-nav">
+
+                <a class="selected" href="dashboard.html">
+                    <i aria-hidden="true" data-lucide="layout-dashboard"></i>
+                    <span>Overview</span>
+                </a>
+
+                <a href="bookings.html">
+                    <i aria-hidden="true" data-lucide="calendar"></i>
+                    <span>Book Boarding Stay</span>
+                </a>
+
+                <a href="activity-updates.html">
+                    <i aria-hidden="true" data-lucide="activity"></i>
+                    <span>Daily Activity Updates</span>
+                </a>
+
+                <a href="payment-history.html">
+                    <i aria-hidden="true" data-lucide="receipt"></i>
+                    <span>Payment History &amp; Invoices</span>
+                </a>
+
+                <a href="profile.html">
+                    <i aria-hidden="true" data-lucide="user"></i>
+                    <span>Pet &amp; Owner Profile</span>
+                </a>
+
+            </nav>
+
+            <a class="side-logout" href="login.html">
+                <i aria-hidden="true" data-lucide="log-out"></i>
+                <span>Log Out</span>
+            </a>
+
+        </aside>
+
+        <div class="mobile-sidebar-backdrop" data-sidebar-backdrop></div>
+
+        <!-- MAIN CONTENT -->
+        <main class="dashboard-main">
+
+            <!-- HEADER -->
+            <header class="dash-topbar">
+
+                <div class="migrated-style-3a15c0f97f">
+
+                    <button
+                        class="sidebar-toggle"
+                        type="button"
+                        data-sidebar-toggle
+                        aria-label="Open dashboard navigation"
+                    >
+                        <i aria-hidden="true" data-lucide="menu"></i>
+                    </button>
+
+                    <div class="dash-topbar-title">
+                        <h2>Pet Owner Dashboard</h2>
+    
+                    </div>
+
+                </div>
+
+                <div class="dash-topbar-right">
+
+                    <!-- DARK MODE -->
+                    <button
+                        class="theme-toggle"
+                        type="button"
+                        data-theme-toggle
+                        title="Toggle dark mode"
+                        aria-label="Switch to dark mode"
+                    >
+                        <span data-theme-icon aria-hidden="true">
+                            <i data-lucide="moon"></i>
+                        </span>
+                    </button>
+
+                    <!-- DIRECTION TOGGLE -->
+                    <button
+                        class="direction-toggle"
+                        type="button"
+                        data-direction-toggle
+                        title="Switch layout direction"
+                        aria-label="Switch layout direction"
+                    >
+                        <i aria-hidden="true" data-lucide="arrow-left-right"></i>
+                    </button>
+
+                    <!-- NOTIFICATIONS -->
+                    <div class="dash-notifications-wrap">
+
+                        <button
+                            class="theme-toggle"
+                            id="notif-toggle"
+                            type="button"
+                            title="3 unread notifications"
+                            aria-label="Notifications"
+                        >
+                            <i aria-hidden="true" data-lucide="bell"></i>
+                            <span class="notif-badge">3</span>
+                        </button>
+
+                        <div class="notif-dropdown" id="notif-dropdown">
+
+                            <div class="notif-dropdown-header">
+                                <strong>Notifications</strong>
+                                <span class="notif-unread-count">3 New</span>
+                            </div>
+
+                            <div class="notif-list">
+
+                                <div class="notif-item unread">
+                                    <div class="notif-icon">
+                                        <i data-lucide="camera"></i>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <strong>Meadow Run:</strong>
+                                            4 new photos &amp; video clip uploaded for Buddy.
+                                        </p>
+                                        <small>22 minutes ago</small>
+                                    </div>
+                                </div>
+
+                                <div class="notif-item unread">
+                                    <div class="notif-icon">
+                                        <i data-lucide="check-circle-2"></i>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <strong>Boarding Confirmed:</strong>
+                                            Diwali Classic Suite stay confirmed for Nov 10–15.
+                                        </p>
+                                        <small>2 hours ago</small>
+                                    </div>
+                                </div>
+
+                                <div class="notif-item unread">
+                                    <div class="notif-icon">
+                                        <i data-lucide="receipt"></i>
+                                    </div>
+                                    <div>
+                                        <p>
+                                            <strong>Invoice #PH-9824:</strong>
+                                            Payment receipt ready for download.
+                                        </p>
+                                        <small>Yesterday</small>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OWNER PROFILE -->
+                    <div class="dash-profile-menu-wrap">
+                        <button
+                            class="dash-profile-pill"
+                            id="profile-menu-toggle"
+                            type="button"
+                            aria-label="Open Ananya Rao's account menu"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                            aria-controls="profile-dropdown"
+                            title="Ananya Rao · Account menu"
+                        >
+                            <span class="dash-avatar" aria-hidden="true">AR</span>
+
+                            <span class="dash-user-meta">
+                                <span class="dash-user-name">Ananya Rao</span>
+                                <span class="dash-pet-name">Buddy’s Parent</span>
+                            </span>
+
+                            <i aria-hidden="true" data-lucide="chevron-down"></i>
+                        </button>
+
+                        <div class="dash-profile-dropdown" id="profile-dropdown" hidden>
+                            <div class="dash-profile-dropdown-heading">
+                                <span class="dash-avatar" aria-hidden="true">AR</span>
+                                <span>
+                                    <strong>Ananya Rao</strong>
+                                    <small>Buddy’s Parent</small>
+                                </span>
+                            </div>
+                            <a href="profile.html"><i aria-hidden="true" data-lucide="user-round"></i><span>My Profile</span></a>
+                            <a href="activity-updates.html"><i aria-hidden="true" data-lucide="bell"></i><span>Notifications</span></a>
+                            <a class="dash-profile-logout" href="index.html"><i aria-hidden="true" data-lucide="log-out"></i><span>Log Out</span></a>
+                        </div>
+                    </div>
+
+                    <!-- HEADER LOGOUT BUTTON REMOVED -->
+
+                </div>
+            </header>
+
+            <div class="dash-content">
+
+                <!-- SECTION 1: WELCOME -->
+                <section class="dash-welcome" data-aos="fade-up">
+
+                    <div class="dash-welcome-copy">
+                        <span class="eyebrow">Paw Haven Care Sanctuary</span>
+
+                        <h1>Welcome back, Ananya Rao!</h1>
+
+                        <p>
+                            Buddy is all set for his upcoming boarding stay.
+                            Keep track of daily activities, watch live webcam feeds,
+                            or reserve future holiday dates anytime.
+                        </p>
+
+                        <div class="dash-welcome-actions">
+                            <a class="btn btn-primary" href="bookings.html">
+                                Book New Stay Dates
+                                <span class="arrow-icon" aria-hidden="true">
+                                    <i data-lucide="arrow-right"></i>
+                                </span>
+                            </a>
+
+                            <a class="btn btn-outline" href="#live-cam">
+                                Watch Live HD Feed
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="dash-welcome-media">
+                        <img
+                            src="images/dash.png"
+                            alt="Buddy the golden dog resting comfortably"
+                            loading="eager"
+                            fetchpriority="high"
+                        >
+                    </div>
+
+                </section>
+
+                <!-- SECTION 2: STATISTICS -->
+                <section class="dash-stats" data-aos="fade-up">
+
+                    <article class="dash-stat">
+                        <div class="dash-stat-top">
+                            <span>Upcoming Stays</span>
+                            <div class="dash-stat-icon">
+                                <i data-lucide="calendar"></i>
+                            </div>
+                        </div>
+                        <strong>01</strong>
+                        <small class="status-pill">Oct 20 – 24 · Confirmed</small>
+                    </article>
+
+                    <article class="dash-stat">
+                        <div class="dash-stat-top">
+                            <span>Today's Updates</span>
+                            <div class="dash-stat-icon">
+                                <i data-lucide="heart"></i>
+                            </div>
+                        </div>
+                        <strong>04</strong>
+                        <small class="status-pill active">Photos &amp; Video Ready</small>
+                    </article>
+
+                    <article class="dash-stat">
+                        <div class="dash-stat-top">
+                            <span>Live Webcams</span>
+                            <div class="dash-stat-icon">
+                                <i data-lucide="video"></i>
+                            </div>
+                        </div>
+                        <strong>HD</strong>
+                        <small class="status-pill">Online · 1080p</small>
+                    </article>
+
+                    <article class="dash-stat">
+                        <div class="dash-stat-top">
+                            <span>Account Balance</span>
+                            <div class="dash-stat-icon">
+                                <i data-lucide="receipt"></i>
+                            </div>
+                        </div>
+                        <strong>₹0</strong>
+                        <small>No Pending Invoices</small>
+                    </article>
+
+                </section>
+
+                <!-- SECTION 3: UPCOMING STAY -->
+                <section class="dash-panel" data-aos="fade-up">
+
+                    <div class="dash-panel-header">
+                        <h2>Confirmed Boarding Reservation</h2>
+                        <a href="bookings.html">Manage Bookings →</a>
+                    </div>
+
+                    <div class="upcoming-stay-card">
+
+                        <img
+                            class="upcoming-stay-img"
+                            src="https://images.unsplash.com/photo-1633722715463-d30f4f325e24?auto=format&amp;fit=crop&amp;w=1200&amp;q=88"
+                            alt="Golden retriever lounging in room"
+                            loading="lazy"
+                        >
+
+                        <div class="upcoming-stay-details">
+                            <span class="eyebrow">Booking #PH-2026-881</span>
+                            <h3>Buddy · Classic Boarding Suite (Suite 4B)</h3>
+
+                            <p>
+                                <strong>Check-in:</strong>
+                                Tuesday, Oct 20, 2026 (09:00 AM) —
+                                <strong>Check-out:</strong>
+                                Saturday, Oct 24, 2026 (11:30 AM)
+                            </p>
+
+                            <div class="stay-meta-tags">
+                                <span class="meta-tag">
+                                    <i data-lucide="check"></i> Hypoallergenic Diet
+                                </span>
+                                <span class="meta-tag">
+                                    <i data-lucide="check"></i> Daily Splash Pool
+                                </span>
+                                <span class="meta-tag">
+                                    <i data-lucide="check"></i> Bedtime Tuck-in
+                                </span>
+                                <span class="meta-tag">
+                                    <i data-lucide="check"></i> Departure Hydrotherapy Spa
+                                </span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <a class="btn btn-outline overview-stay-details" href="bookings.html">
+                                View Stay Details
+                            </a>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SECTION 4: DAILY ACTIVITY -->
+                <section class="dash-panel" data-aos="fade-up">
+
+                    <div class="dash-panel-header">
+                        <h2>Buddy’s Daily Activity Diary</h2>
+                        <a href="activity-updates.html">View Full History →</a>
+                    </div>
+
+                    <div class="activity-feed-grid">
+
+                        <article class="activity-feed-item">
+                            <span class="activity-feed-time">10:45 AM · Today</span>
+                            <div class="activity-feed-body">
+                                <h4>Splash Pool &amp; Agility Meadow Romp</h4>
+                                <p>
+                                    Buddy had an energetic splash pool session with his golden pals,
+                                    followed by gentle agility ball fetch under caregiver supervision.
+                                </p>
+                            </div>
+                            <img
+                                class="activity-feed-thumb"
+                                src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&amp;fit=crop&amp;w=300&amp;q=88"
+                                alt="Dogs playing in meadow"
+                                loading="lazy"
+                            >
+                        </article>
+
+                        <article class="activity-feed-item">
+                            <span class="activity-feed-time">09:15 AM · Today</span>
+                            <div class="activity-feed-body">
+                                <h4>Morning Breakfast &amp; Dental Treat</h4>
+                                <p>
+                                    Buddy enjoyed his portioned breakfast and fresh filtered water,
+                                    followed by a dental chew.
+                                </p>
+                            </div>
+                            <img
+                                class="activity-feed-thumb"
+                                src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=300&amp;q=88"
+                                alt="Puppy resting comfortably"
+                                loading="lazy"
+                            >
+                        </article>
+
+                        <article class="activity-feed-item">
+                            <span class="activity-feed-time">08:00 AM · Today</span>
+                            <div class="activity-feed-body">
+                                <h4>Sunrise Garden Stroll &amp; Bathroom Break</h4>
+                                <p>
+                                    Buddy enjoyed a gentle morning stretch on the cool lawn,
+                                    with healthy activity logged by the staff.
+                                </p>
+                            </div>
+                            <img
+                                class="activity-feed-thumb"
+                                src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&amp;fit=crop&amp;w=300&amp;q=88"
+                                alt="Caregiver with dog"
+                                loading="lazy"
+                            >
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- SECTION 5: LIVE WEBCAM -->
+                <section class="dash-panel" data-aos="fade-up" id="live-cam">
+
+                    <div class="dash-panel-header">
+                        <div>
+                            <h2>Live Kennel HD Webcam Feed</h2>
+                            <p>Encrypted 24/7 stream for pet parents. Switch cameras below.</p>
+                        </div>
+                        <span class="live-indicator">LIVE STREAM</span>
+                    </div>
+
+                    <div class="webcam-viewer">
+
+                        <img
+                            class="webcam-feed-img"
+                            id="webcam-img"
+                            src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&amp;fit=crop&amp;w=1200&amp;q=88"
+                            alt="Webcam preview of dogs playing happily"
+                        >
+
+                        <div class="webcam-top-overlay">
+                            <span id="camera-label">CAM 01 · Outdoor Meadow Playfield</span>
+                            <span>1080p · 30 FPS</span>
+                        </div>
+
+                        <div class="cam-switch-bar">
+                            <span>Active Angle:</span>
+
+                            <div class="cam-buttons">
+                                <button class="cam-btn active" data-cam="meadow" type="button">
+                                    Outdoor Meadow
+                                </button>
+                                <button class="cam-btn" data-cam="suite" type="button">
+                                    Suite 4B (Buddy)
+                                </button>
+                                <button class="cam-btn" data-cam="pool" type="button">
+                                    Splash Pool
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+
+                <!-- SECTION 6: BOOKING FORM -->
+                <section class="dash-panel" data-aos="fade-up">
+
+                    <div class="dash-panel-header">
+                        <div>
+                            <h2>Request Next Boarding Stay</h2>
+                            <p>Reserve your pet's suite in advance for upcoming travel.</p>
+                        </div>
+                    </div>
+
+                    <form class="form-grid" data-demo-form>
+
+                        <label>
+                            Select Companion
+                            <select class="form-control" name="pet">
+                                <option>Buddy (Golden Retriever · 3 yrs)</option>
+                                <option>Bella (Persian Cat · 2 yrs)</option>
+                                <option>+ Add another pet profile</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Stay Service Package
+                            <select class="form-control" name="service">
+                                <option>Classic Overnight Suite (₹1,850 / night)</option>
+                                <option>Royal VIP Penthouse Suite (₹2,650 / night)</option>
+                                <option>Supervised Daycare Pass (₹850 / day)</option>
+                            </select>
+                        </label>
+
+                        <label>
+                            Check-in Date
+                            <input class="form-control" name="checkin" type="date" value="2026-11-12" required>
+                        </label>
+
+                        <label>
+                            Check-out Date
+                            <input class="form-control" name="checkout" type="date" value="2026-11-16" required>
+                        </label>
+
+                        <label class="full">
+                            Special Care or Dietary Instructions
+                            <textarea
+                                class="form-control"
+                                name="notes"
+                                rows="3"
+                                placeholder="Add any special care or dietary instructions."
+                            ></textarea>
+                        </label>
+
+                        <div class="full">
+                            <div>
+                                <span>Estimated Stay Cost (4 nights @ ₹1,850):</span>
+                                <strong>
+                                    ₹7,400
+                                    <small>(incl. 18% GST)</small>
+                                </strong>
+                            </div>
+
+                            <button class="btn btn-primary" type="submit">
+                                Confirm Stay Reservation
+                                <span class="arrow-icon" aria-hidden="true">
+                                    <i data-lucide="arrow-right"></i>
+                                </span>
+                            </button>
+                        </div>
+
+                        <p class="form-status" role="status"></p>
+
+                    </form>
+                </section>
+
+                <!-- SECTION 7: PAYMENT HISTORY -->
+                <section class="dash-panel" data-aos="fade-up">
+
+                    <div class="dash-panel-header">
+                        <h2>Recent Payment History &amp; Invoices</h2>
+                        <a href="payment-history.html">Full Payment Records →</a>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Invoice ID</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                    <th>Method</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Receipt</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <tr>
+                                    <td><strong>#PH-2026-881</strong></td>
+                                    <td>Overnight Boarding (4 Nights Deposit)</td>
+                                    <td>Oct 10, 2026</td>
+                                    <td>UPI / GPay</td>
+                                    <td>₹3,700</td>
+                                    <td><span class="status-pill">Paid</span></td>
+                                    <td><a href="payment-history.html">Download PDF</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#PH-2026-752</strong></td>
+                                    <td>Daycare Pass + Hydrotherapy Bath</td>
+                                    <td>Sep 28, 2026</td>
+                                    <td>Credit Card</td>
+                                    <td>₹1,500</td>
+                                    <td><span class="status-pill">Paid</span></td>
+                                    <td><a href="payment-history.html">Download PDF</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td><strong>#PH-2026-614</strong></td>
+                                    <td>Weekend Boarding Stay (2 Nights)</td>
+                                    <td>Sep 12, 2026</td>
+                                    <td>NetBanking</td>
+                                    <td>₹3,700</td>
+                                    <td><span class="status-pill">Paid</span></td>
+                                    <td><a href="payment-history.html">Download PDF</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- SECTION 8: HEALTH RECORDS -->
+                <section class="dash-panel" data-aos="fade-up">
+
+                    <div class="dash-panel-header">
+                        <h2>Buddy’s Health &amp; Veterinary Records</h2>
+                        <a href="profile.html">Edit Pet Profile →</a>
+                    </div>
+
+                    <div class="health-records-grid">
+
+                        <div class="health-record-card">
+                            <span class="eyebrow">Vaccine Status</span>
+                            <h3>100% Up To Date</h3>
+                            <p>
+                                Rabies: Valid till May 2027<br>
+                                DHPP: Valid till Aug 2027<br>
+                                Bordetella: Valid till Nov 2026
+                            </p>
+                        </div>
+
+                        <div class="health-record-card">
+                            <span class="eyebrow">Allergies &amp; Diet</span>
+                            <h3>Chicken Sensitivity</h3>
+                            <p>
+                                Diet: Salmon &amp; Sweet Potato Kibble only.<br>
+                                Treats: Single-ingredient dehydrated beef or sweet potato slices.
+                            </p>
+                        </div>
+
+                        <div class="health-record-card">
+                            <span class="eyebrow">Designated Clinic</span>
+                            <h3>Dr. Priya Rao, BVSc</h3>
+                            <p>
+                                Apex Pet Hospital, Madhapur<br>
+                                Emergency Hotline: +91 98765 43210
+                            </p>
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script defer src="js/main.js"></script>
+    <script defer src="js/dashboard-profile-menu.js"></script>
+
+</body>
+</html>
+
+
+
+
+

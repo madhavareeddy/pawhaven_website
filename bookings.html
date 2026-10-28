@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Book Boarding Stay | Paw Haven Pet Portal</title>
+<link href="images/paw-haven-logo.png" rel="icon" type="image/png"/>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<link href="css/global.css" rel="stylesheet"/>
+<link href="css/dashboard.css" rel="stylesheet"/>
+<link href="css/bookings.css" rel="stylesheet"/>
+<link href="css/migrated-inline.css" rel="stylesheet"/>    <link href="css/responsive-fixes.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/requested-refinements.css">
+    <link rel="stylesheet" href="css/rtl-shared-layout.css?v=20261026-box-buttons-v2">
+    <link rel="stylesheet" href="css/dashboard-visibility-fixes.css">
+    <link rel="stylesheet" href="css/dashboard-interactions.css">
+</head>
+<body class="dashboard-body">
+<div class="dash-shell">
+<aside class="sidebar" data-sidebar="">
+<a aria-label="Paw Haven home" class="brand" href="index.html">
+<img alt="Paw Haven logo" class="brand-mark" src="images/paw-haven-logo.png"/>
+<span class="brand-text brand-text-stacked">
+<span class="brand-name"><span class="brand-first">Paw</span> <span class="brand-second">Haven</span></span>
+<small class="brand-tagline">Pet Boarding &amp; Daycare</small>
+</span>
+</a>
+<nav class="side-nav">
+<a href="dashboard.html">
+<i aria-hidden="true" data-lucide="layout-dashboard"></i>
+<span>Overview</span>
+</a>
+<a class="selected" href="bookings.html">
+<i aria-hidden="true" data-lucide="calendar"></i>
+<span>Book Boarding Stay</span>
+</a>
+<a href="activity-updates.html">
+<i aria-hidden="true" data-lucide="activity"></i>
+<span>Daily Activity Updates</span>
+</a>
+<a href="payment-history.html">
+<i aria-hidden="true" data-lucide="receipt"></i>
+<span>Payment History &amp; Invoices</span>
+</a>
+<a href="profile.html">
+<i aria-hidden="true" data-lucide="user"></i>
+<span>Pet &amp; Owner Profile</span>
+</a>
+</nav>
+<a class="side-logout" href="login.html">
+<i aria-hidden="true" data-lucide="log-out"></i>
+<span>Log Out</span>
+</a>
+</aside>
+<div class="mobile-sidebar-backdrop" data-sidebar-backdrop=""></div>
+<main class="dashboard-main">
+<header class="dash-topbar">
+<div class="migrated-style-3a15c0f97f">
+<button aria-label="Open dashboard navigation" class="sidebar-toggle" data-sidebar-toggle="" type="button">
+<i aria-hidden="true" data-lucide="menu"></i>
+</button>
+<div class="dash-topbar-title">
+<h2 class="migrated-style-0d170054c2">
+                                Pet Owner Dashboard
+                            </h2>
+
+</div>
+</div>
+<div class="dash-topbar-right">
+<!-- Theme Toggle (Rule 2: 40px) -->
+<button aria-label="Switch to dark mode" class="theme-toggle" data-theme-toggle="" title="Toggle dark mode" type="button">
+<span aria-hidden="true" data-theme-icon="">
+<i aria-hidden="true" data-lucide="moon"></i>
+</span>
+</button>
+<!-- RTL Toggle (Rule 2: 40px) -->
+<button aria-label="Switch to right-to-left layout" class="direction-toggle" data-direction-toggle="" title="Switch to right-to-left layout" type="button">
+<i aria-hidden="true" data-lucide="arrow-left-right"></i>
+</button>
+<!-- Notifications Dropdown (Rule 10) -->
+<div class="dash-notifications-wrap">
+<button aria-label="Notifications" class="theme-toggle migrated-style-d461c96de5" id="notif-toggle" title="3 unread notifications" type="button">
+<i aria-hidden="true" data-lucide="bell"></i>
+<span class="notif-badge">3</span>
+</button>
+<div class="notif-dropdown" id="notif-dropdown">
+<div class="notif-dropdown-header">
+<strong>Notifications</strong>
+<span class="notif-unread-count">3 New</span>
+</div>
+<div class="notif-list">
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="camera"></i></div>
+<div>
+<p><strong>Meadow Run:</strong> 4 new photos &amp; video clip uploaded for Buddy.</p>
+<small>22 minutes ago</small>
+</div>
+</div>
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="check-circle-2"></i></div>
+<div>
+<p><strong>Boarding Confirmed:</strong> Diwali Classic Suite stay confirmed for Nov 10–15.</p>
+<small>2 hours ago</small>
+</div>
+</div>
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="receipt"></i></div>
+<div>
+<p><strong>Invoice #PH-9824:</strong> Payment receipt ready for download.</p>
+<small>Yesterday</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Pill (Rule 10) -->
+<div class="dash-profile-menu-wrap">
+<button aria-label="Open Ananya Rao's account menu" aria-controls="profile-dropdown" aria-expanded="false" aria-haspopup="true" class="dash-profile-pill" id="profile-menu-toggle" title="Ananya Rao · Account menu" type="button">
+<span aria-hidden="true" class="dash-avatar">AR</span>
+<span class="dash-user-meta"><span class="dash-user-name">Ananya Rao</span><span class="dash-pet-name">Buddy’s Parent</span></span>
+<i aria-hidden="true" data-lucide="chevron-down"></i>
+</button>
+<div class="dash-profile-dropdown" hidden id="profile-dropdown">
+<div class="dash-profile-dropdown-heading"><span aria-hidden="true" class="dash-avatar">AR</span><span><strong>Ananya Rao</strong><small>Buddy’s Parent</small></span></div>
+<a href="profile.html"><i aria-hidden="true" data-lucide="user-round"></i><span>My Profile</span></a>
+<a href="activity-updates.html"><i aria-hidden="true" data-lucide="bell"></i><span>Notifications</span></a>
+<a class="dash-profile-logout" href="index.html"><i aria-hidden="true" data-lucide="log-out"></i><span>Log Out</span></a>
+</div>
+</div>
+<!-- Logout Button (Rule 10) -->
+
+</div>
+</header>
+<div class="dash-content">
+<!-- SECTION 1: BOOKING BANNER -->
+<section class="dash-welcome" data-aos="fade-up">
+<div>
+<span class="eyebrow">Plan Their Next Visit</span>
+<h1>Book Boarding &amp; Daycare Dates</h1>
+<p>Reserve luxury suites, choose personal pampering extras, and tell us your travel schedule so we can prepare Buddy’s room.</p>
+</div>
+<div class="dash-welcome-media booking-hero-media">
+<img alt="A relaxed dog resting comfortably on a soft bed" loading="lazy" src="https://images.unsplash.com/photo-1541587631252-1690b345feca?auto=format&amp;fit=crop&amp;w=1600&amp;q=90"/>
+</div>
+</section>
+<!-- SECTION 2: INTERACTIVE RESERVATION FORM -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<div>
+<h2>Request Stay Reservation</h2>
+<p class="migrated-style-c51a493f52">Instant confirmation request. No cancellation fee up to 48 hours before check-in.</p>
+</div>
+</div>
+<form class="form-grid" data-demo-form="">
+<label>
+                                Companion
+                                <select class="form-control" name="pet">
+<option>Buddy · Golden Retriever (Deluxe Suite)</option>
+<option>Bella · Persian Cat (Whisker Wing Condo)</option>
+</select>
+</label>
+<label>
+                                Boarding Service Tier
+                                <select class="form-control" name="tier">
+<option>Classic Boarding Suite · ₹1,850 / night</option>
+<option>Royal VIP Penthouse (Private Webcam) · ₹2,650 / night</option>
+<option>Full Day Daycare · ₹850 / day</option>
+</select>
+</label>
+<label>
+                                Check-in Date
+                                <input class="form-control" name="checkin" required="" type="date" value="2026-11-20"/>
+</label>
+<label>
+                                Check-out Date
+                                <input class="form-control" name="checkout" required="" type="date" value="2026-11-25"/>
+</label>
+<label>
+                                Preferred Check-in Time Slot
+                                <select class="form-control" name="timeslot">
+<option>Morning (08:00 AM – 11:30 AM)</option>
+<option>Afternoon (02:00 PM – 05:00 PM)</option>
+<option>Evening (05:00 PM – 07:00 PM)</option>
+</select>
+</label>
+<label>
+                                Add-On Extras
+                                <select class="form-control" name="addons">
+<option>Hydrotherapy Bath on Checkout (+₹650)</option>
+<option>1-on-1 Snuggle &amp; Reading Time (+₹350 / day)</option>
+<option>Brain Game Agility Workshop (+₹450)</option>
+<option>No Add-ons Required</option>
+</select>
+</label>
+<label class="full">
+                                Dietary &amp; Medical Notes for this Stay
+                                <textarea class="form-control" name="notes" placeholder="Confirm feeding schedule, medications, or any separation anxiety considerations..." rows="3"></textarea>
+</label>
+<div class="full migrated-style-6d83ee3ea0">
+<div>
+<span class="migrated-style-1c4f3706e6">Estimated Stay (5 Nights):</span>
+<strong class="migrated-style-59268de84a">₹9,250 <small class="migrated-style-be1f4c4f87">(All taxes included)</small></strong>
+</div>
+<button class="btn btn-primary" type="submit">
+                                    Submit Boarding Request
+                                    <span aria-hidden="true" class="arrow-icon">
+<i aria-hidden="true" data-lucide="arrow-right"></i>
+</span>
+</button>
+</div>
+<p class="form-status migrated-style-068a8ddc17" role="status"></p>
+</form>
+</section>
+<!-- SECTION 3: UPCOMING CONFIRMED STAYS -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>Upcoming Confirmed Stays</h2>
+<span class="status-pill active">1 Reservation</span>
+</div>
+<div class="upcoming-stay-card">
+<img alt="Buddy relaxing happily" class="upcoming-stay-img" loading="lazy" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&amp;fit=crop&amp;w=1400&amp;q=88"/>
+<div class="upcoming-stay-details">
+<span class="eyebrow migrated-style-4e420aff3f">Booking #PH-2026-881</span>
+<h3>Buddy · Overnight Boarding (Suite 4B)</h3>
+<p><strong>Dates:</strong> Oct 20 – 24, 2026 (4 Nights) · Check-in 09:00 AM</p>
+<div class="stay-meta-tags">
+<span class="meta-tag"><i aria-hidden="true" data-lucide="check"></i> Confirmed</span>
+<span class="meta-tag"><i aria-hidden="true" data-lucide="shield-check"></i> Vaccines Verified</span>
+<span class="meta-tag"><i aria-hidden="true" data-lucide="video"></i> Daily Video Log</span>
+</div>
+</div>
+<div class="migrated-style-525f63c3fc">
+<a class="btn btn-outline migrated-style-1fa7ce538f" href="activity-updates.html">View Activity Log</a>
+<a class="btn btn-light migrated-style-ef871332c7" href="contact.html">Modify Dates</a>
+</div>
+</div>
+</section>
+<!-- SECTION 4: PAST STAYS & RE-BOOK -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>Past Stay History</h2>
+</div>
+<div class="migrated-style-feaa0aa957">
+<div class="migrated-style-555df94fb5">
+<div>
+<strong class="migrated-style-59613530da">Buddy · Weekend Overnight Stay</strong>
+<small class="migrated-style-57f9e31d78">Sep 12 – 14, 2026 (2 Nights) · Suite 2A · Status: Completed</small>
+</div>
+<div class="migrated-style-a9f1538caa">
+<a class="btn btn-outline migrated-style-c6e916b1f9" href="payment-history.html">Invoice Receipt</a>
+<button class="btn btn-primary migrated-style-c6e916b1f9" type="button">Re-book Same Routine</button>
+</div>
+</div>
+<div class="migrated-style-555df94fb5">
+<div>
+<strong class="migrated-style-59613530da">Buddy · Daycare &amp; Splash Pool Day</strong>
+<small class="migrated-style-57f9e31d78">Aug 22, 2026 · Full Day (08:00 AM – 06:30 PM) · Status: Completed</small>
+</div>
+<div class="migrated-style-a9f1538caa">
+<a class="btn btn-outline migrated-style-c6e916b1f9" href="payment-history.html">Invoice Receipt</a>
+<button class="btn btn-primary migrated-style-c6e916b1f9" type="button">Re-book Same Routine</button>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: STAY PACKING & INTAKE CHECKLIST -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>Boarding Packing Checklist</h2>
+</div>
+<div class="migrated-style-45d1c9041b">
+<div class="migrated-style-2805cc8846">
+<strong class="migrated-style-a22797c1c2"><i aria-hidden="true" class="migrated-style-13b2ede32d" data-lucide="check-circle"></i> Vaccinations</strong>
+<p class="migrated-style-bd711c2892">Ensure Rabies &amp; DHPP are current. Upload certificates on your profile.</p>
+</div>
+<div class="migrated-style-2805cc8846">
+<strong class="migrated-style-a22797c1c2"><i aria-hidden="true" class="migrated-style-13b2ede32d" data-lucide="check-circle"></i> Food &amp; Bowls</strong>
+<p class="migrated-style-bd711c2892">Pack portioned food in resealable bags. We supply sanitized stainless steel bowls.</p>
+</div>
+<div class="migrated-style-2805cc8846">
+<strong class="migrated-style-a22797c1c2"><i aria-hidden="true" class="migrated-style-13b2ede32d" data-lucide="check-circle"></i> Medications</strong>
+<p class="migrated-style-bd711c2892">Clearly labeled bottles with exact dosing times. Refrigeration available.</p>
+</div>
+</div>
+</section>
+<!-- SECTION 6: CANCELLATION & RESCHEDULING POLICY -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>Flexible Cancellation Policy</h2>
+</div>
+<p class="migrated-style-649a87d0e0">
+                            We understand travel plans can shift. Cancellations or date modifications made at least <strong>48 hours prior to check-in</strong> incur zero fees, and your deposit is 100% credited to your Paw Haven wallet or refunded back to your original payment method. For holiday peak dates, kindly notify us 72 hours in advance.
+                        </p>
+</section>
+</div>
+</main>
+</div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script defer="" src="js/main.js"></script>
+<script defer="" src="js/dashboard-profile-menu.js"></script>
+</body>
+</html>
+
+
+
+
+

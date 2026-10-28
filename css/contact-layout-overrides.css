@@ -1,0 +1,404 @@
+/* Contact-page refinements: balanced inquiry columns and compact action buttons. */
+.contact-page .contact-form-section .contact-form-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(28px, 3.5vw, 52px);
+    padding: clamp(28px, 3.6vw, 52px);
+}
+
+.contact-page .contact-form-section .contact-form-intro {
+    width: 100%;
+    margin: 0;
+    text-align: left;
+}
+
+.contact-page .contact-form-section .contact-form-intro .eyebrow {
+    justify-content: flex-start;
+}
+
+.contact-page .contact-form-section .contact-form-intro h2,
+.contact-page .contact-form-section .contact-form-intro > p {
+    max-width: 100%;
+    margin-inline: 0;
+}
+
+.contact-page .contact-form-section .contact-note {
+    max-width: 100%;
+    margin: 24px 0 0;
+}
+
+.contact-page .contact-helpful-detail {
+    max-width: 540px;
+    margin: 22px 0 0;
+    color: var(--contact-muted);
+    font-size: 0.96rem;
+    line-height: 1.85;
+}
+
+.contact-page .contact-form-section .contact-form-card {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: clamp(22px, 2.2vw, 32px);
+}
+
+/* Use the same tidy green action style across Contact page buttons. */
+.contact-page .contact-form-section .form-grid .btn,
+.contact-page .location-copy > .btn,
+.contact-page .cta-inner .hero-actions > .btn {
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 268px !important;
+    max-width: 100%;
+    height: 56px !important;
+    min-height: 56px !important;
+    max-height: 56px !important;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    justify-self: start;
+    gap: 12px;
+    padding: 0 22px !important;
+    border: 1px solid var(--contact-primary) !important;
+    border-radius: 10px;
+    background: var(--contact-primary) !important;
+    color: #fff !important;
+    box-shadow: 0 8px 18px rgba(18, 63, 42, 0.14);
+    line-height: 1.15;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.contact-page .contact-form-section .form-grid .btn:hover,
+.contact-page .location-copy > .btn:hover,
+.contact-page .cta-inner .hero-actions > .btn:hover,
+.contact-page .contact-form-section .form-grid .btn:focus-visible,
+.contact-page .location-copy > .btn:focus-visible,
+.contact-page .cta-inner .hero-actions > .btn:focus-visible {
+    border-color: var(--contact-secondary) !important;
+    background: var(--contact-secondary) !important;
+    color: #fff !important;
+}
+
+.contact-page .cta-inner .hero-actions {
+    min-width: 0;
+    align-items: flex-start;
+}
+
+@media (max-width: 900px) {
+    .contact-page .contact-form-section .contact-form-panel {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: stretch;
+    }
+
+    .contact-page .contact-form-section .contact-form-card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-page .cta-inner .hero-actions {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-page .contact-form-section .contact-form-panel {
+        padding: 24px 18px;
+    }
+
+    .contact-page .contact-form-section .form-grid .btn,
+    .contact-page .location-copy > .btn,
+    .contact-page .cta-inner .hero-actions > .btn {
+        width: min(268px, 100%) !important;
+    }
+}
+
+/* Keep every Contact page section on the same horizontal grid as its header and footer. */
+.contact-page {
+    --contact-page-gutter: 24px;
+    --contact-page-section-space: clamp(64px, 7vw, 96px);
+}
+
+.contact-page .site-header .nav-wrap,
+.contact-page .site-footer > .container,
+.contact-page main > section:not(.contact-hero) > .container {
+    width: min(var(--container, 1180px), calc(100% - (var(--contact-page-gutter) * 2)));
+    max-width: var(--container, 1180px);
+    margin-inline: auto;
+}
+
+/* The hero image remains full bleed while its copy stays in the shared page grid. */
+.contact-page .contact-hero > .contact-hero-grid {
+    width: 100%;
+    max-width: none;
+    margin-inline: 0;
+}
+
+.contact-page .contact-main-section,
+.contact-page .contact-form-section,
+.contact-page .location-section,
+.contact-page .faq-section,
+.contact-page .cta-section {
+    padding-block: var(--contact-page-section-space);
+}
+
+.contact-page .contact-form-section .contact-form-panel {
+    min-width: 0;
+}
+
+.contact-page .contact-form-section .contact-form-card,
+.contact-page .contact-form-section .contact-form-intro,
+.contact-page .location-grid > *,
+.contact-page .cta-inner > * {
+    min-width: 0;
+}
+
+@media (max-width: 1024px) {
+    .contact-page { --contact-page-gutter: 20px; }
+}
+
+@media (max-width: 768px) {
+    .contact-page {
+        --contact-page-gutter: 16px;
+        --contact-page-section-space: 56px;
+    }
+}
+
+@media (max-width: 420px) {
+    .contact-page { --contact-page-gutter: 12px; }
+}
+
+/* Align the Contact intro with the top of the inquiry form. */
+.contact-page .contact-form-section .contact-form-panel {
+    align-items: start;
+}
+
+.contact-page .contact-form-section .contact-form-intro {
+    align-self: start;
+    justify-self: start;
+    margin-block: 0 !important;
+    padding-top: 4px;
+    transform: none !important;
+}
+
+/* Compact Contact CTA with distinct primary and secondary actions. */
+.contact-page .cta-section {
+    padding-block: clamp(36px, 4vw, 48px);
+}
+
+/* Reduce the oversized gap around the Contact footer without affecting other pages. */
+.contact-page .site-footer {
+    margin-top: 0 !important;
+    padding-top: clamp(40px, 4vw, 48px);
+}
+
+.contact-page .cta-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(160px, 210px) minmax(185px, 220px);
+    align-items: center;
+    gap: clamp(18px, 2.2vw, 28px);
+    padding: clamp(24px, 2.6vw, 34px);
+    overflow: hidden;
+    border: 1px solid var(--contact-border);
+    border-radius: 22px;
+    background: var(--contact-primary-light);
+}
+
+.contact-page .cta-inner > div:first-child {
+    max-width: 600px;
+}
+
+.contact-page .cta-inner .eyebrow {
+    margin-bottom: 12px;
+    color: var(--contact-secondary);
+}
+
+.contact-page .cta-inner .eyebrow::before {
+    background: var(--contact-secondary);
+}
+
+.contact-page .cta-inner h2 {
+    margin-bottom: 12px;
+    color: var(--contact-primary);
+    font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+    line-height: 1.16;
+}
+
+.contact-page .cta-inner h2 .accent {
+    color: var(--contact-secondary);
+}
+
+.contact-page .cta-inner p {
+    color: var(--contact-muted);
+    font-size: 0.96rem;
+    line-height: 1.7;
+}
+
+.contact-page .cta-section .contact-cta-photo {
+    width: min(100%, 205px);
+    max-width: 205px;
+    justify-self: center;
+    flex: none;
+    aspect-ratio: 1.05 / 1;
+}
+
+.contact-page .cta-inner .hero-actions {
+    width: 100%;
+    min-width: 0;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.contact-page .cta-inner .hero-actions > .btn {
+    width: 100% !important;
+    min-width: 0;
+    max-width: 220px;
+    height: 54px !important;
+    min-height: 54px !important;
+    max-height: 54px !important;
+    justify-self: stretch;
+    padding: 0 18px !important;
+    border-radius: 10px;
+    box-shadow: none;
+    white-space: nowrap;
+}
+
+.contact-page .cta-inner .hero-actions > .btn-primary {
+    background: var(--contact-primary) !important;
+    border-color: var(--contact-primary) !important;
+    color: #fff !important;
+}
+
+.contact-page .cta-inner .hero-actions > .btn-primary:hover,
+.contact-page .cta-inner .hero-actions > .btn-primary:focus-visible {
+    background: var(--contact-secondary) !important;
+    border-color: var(--contact-secondary) !important;
+    color: #fff !important;
+}
+
+.contact-page .cta-inner .hero-actions > .btn-outline {
+    background: var(--contact-secondary) !important;
+    border-color: var(--contact-secondary) !important;
+    color: #fff !important;
+}
+
+.contact-page .cta-inner .hero-actions > .btn-outline:hover,
+.contact-page .cta-inner .hero-actions > .btn-outline:focus-visible {
+    background: var(--contact-primary) !important;
+    border-color: var(--contact-primary) !important;
+    color: #fff !important;
+}
+
+@media (max-width: 900px) {
+    .contact-page .cta-inner {
+        grid-template-columns: minmax(0, 1fr) minmax(160px, 205px);
+        gap: 22px;
+        padding: 28px;
+    }
+
+    .contact-page .cta-inner > div:first-child {
+        grid-column: 1;
+    }
+
+    .contact-page .cta-section .contact-cta-photo {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .contact-page .cta-inner .hero-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 901px) {
+    .contact-page .cta-inner .hero-actions > .btn-primary,
+    .contact-page .cta-inner .hero-actions > .btn-primary:visited {
+        background: var(--contact-primary) !important;
+        border-color: var(--contact-primary) !important;
+        color: #fff !important;
+    }
+
+    .contact-page .cta-inner .hero-actions > .btn-outline,
+    .contact-page .cta-inner .hero-actions > .btn-outline:visited {
+        background: var(--contact-secondary) !important;
+        border-color: var(--contact-secondary) !important;
+        color: #fff !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-page .cta-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 22px;
+        padding: 24px 20px;
+    }
+
+    .contact-page .cta-inner > div:first-child,
+    .contact-page .cta-section .contact-cta-photo,
+    .contact-page .cta-inner .hero-actions {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .contact-page .cta-section .contact-cta-photo {
+        width: min(100%, 220px);
+        justify-self: start;
+    }
+
+    .contact-page .cta-inner .hero-actions {
+        flex-direction: column;
+    }
+}
+
+/* Keep CTA color swaps reliable for both fresh and visited links. */
+.contact-page .cta-section .cta-inner .hero-actions > a.btn-primary:hover,
+.contact-page .cta-section .cta-inner .hero-actions > a.btn-primary:focus-visible,
+.contact-page .cta-section .cta-inner .hero-actions > a.btn-primary:visited:hover {
+    background-color: var(--contact-secondary) !important;
+    border-color: var(--contact-secondary) !important;
+    color: #fff !important;
+}
+
+/* Contact hero action leads directly to the inquiry form. */
+.contact-page .contact-hero-copy .contact-hero-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 44px !important;
+}
+
+.contact-page .contact-hero-copy .contact-hero-actions > .btn-primary,
+.contact-page .contact-hero-copy .contact-hero-actions > .btn-primary:visited {
+    box-sizing: border-box;
+    display: inline-flex;
+    width: 240px;
+    max-width: 100%;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 20px;
+    border: 1px solid var(--contact-primary) !important;
+    border-radius: 10px;
+    background: var(--contact-primary) !important;
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.contact-page .contact-hero-copy .contact-hero-actions > .btn-primary:hover,
+.contact-page .contact-hero-copy .contact-hero-actions > .btn-primary:focus-visible,
+.contact-page .contact-hero-copy .contact-hero-actions > .btn-primary:visited:hover {
+    border-color: var(--contact-secondary) !important;
+    background: var(--contact-secondary) !important;
+    color: #fff !important;
+}
+
+.contact-page .cta-section .cta-inner .hero-actions > a.btn-outline:hover,
+.contact-page .cta-section .cta-inner .hero-actions > a.btn-outline:focus-visible,
+.contact-page .cta-section .cta-inner .hero-actions > a.btn-outline:visited:hover {
+    background-color: var(--contact-primary) !important;
+    border-color: var(--contact-primary) !important;
+    color: #fff !important;
+}

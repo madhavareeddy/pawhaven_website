@@ -1,0 +1,172 @@
+/* Home 2 only: editorial care stories and consistent action buttons. */
+.home2-page .h2-stories {
+  background: var(--surface-2);
+}
+
+.home2-page .h2-story-list {
+  display: grid;
+  gap: clamp(28px, 4.2vw, 56px);
+}
+
+.home2-page .h2-story,
+.home2-page .h2-story-reverse {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.88fr);
+  gap: clamp(26px, 5vw, 76px);
+  overflow: visible;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  transition: opacity 680ms cubic-bezier(.22,.61,.36,1);
+}
+
+.home2-page .h2-story:hover,
+.home2-page .h2-story:focus-within,
+html[data-theme="dark"] .home2-page .h2-story:hover,
+html[data-theme="dark"] .home2-page .h2-story:focus-within {
+  border: 0;
+  box-shadow: none;
+}
+
+.home2-page .h2-story-reverse {
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1fr);
+}
+
+.home2-page .h2-story-reverse .h2-story-image {
+  order: 2;
+}
+
+.home2-page .h2-story-image {
+  aspect-ratio: 1.58 / 1;
+  border-radius: 26px;
+  background: var(--surface-2);
+}
+
+.home2-page .h2-story-image img {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 500ms cubic-bezier(.2,.7,.2,1);
+}
+
+.home2-page .h2-story:hover .h2-story-image img {
+  transform: scale(1.025);
+}
+
+.home2-page .h2-story-copy {
+  padding: clamp(18px, 3vw, 38px) 0;
+}
+
+.home2-page .h2-story-copy h3 {
+  line-height: 1.2;
+}
+
+.home2-page .h2-story-copy p {
+  line-height: 1.8;
+}
+
+/* Keep Home 2 action buttons visually consistent, including secondary/outline variants. */
+.home2-page .btn {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+  transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.home2-page .btn:hover,
+.home2-page .btn:focus-visible {
+  color: var(--text-on-secondary, #fff);
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.home2-page .btn:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--secondary) 35%, transparent);
+  outline-offset: 3px;
+}
+
+.home2-page .btn:disabled,
+.home2-page .btn[aria-disabled="true"] {
+  opacity: .58;
+  cursor: not-allowed;
+}
+
+@media (max-width: 800px) {
+  .home2-page .h2-story,
+  .home2-page .h2-story-reverse {
+    grid-template-columns: minmax(0, 1fr) minmax(0, .95fr);
+    gap: clamp(20px, 3vw, 30px);
+  }
+
+  .home2-page .h2-story-image {
+    aspect-ratio: 1.25 / 1;
+  }
+}
+
+@media (max-width: 620px) {
+  .home2-page .h2-story,
+  .home2-page .h2-story-reverse {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .home2-page .h2-story-reverse .h2-story-image {
+    order: 0;
+  }
+
+  .home2-page .h2-story-image {
+    aspect-ratio: 1.58 / 1;
+    border-radius: 20px;
+  }
+
+  .home2-page .h2-story-copy {
+    width: 100%;
+    padding: 20px 8px 8px;
+  }
+
+  .home2-page .h2-story-copy::before {
+    margin-bottom: 13px;
+  }
+
+  .home2-page .h2-story[data-aos-delay] {
+    transition-delay: 0ms !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home2-page .h2-story,
+  .home2-page .h2-story-image img,
+  .home2-page .btn {
+    transition: none !important;
+  }
+
+  .home2-page .h2-story:hover .h2-story-image img {
+    transform: none;
+  }
+}
+
+/* Keep the final Home 2 call-to-action in the same green/amber button system. */
+.home2-page .h2-final-copy .btn,
+.home2-page .h2-final-copy .btn:visited {
+  color: #fff;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.home2-page .h2-final-copy .btn:hover,
+.home2-page .h2-final-copy .btn:focus-visible {
+  color: #fff;
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* Home 2 service-card arrows use amber on pointer or keyboard focus. */
+.home2-page .h2-service-card > a:hover,
+.home2-page .h2-service-card > a:focus-visible {
+  color: var(--secondary);
+  background: var(--secondary-soft);
+  border-color: var(--secondary);
+}
+.home2-page .h2-service-card > a:hover svg,
+.home2-page .h2-service-card > a:focus-visible svg {
+  color: var(--secondary);
+}

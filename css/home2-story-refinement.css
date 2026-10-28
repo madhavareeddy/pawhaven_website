@@ -1,0 +1,33 @@
+/* Refined editorial cards for Home 2's care journal. */
+.h2-stories{position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 8% 0%,var(--primary-soft),transparent 38%),var(--surface-2)}
+.h2-stories-heading{max-width:820px;margin:0 auto clamp(34px,5vw,58px);text-align:center}
+.h2-stories-heading .eyebrow{position:relative;display:inline-flex;justify-content:center;margin-inline:auto;padding-inline:38px}
+.h2-stories-heading .eyebrow::before,.h2-stories-heading .eyebrow::after{position:absolute;top:50%;width:22px;height:1px;background:var(--secondary);content:""}
+.h2-stories-heading .eyebrow::before{inset-inline-start:0}
+.h2-stories-heading .eyebrow::after{inset-inline-end:0}
+.h2-stories-heading h2{max-width:780px;margin:13px auto 0}
+.h2-stories-heading p{max-width:620px;margin:15px auto 0}
+.h2-story-list{gap:22px}
+.h2-story,.h2-story-reverse{position:relative;display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:center;gap:0;overflow:hidden;padding:12px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface);box-shadow:var(--shadow-sm);transition:border-color 280ms ease,box-shadow 280ms ease}
+.h2-story:hover,.h2-story:focus-within{border-color:color-mix(in srgb,var(--secondary) 52%,var(--border));box-shadow:var(--shadow)}
+.h2-story-reverse{grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr)}
+.h2-story-reverse .h2-story-image{order:2}
+.h2-story-image{width:100%;height:auto;aspect-ratio:1.72/1;overflow:hidden;border-radius:calc(var(--radius-lg) - 7px);background:var(--surface-2)}
+.h2-story-image img{width:100%;height:100%;object-fit:cover;object-position:center;transition:none}
+.h2-story:hover .h2-story-image img{transform:none}
+.h2-story-copy{position:relative;width:min(100%,480px);max-width:480px;margin-inline:auto;padding:clamp(22px,4vw,54px);display:flex;flex-direction:column;align-items:center;text-align:center}
+.h2-story-copy::before{width:32px;height:2px;margin-bottom:19px;border-radius:var(--radius-full);background:var(--secondary);content:""}
+.h2-story-copy .eyebrow{color:var(--secondary);font-size:.68rem;letter-spacing:.13em}
+.h2-story-copy h3{max-width:390px;margin:13px auto;font-size:clamp(1.55rem,2.5vw,2.2rem);line-height:1.2}
+.h2-story-copy p{max-width:380px;margin:0 auto 18px;font-size:.93rem;line-height:1.75}
+.h2-story-copy .text-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:.88rem}
+.h2-story-copy .text-link svg{width:16px;height:16px;transition:transform 180ms ease}
+.h2-story-copy .text-link:hover svg{transform:translateX(3px)}
+html[dir="rtl"] .h2-story-copy .text-link:hover svg{transform:translateX(-3px)}
+.h2-story[data-aos="fade-up"]{transition-property:opacity,transform;transition-duration:680ms!important;transition-timing-function:cubic-bezier(.22,.61,.36,1)!important}
+html[data-theme="dark"] .h2-stories{background:radial-gradient(ellipse at 8% 0%,var(--primary-soft),transparent 38%),var(--bg)}
+html[data-theme="dark"] .h2-story{background:var(--surface);border-color:var(--border)}
+html[data-theme="dark"] .h2-story:hover,html[data-theme="dark"] .h2-story:focus-within{border-color:var(--secondary)}
+@media(max-width:800px){.h2-story,.h2-story-reverse{grid-template-columns:minmax(0,1fr) minmax(0,.95fr)}.h2-story-image{aspect-ratio:1.2/1}.h2-story-copy{padding:clamp(18px,3vw,28px)}.h2-story-copy h3{font-size:clamp(1.4rem,3vw,1.8rem)}}
+@media(max-width:620px){.h2-stories{padding-block:54px}.h2-stories-heading{margin-bottom:27px}.h2-story,.h2-story-reverse{grid-template-columns:1fr;gap:0;padding:9px;border-radius:22px}.h2-story-reverse .h2-story-image{order:0}.h2-story-image{aspect-ratio:1.58/1;border-radius:16px}.h2-story-copy{width:100%;padding:22px 14px 20px}.h2-story-copy::before{margin-bottom:13px}.h2-story-copy h3{font-size:1.55rem}.h2-story-copy p{font-size:.9rem}.h2-story-list{gap:16px}.h2-story[data-aos-delay]{transition-delay:0ms!important}.h2-story-copy .text-link:hover svg{transform:none}}
+@media(prefers-reduced-motion:reduce){.h2-story,.h2-story-copy .text-link svg{transition:none!important}.h2-story[data-aos="fade-up"]{transition:none!important}}

@@ -1,0 +1,1701 @@
+/* =========================================================
+   PAW HAVEN — HOME 1 MERGED STYLESHEET
+   Original Home 1 styles + final overrides
+   Primary: Deep Forest Green #123F2A
+   Secondary: Warm Amber #B27B0D
+   Font: Playfair Display
+   External CSS only
+========================================================= */
+
+/* =========================================================
+   1. HERO SECTION
+========================================================= */
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    padding: 60px 0 88px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+html[data-theme="dark"] .hero-section {
+    background: var(--bg);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    align-items: center;
+    gap: clamp(40px, 5vw, 64px);
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.hero-copy h1 {
+    margin: 12px 0 20px;
+    font-size: clamp(2.5rem, 5.2vw, 4.4rem);
+    line-height: 1.1;
+}
+
+.hero-copy p {
+    max-width: 540px;
+    margin-bottom: 28px;
+    color: var(--muted);
+    font-size: 1.12rem;
+    line-height: 1.8;
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    width: 100%;
+    margin-bottom: 32px;
+}
+
+.hero-actions .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+}
+
+.hero-actions .btn-primary {
+    order: 1;
+}
+
+.hero-actions .btn-outline {
+    order: 2;
+}
+
+.hero-actions .arrow-icon {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-actions .arrow-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+html[data-theme="dark"] .hero-actions .btn-outline {
+    color: var(--text);
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .hero-actions .btn-outline:hover,
+html[data-theme="dark"] .hero-actions .btn-outline:focus-visible {
+    color: #fff;
+    background: var(--secondary, #B27B0D);
+    border-color: var(--secondary, #B27B0D);
+}
+
+html[data-theme="dark"] .hero-actions .btn-primary,
+html[data-theme="dark"] .site-header .btn-primary,
+html[data-theme="dark"] .site-footer .btn-primary {
+    color: #fff;
+    background: var(--primary, #123F2A);
+    border-color: var(--primary, #123F2A);
+}
+
+.hero-trust {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 18px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+}
+
+.trust-avatars {
+    font-size: 1.25rem;
+    letter-spacing: -2px;
+}
+
+.hero-trust span {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.hero-trust strong {
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.hero-trust small {
+    color: var(--muted);
+    font-size: 0.74rem;
+}
+
+.hero-visual {
+    position: relative;
+    min-width: 0;
+}
+
+.hero-main-image {
+    display: block;
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 44% 44% 28px 28px;
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-floating {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: calc(100% - 24px);
+    padding: 14px 20px;
+    background: color-mix(in srgb, var(--surface) 95%, transparent);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(12px);
+}
+
+.floating-icon {
+    display: grid;
+    flex: 0 0 38px;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    color: var(--secondary);
+    background: var(--secondary-soft);
+    border-radius: 50%;
+    font-size: 1.1rem;
+}
+
+.hero-floating strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.9rem;
+}
+
+.hero-floating small {
+    color: var(--muted);
+    font-size: 0.76rem;
+}
+
+/* =========================================================
+   2. PROMISE SECTION
+========================================================= */
+
+.promise-section {
+    background: var(--bg);
+}
+
+.promise-strip {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.promise-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    min-width: 0;
+    padding: 32px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--ease),
+        border-color var(--ease),
+        box-shadow var(--ease);
+}
+
+.promise-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--secondary);
+    box-shadow: var(--shadow);
+}
+
+.promise-item b {
+    flex-shrink: 0;
+    color: var(--secondary);
+    font-family: var(--serif, "Playfair Display", serif);
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.promise-item h3 {
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+}
+
+.promise-item p {
+    margin-bottom: 0;
+    font-size: 0.94rem;
+}
+
+/* =========================================================
+   3. FEATURE LIST
+========================================================= */
+
+.feature-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0 28px;
+}
+
+.feature-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.feature-icon {
+    display: grid;
+    flex: 0 0 36px;
+    place-items: center;
+    width: 36px;
+    height: 36px;
+    color: var(--secondary);
+    background: var(--secondary-soft);
+    border-radius: 50%;
+}
+
+.feature-icon svg,
+.feature-icon i {
+    width: 18px;
+    height: 18px;
+}
+
+.feature-row strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.feature-row p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* =========================================================
+   4. SERVICES SHOWCASE
+========================================================= */
+
+.services-preview {
+    background: var(--surface-2);
+}
+
+.service-showcase {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.service-line {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    min-height: 240px;
+    padding: 32px 26px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--ease),
+        border-color var(--ease),
+        box-shadow var(--ease);
+}
+
+.service-line:hover {
+    transform: translateY(-4px);
+    border-color: var(--secondary);
+    box-shadow: var(--shadow);
+}
+
+.service-number {
+    margin-bottom: 12px;
+    color: var(--secondary);
+    font-family: var(--serif, "Playfair Display", serif);
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.service-line h3 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.service-line p {
+    margin-bottom: 18px;
+    font-size: 0.92rem;
+}
+
+.service-line a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--secondary);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+.service-symbol {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: var(--secondary);
+    opacity: 0.6;
+}
+
+.service-symbol svg,
+.service-symbol i {
+    width: 26px;
+    height: 26px;
+}
+
+/* =========================================================
+   5. SPACES PREVIEW
+========================================================= */
+
+.spaces-preview {
+    background: var(--bg);
+}
+
+.spaces-heading {
+    max-width: 680px;
+    margin-bottom: 40px;
+}
+
+.spaces-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.space-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition:
+        transform var(--ease),
+        border-color var(--ease);
+}
+
+.space-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--secondary);
+}
+
+.space-card img {
+    display: block;
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 600ms var(--ease);
+}
+
+.space-card:hover img {
+    transform: scale(1.05);
+}
+
+.space-card-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 24px;
+}
+
+.space-card-content h3 {
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+}
+
+.space-card-content p {
+    margin-bottom: 16px;
+    font-size: 0.92rem;
+}
+
+.space-card-content a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: auto;
+    color: var(--secondary);
+    font-size: 0.88rem;
+    font-weight: 700;
+}
+
+/* =========================================================
+   6. QUOTE PANEL
+========================================================= */
+
+.quote-panel {
+    padding: clamp(36px, 6vw, 60px);
+    text-align: center;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+}
+
+html[data-theme="dark"] .quote-panel {
+    background: var(--surface);
+    border-color: var(--secondary);
+}
+
+.quote-panel .eyebrow {
+    justify-content: center;
+}
+
+.quote-panel h2 {
+    max-width: 820px;
+    margin: 14px auto 16px;
+    font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+    line-height: 1.25;
+}
+
+.quote-panel p {
+    max-width: 700px;
+    margin: 0 auto 28px;
+    font-size: 1.05rem;
+}
+
+/* =========================================================
+   7. REVIEWS
+========================================================= */
+
+.reviews-section {
+    background: var(--bg);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.review-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    padding: 32px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.review-stars {
+    margin-bottom: 14px;
+    color: var(--secondary);
+    font-size: 1.15rem;
+    letter-spacing: 2px;
+}
+
+.review-quote {
+    flex-grow: 1;
+    margin-bottom: 24px;
+    color: var(--text);
+    font-size: 0.98rem;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.review-avatar {
+    display: grid;
+    flex: 0 0 42px;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    color: var(--secondary);
+    background: var(--secondary-soft);
+    border-radius: 50%;
+    font-size: 1.2rem;
+}
+
+.review-author strong {
+    display: block;
+    color: var(--text);
+    font-size: 0.92rem;
+}
+
+.review-author small {
+    display: block;
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+/* =========================================================
+   8. BRAND AND LOGO
+   Supports both brand-symbol and brand-mark markup
+========================================================= */
+
+.site-header .brand,
+.site-footer .brand,
+.site-footer .brand-logo {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    gap: 10px;
+    min-width: 0;
+    direction: ltr;
+    unicode-bidi: isolate;
+    text-decoration: none;
+}
+
+.site-header .brand-symbol,
+.site-footer .brand-symbol,
+.site-header .brand-mark,
+.site-footer .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    color: var(--primary, #123F2A);
+    object-fit: contain;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.site-header .brand-symbol svg,
+.site-footer .brand-symbol svg {
+    display: block;
+    width: 38px;
+    height: 38px;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
+
+.site-header .brand-logo-image,
+.site-footer .brand-logo-image {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.site-header .brand-text,
+.site-footer .brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    direction: ltr;
+    unicode-bidi: isolate;
+    text-align: left;
+    line-height: 1.12;
+}
+
+.site-header .brand-name,
+.site-footer .brand-name {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.28em;
+    direction: ltr;
+    unicode-bidi: isolate;
+    white-space: nowrap;
+    color: var(--text);
+    font-family: var(--serif, "Playfair Display", serif);
+    font-size: clamp(1.2rem, 1.6vw, 1.55rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
+}
+
+.site-header .brand-first,
+.site-footer .brand-first {
+    order: 1;
+    color: var(--primary, #123F2A);
+}
+
+.site-header .brand-second,
+.site-footer .brand-second {
+    order: 2;
+    color: var(--secondary, #B27B0D);
+}
+
+.site-header .brand-tagline,
+.site-footer .brand-tagline {
+    display: block;
+    margin-top: 3px;
+    direction: ltr;
+    unicode-bidi: isolate;
+    white-space: nowrap;
+    color: var(--muted);
+    font-family: var(--serif, "Playfair Display", serif);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    line-height: 1.5;
+}
+
+/* RTL brand */
+
+html[dir="rtl"] .site-header .brand,
+html[dir="rtl"] .site-footer .brand,
+html[dir="rtl"] .site-footer .brand-logo {
+    flex-direction: row;
+    direction: rtl;
+}
+
+html[dir="rtl"] .site-header .brand-symbol,
+html[dir="rtl"] .site-footer .brand-symbol,
+html[dir="rtl"] .site-header .brand-mark,
+html[dir="rtl"] .site-footer .brand-mark {
+    order: 1;
+}
+
+html[dir="rtl"] .site-header .brand-text,
+html[dir="rtl"] .site-footer .brand-text {
+    order: 2;
+    align-items: flex-start;
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .site-header .brand-name,
+html[dir="rtl"] .site-footer .brand-name {
+    flex-direction: row;
+    direction: rtl;
+    text-align: right;
+}
+
+html[dir="rtl"] .site-header .brand-first,
+html[dir="rtl"] .site-footer .brand-first {
+    order: 2;
+}
+
+html[dir="rtl"] .site-header .brand-second,
+html[dir="rtl"] .site-footer .brand-second {
+    order: 1;
+}
+
+html[dir="rtl"] .site-header .brand-tagline,
+html[dir="rtl"] .site-footer .brand-tagline {
+    text-align: right;
+}
+
+html[dir="rtl"] .site-header .nav-wrap,
+html[dir="rtl"] .site-header .main-nav,
+html[dir="rtl"] .site-header .header-actions {
+    direction: rtl;
+}
+
+/* =========================================================
+   9. FOOTER GRID AND CONTENT
+========================================================= */
+
+.site-footer .footer-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: clamp(24px, 3vw, 42px);
+}
+
+.site-footer .footer-brand,
+.site-footer .footer-column {
+    min-width: 0;
+}
+
+.site-footer .footer-brand > p {
+    margin-top: 20px;
+    margin-bottom: 0;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.site-footer .footer-column h3 {
+    margin-bottom: 20px;
+}
+
+.site-footer .footer-links,
+.site-footer .footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.site-footer .footer-links a,
+.site-footer .footer-contact a,
+.site-footer .footer-contact > span {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+}
+
+.site-footer .footer-links a > svg,
+.site-footer .footer-contact svg {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 18px;
+    color: var(--secondary, #B27B0D);
+}
+
+/* =========================================================
+   10. SOCIAL MEDIA ICONS
+   Supports Lucide SVG and Font Awesome icons
+========================================================= */
+
+.site-footer .footer-icons,
+.footer-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.site-footer .footer-icons a,
+.site-footer .footer-icons .social-link,
+.footer-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+    color: var(--primary, #123F2A);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    text-decoration: none;
+    transition:
+        color 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.site-footer .footer-icons a svg,
+.site-footer .footer-icons .social-link svg,
+.footer-icons a svg {
+    display: block;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+}
+
+.site-footer .footer-icons .social-link i.fa-brands {
+    display: inline-block;
+    font-family: "Font Awesome 6 Brands";
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.site-footer .footer-icons a:hover,
+.site-footer .footer-icons a:focus-visible,
+.site-footer .footer-icons .social-link:hover,
+.site-footer .footer-icons .social-link:focus-visible,
+.footer-icons a:hover,
+.footer-icons a:focus-visible {
+    color: #fff;
+    background: var(--secondary, #B27B0D);
+    border-color: var(--secondary, #B27B0D);
+    transform: translateY(-3px);
+}
+
+.site-footer .footer-icons a:focus-visible,
+.site-footer .footer-icons .social-link:focus-visible,
+.footer-icons a:focus-visible {
+    outline: 2px solid var(--secondary, #B27B0D);
+    outline-offset: 3px;
+}
+
+html[data-theme="dark"] .site-footer .footer-icons a,
+html[data-theme="dark"] .site-footer .footer-icons .social-link,
+html[data-theme="dark"] .footer-icons a {
+    color: var(--secondary, #B27B0D);
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .site-footer .footer-icons a:hover,
+html[data-theme="dark"] .site-footer .footer-icons a:focus-visible,
+html[data-theme="dark"] .site-footer .footer-icons .social-link:hover,
+html[data-theme="dark"] .site-footer .footer-icons .social-link:focus-visible,
+html[data-theme="dark"] .footer-icons a:hover,
+html[data-theme="dark"] .footer-icons a:focus-visible {
+    color: #fff;
+    background: var(--secondary, #B27B0D);
+    border-color: var(--secondary, #B27B0D);
+}
+
+/* =========================================================
+   11. FOOTER BOTTOM
+========================================================= */
+
+.site-footer .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px 24px;
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+}
+
+.site-footer .footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+/* =========================================================
+   12. HEADER CONTROLS — DARK MODE
+========================================================= */
+
+html[data-theme="dark"] .site-header .theme-toggle,
+html[data-theme="dark"] .site-header .direction-toggle,
+html[data-theme="dark"] .site-header .menu-toggle {
+    color: var(--text);
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .site-header .theme-toggle:hover,
+html[data-theme="dark"] .site-header .direction-toggle:hover,
+html[data-theme="dark"] .site-header .menu-toggle:hover {
+    color: #fff;
+    background: var(--secondary, #B27B0D);
+    border-color: var(--secondary, #B27B0D);
+}
+
+/* =========================================================
+   13. RESPONSIVE — TABLET AND SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+    }
+
+    .hero-main-image {
+        height: 400px;
+    }
+
+    .promise-strip,
+    .service-showcase,
+    .spaces-grid,
+    .reviews-grid {
+        gap: 18px;
+    }
+
+    .promise-item {
+        gap: 14px;
+        padding: 26px 22px;
+    }
+
+    .service-line {
+        padding: 28px 22px;
+    }
+
+    .site-header .brand-symbol,
+    .site-footer .brand-symbol,
+    .site-header .brand-mark,
+    .site-footer .brand-mark {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .site-header .brand-symbol svg,
+    .site-footer .brand-symbol svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .site-header .brand,
+    .site-footer .brand,
+    .site-footer .brand-logo {
+        gap: 8px;
+    }
+
+    .site-footer .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px;
+    }
+}
+
+/* =========================================================
+   15. RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+    .site-header .brand,
+    .site-footer .brand,
+    .site-footer .brand-logo {
+        gap: 8px;
+    }
+
+    .site-header .brand-symbol,
+    .site-footer .brand-symbol,
+    .site-header .brand-mark,
+    .site-footer .brand-mark {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .site-header .brand-symbol svg,
+    .site-footer .brand-symbol svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .site-header .brand-name,
+    .site-footer .brand-name {
+        font-size: 1.08rem;
+    }
+
+    .site-header .brand-tagline,
+    .site-footer .brand-tagline {
+        font-size: 0.53rem;
+        letter-spacing: 0.035em;
+    }
+
+    .promise-item {
+        padding: 24px 20px;
+    }
+
+    .space-card img {
+        height: 220px;
+    }
+
+    .site-footer .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/* =========================================================
+   18. RESPONSIVE — 360PX
+========================================================= */
+
+@media (max-width: 360px) {
+    .site-header .brand,
+    .site-footer .brand,
+    .site-footer .brand-logo {
+        gap: 6px;
+    }
+
+    .site-header .brand-symbol,
+    .site-footer .brand-symbol,
+    .site-header .brand-mark,
+    .site-footer .brand-mark {
+        flex-basis: 30px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .site-header .brand-name,
+    .site-footer .brand-name {
+        gap: 0.2em;
+        font-size: 0.92rem;
+    }
+
+    .site-header .brand-tagline,
+    .site-footer .brand-tagline {
+        font-size: 0.44rem;
+        letter-spacing: 0.015em;
+    }
+
+    .site-footer .footer-icons,
+    .footer-icons {
+        gap: 8px;
+    }
+}
+
+/* =========================================================
+   19. ACCESSIBILITY — REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .site-footer .footer-icons a,
+    .site-footer .footer-icons .social-link,
+    .footer-icons a,
+    .space-card,
+    .space-card img,
+    .promise-item,
+    .service-line {
+        transition: none;
+    }
+
+    .site-footer .footer-icons a:hover,
+    .site-footer .footer-icons .social-link:hover,
+    .footer-icons a:hover,
+    .space-card:hover,
+    .promise-item:hover,
+    .service-line:hover {
+        transform: none;
+    }
+}
+
+
+/* Requested final brand consistency: larger logo on every page */
+.site-header .brand-mark,
+.site-header .brand-logo-image,
+.site-header .brand-symbol img,
+.site-footer .brand-mark,
+.site-footer .brand-logo-image,
+.site-footer .brand-symbol img,
+body .sidebar .brand-mark,
+body .sidebar .brand-logo-image,
+body.login-page .brand-logo,
+body.signup-page .signup-logo {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    flex: 0 0 56px !important;
+    object-fit: contain !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* RTL: wordmark reads Haven Paw and the logo image sits on its right */
+html[dir="rtl"] body .brand,
+html[dir="rtl"] body .signup-brand,
+html[dir="rtl"] body .site-header .brand,
+html[dir="rtl"] body .site-footer .brand-logo {
+    flex-direction: row-reverse !important;
+}
+
+/* Preserve the original brand colors in both directions */
+body .brand-name .brand-first,
+body .signup-brand-name .brand-first { color: #123F2A !important; }
+body .brand-name .brand-second,
+body .signup-brand-name .brand-second { color: #B27B0D !important; }
+
+/* Smooth transitions for brand and controls */
+body .brand, body .signup-brand, body .brand-logo, body .signup-logo,
+body .brand-name, body .signup-brand-name,
+body [data-theme-toggle], body [data-direction-toggle] {
+    transition: color 350ms ease, background-color 350ms ease, border-color 350ms ease, transform 350ms ease;
+}
+/* =========================================================
+   PAW HAVEN — FINAL ALIGNMENT AND HEADER FIXES
+   Append at the END of home1.css
+   Primary: #123F2A
+   Secondary: #B27B0D
+========================================================= */
+
+/* 1. Center section headings and introductory content
+   Keep hero section alignment unchanged */
+
+main > section:not(.hero-section) .section-heading,
+main > section:not(.hero-section) .spaces-heading,
+main > section:not(.hero-section) .home2-gallery-head,
+main > section:not(.hero-section) .home2-section-heading {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+main > section:not(.hero-section) .section-heading .eyebrow,
+main > section:not(.hero-section) .spaces-heading .eyebrow,
+main > section:not(.hero-section) .home2-gallery-head .eyebrow,
+main > section:not(.hero-section) .home2-section-heading .eyebrow {
+    justify-content: center;
+}
+
+main > section:not(.hero-section) .section-heading > p,
+main > section:not(.hero-section) .spaces-heading > p,
+main > section:not(.hero-section) .home2-gallery-head > p,
+main > section:not(.hero-section) .home2-section-heading > p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Center headings inside common section containers */
+
+main > section:not(.hero-section) .container > .section-title,
+main > section:not(.hero-section) .container > .section-heading h2,
+main > section:not(.hero-section) .container > .spaces-heading h2 {
+    text-align: center;
+}
+
+/* 2. Home 1 active navigation underline
+   Match the About page's amber active indicator */
+
+.site-header .main-nav > a.active,
+.site-header .main-nav .nav-dropdown > .nav-dropdown-toggle.active,
+.site-header .nav-dropdown-menu a.active {
+    color: var(--secondary, #B27B0D);
+}
+
+.site-header .main-nav > a.active {
+    position: relative;
+}
+
+.site-header .main-nav > a.active::after {
+    position: absolute;
+    right: 0;
+    bottom: -8px;
+    left: 0;
+    height: 3px;
+    background: var(--secondary, #B27B0D);
+    border-radius: 3px;
+    content: "";
+}
+
+/* Remove the underline from inactive navigation items */
+
+.site-header .main-nav > a:not(.active)::after {
+    content: none;
+}
+
+/* 3. Secondary-colour borders for header controls */
+
+.site-header .theme-toggle,
+.site-header .direction-toggle,
+.site-header .menu-toggle {
+    border: 1px solid var(--secondary, #B27B0D);
+    transition:
+        color 250ms ease,
+        background-color 250ms ease,
+        border-color 250ms ease,
+        transform 250ms ease;
+}
+
+.site-header .theme-toggle:hover,
+.site-header .direction-toggle:hover,
+.site-header .menu-toggle:hover {
+    color: #fff;
+    background: var(--secondary, #B27B0D);
+    border-color: var(--secondary, #B27B0D);
+    transform: translateY(-2px);
+}
+
+.site-header .theme-toggle:focus-visible,
+.site-header .direction-toggle:focus-visible,
+.site-header .menu-toggle:focus-visible {
+    outline: 2px solid var(--secondary, #B27B0D);
+    outline-offset: 3px;
+}
+
+/* 4. Secondary-colour borders for social media icons */
+
+.site-footer .footer-icons a,
+.site-footer .footer-icons .social-link,
+.footer-icons a {
+    border: 1px solid var(--secondary, #B27B0D);
+    transition:
+        color 250ms ease,
+        background-color 250ms ease,
+        border-color 250ms ease,
+        transform 250ms ease;
+}
+
+.site-footer .footer-icons a:hover,
+.site-footer .footer-icons .social-link:hover,
+.footer-icons a:hover {
+    color: #fff;
+    background: var(--secondary, #B27B0D);
+    border-color: var(--secondary, #B27B0D);
+    transform: translateY(-3px);
+}
+
+/* 5. Dark-mode header control borders */
+
+html[data-theme="dark"] .site-header .theme-toggle,
+html[data-theme="dark"] .site-header .direction-toggle,
+html[data-theme="dark"] .site-header .menu-toggle {
+    border-color: var(--secondary, #B27B0D);
+}
+
+html[data-theme="dark"] .site-header .theme-toggle:hover,
+html[data-theme="dark"] .site-header .direction-toggle:hover,
+html[data-theme="dark"] .site-header .menu-toggle:hover {
+    color: #fff;
+    background: var(--secondary, #B27B0D);
+    border-color: var(--secondary, #B27B0D);
+}
+
+/* 6. Responsive heading alignment */
+
+@media (max-width: 768px) {
+    main > section:not(.hero-section) .section-heading,
+    main > section:not(.hero-section) .spaces-heading,
+    main > section:not(.hero-section) .home2-gallery-head,
+    main > section:not(.hero-section) .home2-section-heading {
+        text-align: center;
+    }
+
+    .site-header .main-nav > a.active::after {
+        bottom: -4px;
+    }
+}
+
+@media (max-width: 360px) {
+    .site-header .theme-toggle,
+    .site-header .direction-toggle,
+    .site-header .menu-toggle {
+        border-color: var(--secondary, #B27B0D);
+    }
+
+    .site-footer .footer-icons,
+    .footer-icons {
+        gap: 8px;
+    }
+}
+
+/* 7. Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header .theme-toggle,
+    .site-header .direction-toggle,
+    .site-header .menu-toggle,
+    .site-footer .footer-icons a,
+    .site-footer .footer-icons .social-link,
+    .footer-icons a {
+        transition: none;
+    }
+}
+/* =========================================================
+   PAW HAVEN — DARK MODE COLOR FIXES
+   Primary:   #123F2A
+   Secondary: #B27B0D
+   Add at the END of home1.css
+========================================================= */
+
+/* 1. PRIMARY BUTTONS — solid forest green */
+
+html[data-theme="dark"] .hero-actions .btn-primary,
+html[data-theme="dark"] .site-header .btn-primary,
+html[data-theme="dark"] .site-footer .btn-primary,
+html[data-theme="dark"] .btn-primary {
+    color: #FFFFFF;
+    background-color: #123F2A;
+    border: 1px solid #123F2A;
+    box-shadow: none;
+    opacity: 1;
+}
+
+html[data-theme="dark"] .hero-actions .btn-primary:hover,
+html[data-theme="dark"] .site-header .btn-primary:hover,
+html[data-theme="dark"] .site-footer .btn-primary:hover,
+html[data-theme="dark"] .btn-primary:hover {
+    color: #FFFFFF;
+    background-color: #1A563B;
+    border-color: #1A563B;
+}
+
+/* 2. OUTLINE BUTTONS — neutral surface with amber border */
+
+html[data-theme="dark"] .hero-actions .btn-outline,
+html[data-theme="dark"] .btn-outline {
+    color: #F4F0E8;
+    background-color: #171F1A;
+    border: 1px solid #B27B0D;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .hero-actions .btn-outline:hover,
+html[data-theme="dark"] .hero-actions .btn-outline:focus-visible,
+html[data-theme="dark"] .btn-outline:hover,
+html[data-theme="dark"] .btn-outline:focus-visible {
+    color: #FFFFFF;
+    background-color: #B27B0D;
+    border-color: #B27B0D;
+}
+
+/* 3. HERO TRUST ICONS — visible in dark mode */
+
+html[data-theme="dark"] .hero-trust {
+    background-color: #1B2720;
+    border-color: #35483A;
+}
+
+html[data-theme="dark"] .hero-trust .trust-avatars,
+html[data-theme="dark"] .hero-trust svg,
+html[data-theme="dark"] .hero-trust i {
+    color: #D9A52E;
+}
+
+html[data-theme="dark"] .hero-trust strong {
+    color: #F4F0E8;
+}
+
+html[data-theme="dark"] .hero-trust small {
+    color: #C2C9C1;
+}
+
+/* 4. FLOATING HERO CARD */
+
+html[data-theme="dark"] .hero-floating {
+    color: #F4F0E8;
+    background-color: #17211A;
+    border-color: #B27B0D;
+}
+
+html[data-theme="dark"] .hero-floating strong {
+    color: #FFFFFF;
+}
+
+html[data-theme="dark"] .hero-floating small {
+    color: #C2C9C1;
+}
+
+html[data-theme="dark"] .hero-floating .floating-icon {
+    color: #D9A52E;
+    background-color: #2A2B1E;
+}
+
+/* 5. FEATURE LIST ICONS — prevent dark green icons disappearing */
+
+html[data-theme="dark"] .feature-icon {
+    color: #D9A52E;
+    background-color: #29291D;
+    border: 1px solid #B27B0D;
+}
+
+html[data-theme="dark"] .feature-icon svg,
+html[data-theme="dark"] .feature-icon i {
+    color: #D9A52E;
+    stroke: currentColor;
+}
+
+html[data-theme="dark"] .feature-row strong {
+    color: #F4F0E8;
+}
+
+html[data-theme="dark"] .feature-row p {
+    color: #C2C9C1;
+}
+
+/* 6. HEADER MOON/SUN AND DIRECTION BUTTONS */
+
+html[data-theme="dark"] .site-header .theme-toggle,
+html[data-theme="dark"] .site-header .direction-toggle,
+html[data-theme="dark"] .site-header .menu-toggle {
+    color: #D9A52E;
+    background-color: #151C17;
+    border: 1px solid #B27B0D;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .site-header .theme-toggle svg,
+html[data-theme="dark"] .site-header .direction-toggle svg,
+html[data-theme="dark"] .site-header .menu-toggle svg,
+html[data-theme="dark"] .site-header .theme-toggle i,
+html[data-theme="dark"] .site-header .direction-toggle i,
+html[data-theme="dark"] .site-header .menu-toggle i {
+    color: #D9A52E;
+    stroke: currentColor;
+}
+
+html[data-theme="dark"] .site-header .theme-toggle:hover,
+html[data-theme="dark"] .site-header .direction-toggle:hover,
+html[data-theme="dark"] .site-header .menu-toggle:hover {
+    color: #FFFFFF;
+    background-color: #B27B0D;
+    border-color: #B27B0D;
+}
+
+html[data-theme="dark"] .site-header .theme-toggle:hover svg,
+html[data-theme="dark"] .site-header .direction-toggle:hover svg,
+html[data-theme="dark"] .site-header .menu-toggle:hover svg {
+    color: #FFFFFF;
+}
+
+/* 7. SOCIAL MEDIA ICONS — amber border always visible */
+
+html[data-theme="dark"] .site-footer .footer-icons a,
+html[data-theme="dark"] .site-footer .footer-icons .social-link,
+html[data-theme="dark"] .footer-icons a {
+    color: #D9A52E;
+    background-color: #19221B;
+    border: 1px solid #B27B0D;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .site-footer .footer-icons a svg,
+html[data-theme="dark"] .site-footer .footer-icons .social-link svg,
+html[data-theme="dark"] .footer-icons a svg {
+    color: #D9A52E;
+    stroke: currentColor;
+}
+
+html[data-theme="dark"] .site-footer .footer-icons .social-link i.fa-brands {
+    color: #D9A52E;
+}
+
+html[data-theme="dark"] .site-footer .footer-icons a:hover,
+html[data-theme="dark"] .site-footer .footer-icons .social-link:hover,
+html[data-theme="dark"] .footer-icons a:hover {
+    color: #FFFFFF;
+    background-color: #B27B0D;
+    border-color: #B27B0D;
+    transform: translateY(-3px);
+}
+
+html[data-theme="dark"] .site-footer .footer-icons a:hover svg,
+html[data-theme="dark"] .site-footer .footer-icons .social-link:hover svg,
+html[data-theme="dark"] .site-footer .footer-icons a:hover i.fa-brands {
+    color: #FFFFFF;
+}
+
+/* 8. SERVICE AND SPACE CARD ICONS */
+
+html[data-theme="dark"] .service-symbol,
+html[data-theme="dark"] .service-number,
+html[data-theme="dark"] .service-line a,
+html[data-theme="dark"] .space-card-content a,
+html[data-theme="dark"] .review-stars {
+    color: #D9A52E;
+}
+
+html[data-theme="dark"] .service-symbol svg,
+html[data-theme="dark"] .service-symbol i {
+    color: #D9A52E;
+    stroke: currentColor;
+}
+
+/* 9. CARD BORDERS — no mixed colors */
+
+html[data-theme="dark"] .promise-item,
+html[data-theme="dark"] .service-line,
+html[data-theme="dark"] .space-card,
+html[data-theme="dark"] .review-card {
+    background-color: #171F1A;
+    border-color: #35483A;
+}
+
+html[data-theme="dark"] .promise-item:hover,
+html[data-theme="dark"] .service-line:hover,
+html[data-theme="dark"] .space-card:hover {
+    border-color: #B27B0D;
+}
+
+/* 10. KEEP BUTTONS AND ICONS CONSISTENT */
+
+html[data-theme="dark"] .hero-actions .btn,
+html[data-theme="dark"] .site-header .btn-primary,
+html[data-theme="dark"] .site-footer .btn-primary {
+    opacity: 1;
+    mix-blend-mode: normal;
+}
+
+/* 11. ACCESSIBILITY */
+
+html[data-theme="dark"] .btn:focus-visible,
+html[data-theme="dark"] .site-header button:focus-visible,
+html[data-theme="dark"] .site-footer .footer-icons a:focus-visible {
+    outline: 2px solid #D9A52E;
+    outline-offset: 3px;
+}
+/* Home 1 final CTA: light editorial card with a warm, animated accent. */
+.home1-final-cta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding-block: clamp(42px, 6vw, 82px) !important;
+    background: transparent !important;
+}
+
+.home1-final-cta .cta-inner {
+    position: relative;
+    isolation: isolate;
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: clamp(28px, 5vw, 76px);
+    overflow: hidden;
+    padding: clamp(34px, 5vw, 66px) !important;
+    border: 1px solid rgba(178, 123, 13, .34) !important;
+    border-radius: 30px !important;
+    background: linear-gradient(118deg, #fffdf8 0%, #f7f2e7 62%, #f0e7d3 100%) !important;
+    box-shadow: 0 24px 64px rgba(33, 49, 38, .12), inset 0 1px 0 rgba(255,255,255,.9) !important;
+    color: #183d2b !important;
+    transition: transform 500ms cubic-bezier(.22, 1, .36, 1), box-shadow 500ms cubic-bezier(.22, 1, .36, 1), border-color 350ms ease !important;
+}
+
+.home1-final-cta .cta-inner::before {
+    position: absolute;
+    z-index: -1;
+    top: -190px;
+    right: -110px;
+    width: clamp(280px, 40vw, 520px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(178, 123, 13, .2);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,.75), rgba(226, 208, 166, .22) 56%, transparent 72%);
+    content: "";
+    pointer-events: none;
+    transition: transform 800ms cubic-bezier(.22, 1, .36, 1), opacity 500ms ease;
+}
+
+.home1-final-cta .cta-inner::after {
+    position: absolute;
+    z-index: -1;
+    right: 17%;
+    bottom: -72px;
+    width: 180px;
+    height: 180px;
+    border: 1px solid rgba(18, 63, 42, .12);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+}
+
+.home1-final-cta .cta-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 760px;
+}
+
+.home1-final-cta .cta-copy .eyebrow {
+    color: var(--secondary, #B27B0D) !important;
+}
+
+.home1-final-cta .cta-copy .eyebrow::before {
+    background: currentColor !important;
+}
+
+.home1-final-cta .cta-copy h2 {
+    max-width: 16ch;
+    color: var(--primary, #123F2A) !important;
+    text-wrap: balance;
+}
+
+.home1-final-cta .cta-copy p {
+    max-width: 640px;
+    color: #65736a !important;
+}
+
+.home1-final-cta .cta-btn-wrap {
+    position: relative;
+    z-index: 1;
+    min-width: 238px;
+}
+
+.home1-final-cta .cta-inner:hover {
+    transform: translateY(-5px);
+    border-color: rgba(178, 123, 13, .62) !important;
+    box-shadow: 0 32px 76px rgba(33, 49, 38, .17), inset 0 1px 0 rgba(255,255,255,.95) !important;
+}
+
+.home1-final-cta .cta-inner:hover::before {
+    transform: scale(1.08) translate(-8px, 8px);
+    opacity: .9;
+}
+
+.home1-final-cta.aos-animate .cta-inner {
+    animation: home1CtaReveal 820ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+@keyframes home1CtaReveal {
+    from { opacity: 0; transform: translateY(24px) scale(.985); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+html[data-theme="dark"] .home1-final-cta .cta-inner {
+    border-color: rgba(178, 123, 13, .45) !important;
+    background: linear-gradient(118deg, #19251d 0%, #202a22 62%, #2b2c20 100%) !important;
+    box-shadow: 0 24px 64px rgba(0,0,0,.3), inset 0 1px 0 rgba(255,255,255,.05) !important;
+    color: #f3f6f3 !important;
+}
+
+html[data-theme="dark"] .home1-final-cta .cta-copy h2 {
+    color: #f3f6f3 !important;
+}
+
+html[data-theme="dark"] .home1-final-cta .cta-copy p {
+    color: #b7c1b9 !important;
+}
+
+html[data-theme="dark"] .home1-final-cta .cta-inner::before {
+    border-color: rgba(216, 165, 46, .2);
+    background: radial-gradient(circle, rgba(255,255,255,.06), rgba(178, 123, 13, .08) 56%, transparent 72%);
+}
+
+@media (max-width: 768px) {
+    .home1-final-cta .cta-inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        padding: clamp(28px, 6vw, 42px) !important;
+        border-radius: 24px !important;
+    }
+
+    .home1-final-cta .cta-copy h2 {
+        max-width: 20ch;
+    }
+
+    .home1-final-cta .cta-btn-wrap {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .home1-final-cta .cta-inner {
+        padding: 24px 20px !important;
+        border-radius: 20px !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home1-final-cta .cta-inner,
+    .home1-final-cta .cta-inner::before {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .home1-final-cta.aos-animate .cta-inner {
+        opacity: 1;
+        transform: none;
+    }
+}

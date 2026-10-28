@@ -1,0 +1,1784 @@
+
+/* =========================================================
+   PAW HAVEN — ABOUT PAGE STYLESHEET
+   Dedicated stylesheet for about.html
+   Shared tokens, reset, header & footer are in global.css
+   Updated: About hero alignment and eyebrow color
+========================================================= */
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.about-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 520px;
+    padding: 72px 0 64px;
+    overflow: hidden;
+    background: linear-gradient(
+        135deg,
+        var(--surface-2) 0%,
+        var(--bg) 60%,
+        var(--surface-2) 100%
+    );
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+}
+
+.about-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 48%;
+}
+
+.about-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(18, 63, 42, 0.78),
+        rgba(18, 63, 42, 0.28)
+    );
+    pointer-events: none;
+}
+
+.about-hero .container {
+    position: relative;
+    z-index: 1;
+    width: min(var(--container, 1180px), calc(100% - 48px));
+    max-width: 1180px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+/* OUR STORY & PURPOSE — Secondary color */
+.about-hero .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 14px;
+    color: var(--secondary) !important;
+    text-align: center;
+}
+
+.about-hero .eyebrow::before,
+.about-hero .eyebrow::after {
+    flex-shrink: 0;
+}
+
+/* Main heading */
+.about-hero h1 {
+    max-width: 1000px;
+    margin: 18px auto 22px;
+    color: #fff;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    line-height: 1.12;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.about-hero h1 em {
+    color: var(--secondary);
+    font-style: italic;
+}
+
+/* Hero description */
+.about-hero p,
+.about-hero .lead {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 1.05rem;
+    line-height: 1.85;
+    text-align: center;
+}
+
+/* =========================================================
+   01. STORY SECTION
+========================================================= */
+
+.about-story-split {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(36px, 5vw, 64px);
+    align-items: center;
+}
+
+.about-story-copy h2 {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+
+.about-story-copy p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 24px;
+}
+
+.about-story-photo {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.about-story-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+    object-fit: cover;
+    display: block;
+}
+
+/* =========================================================
+   02. PHILOSOPHY EDITORIAL SECTION
+========================================================= */
+
+.about-philosophy-section {
+    background: var(--surface-2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.philosophy-editorial {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    gap: clamp(40px, 6vw, 80px);
+    align-items: flex-start;
+}
+
+.philosophy-editorial-heading {
+    position: relative;
+    padding-top: 20px;
+}
+
+.philosophy-editorial-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--secondary);
+    margin-bottom: 12px;
+}
+
+.philosophy-kicker-line {
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+}
+
+.philosophy-editorial-number {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-family: var(--serif);
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--border);
+    opacity: 0.5;
+    user-select: none;
+    pointer-events: none;
+}
+
+.philosophy-editorial-heading h2 {
+    font-size: clamp(2rem, 3.6vw, 3rem);
+    line-height: 1.2;
+    margin: 8px 0 16px;
+}
+
+.philosophy-editorial-intro {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.7;
+    margin-bottom: 24px;
+}
+
+.philosophy-editorial-signature {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.philosophy-editorial-signature svg,
+.philosophy-editorial-signature i {
+    width: 16px;
+    height: 16px;
+    color: var(--secondary);
+}
+
+.philosophy-editorial-decoration {
+    display: block;
+    margin-top: 32px;
+    color: var(--secondary);
+    opacity: 0.35;
+}
+
+.philosophy-editorial-decoration svg,
+.philosophy-editorial-decoration i {
+    width: 48px;
+    height: 48px;
+}
+
+.philosophy-editorial-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.philosophy-principle {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--ease), border-color var(--ease);
+}
+
+.philosophy-principle:hover {
+    transform: translateY(-3px);
+    border-color: var(--secondary);
+}
+
+.philosophy-principle-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.philosophy-principle-number {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--secondary);
+}
+
+.philosophy-principle-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    display: grid;
+    place-items: center;
+    color: var(--secondary);
+}
+
+.philosophy-principle-icon svg,
+.philosophy-principle-icon i {
+    width: 20px;
+    height: 20px;
+}
+
+.philosophy-principle-label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 4px;
+}
+
+.philosophy-principle-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+}
+
+.philosophy-principle-body p {
+    font-size: 0.94rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+.philosophy-principle-paw {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 32px;
+    height: 32px;
+    color: var(--border);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.philosophy-editorial-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border-radius: var(--radius-md);
+    background: var(--surface);
+    border: 1px dashed var(--border);
+    font-size: 0.92rem;
+    color: var(--muted);
+}
+
+.philosophy-footer-paw svg,
+.philosophy-footer-paw i {
+    width: 20px;
+    height: 20px;
+    color: var(--secondary);
+}
+
+/* =========================================================
+   03. VALUES SECTION
+========================================================= */
+
+.value-lines {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.value-lines > div {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 36px 30px;
+    position: relative;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--ease), border-color var(--ease);
+}
+
+.value-lines > div:hover {
+    transform: translateY(-4px);
+    border-color: var(--secondary);
+}
+
+.value-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    color: var(--secondary);
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+}
+
+.value-icon svg,
+.value-icon i {
+    width: 22px;
+    height: 22px;
+}
+
+.value-lines b {
+    position: absolute;
+    top: 30px;
+    right: 28px;
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--border);
+    font-weight: 800;
+}
+
+.value-lines h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.value-lines p {
+    font-size: 0.94rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* =========================================================
+   04. TEAM SECTION
+========================================================= */
+
+.about-team-section {
+    padding: 88px 0;
+    background: var(--surface-2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.about-team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.about-team-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--ease), border-color var(--ease);
+}
+
+.about-team-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+}
+
+.team-card-photo {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+.team-card-body {
+    padding: 24px 22px 28px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.team-card-role {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--secondary);
+    margin-bottom: 6px;
+}
+
+.team-card-body h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.team-card-body p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 16px;
+    flex: 1;
+}
+
+.team-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.74rem;
+    font-weight: 700;
+    color: var(--secondary);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    align-self: flex-start;
+}
+
+/* =========================================================
+   05. CERTIFICATIONS SECTION
+========================================================= */
+
+.about-cert-section {
+    padding: 88px 0;
+}
+
+.about-cert-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.cert-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 28px 22px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    transition: transform var(--ease), border-color var(--ease);
+}
+
+.cert-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--secondary);
+}
+
+.cert-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--surface-2);
+    color: var(--secondary);
+    display: grid;
+    place-items: center;
+    margin: 0 auto 16px;
+}
+
+.cert-card-icon svg,
+.cert-card-icon i {
+    width: 24px;
+    height: 24px;
+}
+
+.cert-card h3 {
+    font-size: 1.12rem;
+    margin-bottom: 8px;
+}
+
+.cert-card p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* =========================================================
+   06. REVIEWS SECTION
+========================================================= */
+
+.about-reviews-section {
+    padding: 88px 0;
+    background: var(--surface-2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+/* =========================================================
+   07. STATS SECTION
+========================================================= */
+
+.about-stats-section {
+    padding: 72px 0;
+}
+
+.stats-grid-quad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.stat-quad-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-quad-num {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    color: var(--secondary);
+    line-height: 1;
+    margin-bottom: 8px;
+    transition: none;
+}
+
+.stat-quad-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+}
+
+.stat-quad-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET 1024PX
+========================================================= */
+
+@media (max-width: 1024px) {
+    .about-story-split {
+        grid-template-columns: 1fr;
+    }
+
+    .about-cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats-grid-quad {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .philosophy-editorial {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-hero .container {
+        width: calc(100% - 48px);
+    }
+
+    .about-hero h1 {
+        font-size: clamp(2.5rem, 5.5vw, 3.8rem);
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — TABLET 768PX
+========================================================= */
+
+@media (max-width: 768px) {
+    .value-lines {
+        grid-template-columns: 1fr;
+    }
+
+    .about-team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-team-section,
+    .about-cert-section,
+    .about-reviews-section {
+        padding: 60px 0;
+    }
+
+    .about-hero {
+        min-height: 0;
+        padding: 290px 0 42px;
+    }
+
+    .about-hero-image {
+        height: 270px;
+    }
+
+    .about-hero::after {
+        background: linear-gradient(
+            180deg,
+            rgba(18, 63, 42, 0.05) 0%,
+            var(--primary) 270px,
+            var(--primary) 100%
+        );
+    }
+
+    .about-hero .container {
+        width: calc(100% - 36px);
+        text-align: center;
+    }
+
+    .about-hero .eyebrow {
+        color: var(--secondary) !important;
+        justify-content: center;
+    }
+
+    .about-hero h1 {
+        margin: 14px auto 18px;
+        font-size: clamp(2.3rem, 6.5vw, 3.5rem);
+        line-height: 1.15;
+        text-align: center;
+    }
+
+    .about-hero p,
+    .about-hero .lead {
+        max-width: 600px;
+        margin-inline: auto;
+        color: #fff;
+        font-size: 1rem;
+        line-height: 1.8;
+        text-align: center;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE — MOBILE 500PX
+========================================================= */
+
+@media (max-width: 500px) {
+    .about-hero {
+        padding: 270px 0 40px;
+    }
+
+    .about-hero-image {
+        height: 250px;
+        object-position: center 48%;
+    }
+
+    .about-hero::after {
+        background: linear-gradient(
+            180deg,
+            rgba(18, 63, 42, 0.05) 0%,
+            var(--primary) 250px,
+            var(--primary) 100%
+        );
+    }
+
+    .about-hero .container {
+        width: calc(100% - 32px);
+    }
+
+    .about-hero .eyebrow {
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        color: var(--secondary) !important;
+    }
+
+    .about-hero h1 {
+        margin: 14px auto 18px;
+        font-size: clamp(2rem, 8.5vw, 2.8rem);
+        line-height: 1.16;
+    }
+
+    .about-hero p,
+    .about-hero .lead {
+        font-size: 0.94rem;
+        line-height: 1.8;
+    }
+
+    .about-cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid-quad {
+        grid-template-columns: 1fr;
+    }
+
+    .philosophy-principle {
+        padding: 22px 18px;
+    }
+}
+
+/* =========================================================
+   SMALL MOBILE — 360PX
+========================================================= */
+
+@media (max-width: 360px) {
+    .about-hero .container {
+        width: calc(100% - 28px);
+    }
+
+    .about-hero h1 {
+        font-size: 2rem;
+    }
+
+    .about-hero p,
+    .about-hero .lead {
+        font-size: 0.9rem;
+    }
+
+    .about-hero .eyebrow {
+        font-size: 0.65rem;
+        letter-spacing: 0.1em;
+    }
+}
+
+
+.site-header .brand,
+.site-footer .brand,
+.site-footer .brand-logo {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+    gap: 12px;
+    min-width: 0;
+    direction: ltr;
+    unicode-bidi: isolate;
+    text-decoration: none;
+}
+
+.site-header .brand-mark,
+.site-footer .brand-mark,
+.site-header .brand-symbol,
+.site-footer .brand-symbol {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 64px;
+    width: 64px;
+    height: 64px;
+    padding: 0;
+    object-fit: contain;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.site-header .brand-logo-image,
+.site-footer .brand-logo-image {
+    display: block;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: contain;
+}
+
+.site-header .brand-text,
+.site-footer .brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-width: 0;
+    direction: ltr;
+    unicode-bidi: isolate;
+    text-align: left;
+    line-height: 1.12;
+}
+
+.site-header .brand-name,
+.site-footer .brand-name {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: baseline;
+    gap: 0.28em;
+    margin: 0;
+    direction: ltr;
+    unicode-bidi: isolate;
+    white-space: nowrap;
+    font-family: var(--serif, "Playfair Display", serif);
+    font-size: clamp(1.25rem, 1.6vw, 1.65rem);
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.15;
+}
+
+.site-header .brand-first,
+.site-footer .brand-first {
+    color: var(--primary, #123F2A);
+}
+
+.site-header .brand-second,
+.site-footer .brand-second {
+    color: var(--secondary, #B27B0D);
+}
+
+.site-header .brand-tagline,
+.site-footer .brand-tagline {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted);
+    font-family: var(--serif, "Playfair Display", serif);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   2. SOCIAL MEDIA ICONS
+   Forest green normally, amber on hover
+   ========================================================= */
+
+.site-footer .footer-icons,
+.footer-icons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.site-footer .footer-icons a,
+.site-footer .footer-icons .social-link,
+.footer-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 42px;
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+    color: #123F2A;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    text-decoration: none;
+    transition:
+        color 180ms ease,
+        background-color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+}
+
+.site-footer .footer-icons a i,
+.footer-icons a i {
+    color: inherit;
+    font-size: 1.05rem;
+    line-height: 1;
+}
+
+.site-footer .footer-icons a:hover,
+.site-footer .footer-icons a:focus-visible,
+.site-footer .footer-icons .social-link:hover,
+.footer-icons a:hover,
+.footer-icons a:focus-visible {
+    color: #FFFFFF;
+    background: #B27B0D;
+    border-color: #B27B0D;
+    transform: translateY(-3px);
+}
+
+.site-footer .footer-icons a:focus-visible,
+.footer-icons a:focus-visible {
+    outline: 2px solid #B27B0D;
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   3. DARK MODE — BRAND AND SOCIAL ICONS
+   Keep contrast readable in both themes
+   ========================================================= */
+
+html[data-theme="dark"] .site-header .brand-name,
+html[data-theme="dark"] .site-footer .brand-name {
+    color: var(--text);
+}
+
+html[data-theme="dark"] .site-header .brand-first,
+html[data-theme="dark"] .site-footer .brand-first {
+    color: #6FA889;
+}
+
+html[data-theme="dark"] .site-header .brand-second,
+html[data-theme="dark"] .site-footer .brand-second {
+    color: #D6A84D;
+}
+
+html[data-theme="dark"] .site-header .brand-tagline,
+html[data-theme="dark"] .site-footer .brand-tagline {
+    color: var(--muted);
+}
+
+html[data-theme="dark"] .site-footer .footer-icons a,
+html[data-theme="dark"] .footer-icons a {
+    color: #6FA889;
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .site-footer .footer-icons a:hover,
+html[data-theme="dark"] .site-footer .footer-icons a:focus-visible,
+html[data-theme="dark"] .footer-icons a:hover,
+html[data-theme="dark"] .footer-icons a:focus-visible {
+    color: #FFFFFF;
+    background: #B27B0D;
+    border-color: #B27B0D;
+}
+
+
+/* =========================================================
+   4. DARK MODE — HOME 2 CONTENT
+   Fix text visibility across all content sections
+   ========================================================= */
+
+html[data-theme="dark"] .home2-manifesto-section,
+html[data-theme="dark"] .home2-care,
+html[data-theme="dark"] .home2-promise-section,
+html[data-theme="dark"] .cta-section {
+    color: var(--text);
+    background: var(--surface);
+}
+
+html[data-theme="dark"] .home2-care-approach-section,
+html[data-theme="dark"] .home2-alternating-section,
+html[data-theme="dark"] .home2-day-section {
+    color: var(--text);
+    background: var(--bg);
+}
+
+html[data-theme="dark"] .home2-care-approach-section h2,
+html[data-theme="dark"] .home2-care-approach-section h3,
+html[data-theme="dark"] .home2-care-approach-section strong,
+html[data-theme="dark"] .home2-note h2,
+html[data-theme="dark"] .home2-quote blockquote,
+html[data-theme="dark"] .day-in-life h2,
+html[data-theme="dark"] .timeline b,
+html[data-theme="dark"] .alternating-feature-copy h3,
+html[data-theme="dark"] .care-columns article h3,
+html[data-theme="dark"] .manifesto-statement h2,
+html[data-theme="dark"] .manifesto-signature {
+    color: var(--text);
+}
+
+html[data-theme="dark"] .home2-care-approach-section p,
+html[data-theme="dark"] .home2-note p,
+html[data-theme="dark"] .home2-gallery-head > p,
+html[data-theme="dark"] .alternating-feature-copy p,
+html[data-theme="dark"] .day-in-life p,
+html[data-theme="dark"] .timeline small,
+html[data-theme="dark"] .care-steps small,
+html[data-theme="dark"] .manifesto-description,
+html[data-theme="dark"] .manifesto-bottom p {
+    color: var(--muted);
+}
+
+html[data-theme="dark"] .care-columns {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .care-columns article {
+    background: var(--surface);
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .care-columns article:hover {
+    background: var(--surface-2);
+}
+
+html[data-theme="dark"] .home2-quote {
+    background: var(--surface-2);
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .photo-frame,
+html[data-theme="dark"] .alternating-feature-image {
+    background: var(--surface-2);
+}
+
+html[data-theme="dark"] .timeline {
+    border-color: var(--border);
+}
+
+html[data-theme="dark"] .timeline > div {
+    border-color: var(--border);
+}
+
+
+/* =========================================================
+   5. DARK MODE — BUTTONS AND INTERACTIVE CONTROLS
+   ========================================================= */
+
+html[data-theme="dark"] .home2-hero-content .btn-primary {
+    color: #FFFFFF;
+    background: #123F2A;
+    border-color: #6FA889;
+}
+
+html[data-theme="dark"] .home2-hero-content .btn-primary:hover {
+    color: #FFFFFF;
+    background: #B27B0D;
+    border-color: #B27B0D;
+}
+
+html[data-theme="dark"] .home2-note .btn-outline {
+    color: var(--text);
+    background: transparent;
+    border-color: var(--secondary);
+}
+
+html[data-theme="dark"] .home2-note .btn-outline:hover {
+    color: #FFFFFF;
+    background: #B27B0D;
+    border-color: #B27B0D;
+}
+
+html[data-theme="dark"] .home2-final-cta .btn {
+    color: #123F2A;
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+html[data-theme="dark"] .home2-final-cta .btn:hover {
+    color: #FFFFFF;
+    background: #B27B0D;
+    border-color: #B27B0D;
+}
+
+html[data-theme="dark"] .theme-toggle,
+html[data-theme="dark"] .direction-toggle,
+html[data-theme="dark"] .menu-toggle {
+    color: var(--text);
+}
+
+html[data-theme="dark"] .theme-toggle:hover,
+html[data-theme="dark"] .direction-toggle:hover,
+html[data-theme="dark"] .menu-toggle:hover {
+    color: #B27B0D;
+}
+
+
+/* =========================================================
+   6. LOGO AND BRAND — TABLET
+   ========================================================= */
+
+@media (max-width: 1024px) {
+    .site-header .brand-mark,
+    .site-footer .brand-mark,
+    .site-header .brand-symbol,
+    .site-footer .brand-symbol {
+        flex-basis: 54px;
+        width: 54px;
+        height: 54px;
+    }
+
+    .site-header .brand,
+    .site-footer .brand,
+    .site-footer .brand-logo {
+        gap: 10px;
+    }
+
+    .site-header .brand-name,
+    .site-footer .brand-name {
+        font-size: 1.3rem;
+    }
+
+    .site-header .brand-tagline,
+    .site-footer .brand-tagline {
+        font-size: 0.65rem;
+    }
+}
+
+
+/* =========================================================
+   7. LOGO AND BRAND — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .site-header .brand-mark,
+    .site-footer .brand-mark,
+    .site-header .brand-symbol,
+    .site-footer .brand-symbol {
+        flex-basis: 46px;
+        width: 46px;
+        height: 46px;
+    }
+
+    .site-header .brand-name,
+    .site-footer .brand-name {
+        font-size: 1.2rem;
+    }
+
+    .site-header .brand-tagline,
+    .site-footer .brand-tagline {
+        margin-top: 3px;
+        font-size: 0.6rem;
+    }
+
+    .site-header .brand,
+    .site-footer .brand,
+    .site-footer .brand-logo {
+        gap: 8px;
+    }
+
+    .site-footer .footer-icons {
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   8. EXTRA SMALL MOBILE — 360PX
+   ========================================================= */
+
+@media (max-width: 360px) {
+    .site-header .brand-mark,
+    .site-footer .brand-mark,
+    .site-header .brand-symbol,
+    .site-footer .brand-symbol {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .site-header .brand-name,
+    .site-footer .brand-name {
+        font-size: 1.05rem;
+        letter-spacing: -0.02em;
+    }
+
+    .site-header .brand-tagline,
+    .site-footer .brand-tagline {
+        font-size: 0.54rem;
+        letter-spacing: 0;
+    }
+
+    .site-header .brand,
+    .site-footer .brand,
+    .site-footer .brand-logo {
+        gap: 7px;
+    }
+
+    .site-footer .footer-icons a,
+    .footer-icons a {
+        flex-basis: 38px;
+        width: 38px;
+        height: 38px;
+        padding: 8px;
+    }
+}
+
+
+/* =========================================================
+   9. ACCESSIBILITY — REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .site-footer .footer-icons a,
+    .footer-icons a,
+    .care-columns article,
+    .alternating-feature-image img {
+        transition: none;
+    }
+
+    .site-footer .footer-icons a:hover,
+    .footer-icons a:hover {
+        transform: none;
+    }
+}
+
+.about-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.about-hero-image {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 48%;
+}
+
+.about-hero::after {
+    z-index: 0;
+}
+
+.about-hero .container {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Requested final brand consistency: larger logo on every page */
+.site-header .brand-mark,
+.site-header .brand-logo-image,
+.site-header .brand-symbol img,
+.site-footer .brand-mark,
+.site-footer .brand-logo-image,
+.site-footer .brand-symbol img,
+body .sidebar .brand-mark,
+body .sidebar .brand-logo-image,
+body.login-page .brand-logo,
+body.signup-page .signup-logo {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    flex: 0 0 56px !important;
+    object-fit: contain !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* RTL: wordmark reads Haven Paw and the logo image sits on its right */
+html[dir="rtl"] body .brand,
+html[dir="rtl"] body .signup-brand,
+html[dir="rtl"] body .site-header .brand,
+html[dir="rtl"] body .site-footer .brand-logo {
+    flex-direction: row-reverse !important;
+}
+
+/* Preserve the original brand colors in both directions */
+body .brand-name .brand-first,
+body .signup-brand-name .brand-first { color: #123F2A !important; }
+body .brand-name .brand-second,
+body .signup-brand-name .brand-second { color: #B27B0D !important; }
+
+/* Smooth transitions for brand and controls */
+body .brand, body .signup-brand, body .brand-logo, body .signup-logo,
+body .brand-name, body .signup-brand-name,
+body [data-theme-toggle], body [data-direction-toggle] {
+    transition: color 350ms ease, background-color 350ms ease, border-color 350ms ease, transform 350ms ease;
+}
+
+/* About page refinements requested: crisp responsive portraits, centered values, and a paw-themed CTA. */
+.about-team-section .team-card-photo {
+    width: 100%;
+    height: clamp(240px, 24vw, 310px);
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: center 38%;
+    image-rendering: auto;
+}
+
+.about-values-section > .container > .section-heading {
+    max-width: 760px;
+    margin: 0 auto 44px;
+    text-align: center;
+}
+
+.about-values-section .section-heading .eyebrow {
+    justify-content: center;
+}
+
+.about-values-section .section-heading h2 {
+    margin-inline: auto;
+}
+
+.about-reviews-section .review-avatar {
+    flex: 0 0 56px;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.about-reviews-section .review-avatar img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: center 35%;
+}
+
+.about-cta-section .cta-inner {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #14251d;
+}
+
+.about-cta-section .cta-inner > :not(.cta-paw-decor) {
+    position: relative;
+    z-index: 1;
+}
+
+.about-cta-section .cta-inner h2,
+.about-cta-section .cta-inner p,
+.about-cta-section .cta-inner .eyebrow {
+    color: #14251d;
+}
+
+.about-cta-section .cta-inner .btn-primary {
+    color: #fff;
+    background: var(--primary);
+    border-color: var(--primary);
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.about-cta-section .cta-inner .btn-primary:hover,
+.about-cta-section .cta-inner .btn-primary:focus-visible {
+    color: #fff;
+    background: #0d3021;
+    border-color: #0d3021;
+    transform: translateY(-2px);
+}
+
+.about-cta-section .cta-paw-decor {
+    position: absolute;
+    z-index: 0;
+    display: grid;
+    width: 62px;
+    height: 62px;
+    place-items: center;
+    color: rgba(20, 37, 29, .14);
+    pointer-events: none;
+}
+
+.about-cta-section .cta-paw-decor svg {
+    width: 100%;
+    height: 100%;
+    stroke-width: 1.25;
+}
+
+.about-cta-section .cta-paw-decor-one { inset-block-start: 14%; inset-inline-end: 18%; transform: rotate(-18deg); }
+.about-cta-section .cta-paw-decor-two { inset-block-end: 12%; inset-inline-end: 8%; width: 44px; height: 44px; transform: rotate(14deg); }
+.about-cta-section .cta-paw-decor-three { inset-block-start: 18%; inset-inline-start: 45%; width: 36px; height: 36px; transform: rotate(22deg); }
+
+@media (max-width: 1024px) {
+    .about-team-section .team-card-photo {
+        height: clamp(230px, 30vw, 280px);
+        object-position: center 34%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-team-section .team-card-photo {
+        height: clamp(220px, 58vw, 300px);
+        aspect-ratio: 16 / 10;
+        object-position: center 35%;
+    }
+
+    .about-values-section > .container > .section-heading {
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .about-cta-section .cta-inner {
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-cta-section .cta-inner .btn-primary {
+        align-self: center;
+    }
+
+    .about-cta-section .cta-paw-decor-three { inset-inline-start: 12%; }
+}
+
+@media (max-width: 500px) {
+    .about-team-section .team-card-photo {
+        height: clamp(210px, 66vw, 270px);
+    }
+
+    .about-cta-section .cta-paw-decor {
+        width: 40px;
+        height: 40px;
+        opacity: .7;
+    }
+
+    .about-cta-section .cta-paw-decor-three { display: none; }
+}
+
+.about-cta-section .cta-inner .btn-primary {
+    color: var(--primary);
+    background: var(--surface);
+    border-color: var(--surface);
+}
+
+.about-cta-section .cta-inner .btn-primary:hover,
+.about-cta-section .cta-inner .btn-primary:focus-visible {
+    color: #fff;
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* Keep About review cards aligned across rows and breakpoints. */
+.about-reviews-section .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+}
+
+.about-reviews-section .review-card {
+    display: flex;
+    height: 100%;
+    min-width: 0;
+    flex-direction: column;
+}
+
+.about-reviews-section .review-card > p {
+    flex: 1 1 auto;
+}
+
+.about-reviews-section .review-author {
+    margin-top: auto;
+}
+
+/* Dark mode keeps the CTA visible while retaining the gold brand accent. */
+html[data-theme="dark"] .about-cta-section .cta-inner {
+    background: var(--surface-2);
+    border-color: var(--secondary);
+    color: var(--text);
+}
+
+html[data-theme="dark"] .about-cta-section .cta-inner h2,
+html[data-theme="dark"] .about-cta-section .cta-inner p,
+html[data-theme="dark"] .about-cta-section .cta-inner .eyebrow {
+    color: var(--text);
+}
+
+html[data-theme="dark"] .about-cta-section .cta-paw-decor {
+    color: color-mix(in srgb, var(--secondary) 30%, transparent);
+}
+
+html[data-theme="dark"] .about-cta-section .cta-inner .btn-primary {
+    color: #fff;
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+html[data-theme="dark"] .about-cta-section .cta-inner .btn-primary:hover,
+html[data-theme="dark"] .about-cta-section .cta-inner .btn-primary:focus-visible {
+    color: #fff;
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+@media (max-width: 900px) {
+    .about-reviews-section .reviews-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-reviews-section .review-card:last-child {
+        grid-column: 1 / -1;
+        width: min(100%, 520px);
+        justify-self: center;
+    }
+}
+
+@media (max-width: 620px) {
+    .about-reviews-section .reviews-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .about-reviews-section .review-card:last-child {
+        grid-column: auto;
+        width: 100%;
+    }
+}
+
+/* Keep About CTA button states above the site's shared !important button tokens. */
+.about-cta-section .cta-inner .btn-primary {
+    color: var(--primary) !important;
+    background: var(--surface) !important;
+    border-color: var(--surface) !important;
+}
+
+.about-cta-section .cta-inner .btn-primary:hover,
+.about-cta-section .cta-inner .btn-primary:focus-visible {
+    color: #fff !important;
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+html[data-theme="dark"] .about-cta-section .cta-inner .btn-primary {
+    color: #fff !important;
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+html[data-theme="dark"] .about-cta-section .cta-inner .btn-primary:hover,
+html[data-theme="dark"] .about-cta-section .cta-inner .btn-primary:focus-visible {
+    color: #fff !important;
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+/* Restore the original full-width About card alignment; keep team portraits fully framed. */
+.about-team-section > .container > .about-team-grid {
+    width: 100% !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    align-items: stretch !important;
+    gap: 28px !important;
+}
+
+.about-team-section .team-card-photo {
+    display: block;
+    width: 100% !important;
+    height: 310px !important;
+    aspect-ratio: auto !important;
+    object-fit: cover !important;
+    object-position: center 20% !important;
+}
+
+.about-team-section .team-card-body {
+    padding: 24px 22px 28px !important;
+    text-align: left;
+}
+
+@media (max-width: 1024px) {
+    .about-team-section > .container > .about-team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 22px !important;
+    }
+
+    .about-team-section .team-card-photo {
+        height: 280px !important;
+    }
+}
+
+@media (max-width: 620px) {
+    .about-team-section > .container > .about-team-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 18px !important;
+    }
+
+    .about-team-section .team-card-photo {
+        height: 260px !important;
+    }
+}
+
+
+/* Requested About hero contrast, action button, and neutral CTA surface. */
+.about-page .about-hero::after {
+    z-index: 0;
+    background: linear-gradient(90deg, rgba(7, 25, 16, .76) 0%, rgba(7, 25, 16, .58) 58%, rgba(7, 25, 16, .46) 100%);
+}
+
+.about-page .about-hero .container {
+    z-index: 2;
+}
+
+.about-page .about-hero .eyebrow {
+    color: #f0c461 !important;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, .62);
+}
+
+.about-page .about-hero h1,
+.about-page .about-hero p {
+    color: #fff !important;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, .62);
+}
+
+.about-page .about-hero h1 em {
+    color: #efb83d !important;
+}
+
+.about-page .about-hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 26px;
+    color: #fff !important;
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    text-shadow: none;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .24);
+}
+
+.about-page .about-hero-cta:hover,
+.about-page .about-hero-cta:focus-visible {
+    color: #fff !important;
+    background: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+}
+
+.about-page .about-hero-cta svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+}
+
+.about-page .about-cta-section .cta-inner {
+    background: var(--surface-2) !important;
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+.about-page .about-cta-section .cta-inner h2,
+.about-page .about-cta-section .cta-inner p,
+.about-page .about-cta-section .cta-inner .eyebrow {
+    color: var(--text) !important;
+}
+
+html[data-theme="dark"] .about-page .about-cta-section .cta-inner {
+    background: var(--surface-2) !important;
+    border-color: var(--border) !important;
+}
+
+@media (max-width: 768px) {
+    .about-page .about-hero::after {
+        background: linear-gradient(180deg, rgba(7, 25, 16, .08) 0%, rgba(7, 25, 16, .7) 210px, rgba(7, 25, 16, .88) 100%);
+    }
+
+    .about-page .about-hero-cta {
+        margin-top: 20px;
+    }
+}
+
+/* About-page dark mode: one clear primary button style with a secondary hover. */
+html[data-theme="dark"] .about-page a.btn,
+html[data-theme="dark"] .about-page button.btn {
+    color: #fff !important;
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    text-shadow: none !important;
+}
+
+html[data-theme="dark"] .about-page a.btn:hover,
+html[data-theme="dark"] .about-page a.btn:focus-visible,
+html[data-theme="dark"] .about-page button.btn:hover,
+html[data-theme="dark"] .about-page button.btn:focus-visible {
+    color: #17251d !important;
+    background: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+    text-shadow: none !important;
+}
+
+html[data-theme="dark"] .about-page a.btn svg,
+html[data-theme="dark"] .about-page button.btn svg {
+    color: inherit !important;
+}
+
+/* About page button system: solid primary, secondary hover, no mixed glow. */
+.about-page a.btn,
+.about-page button.btn {
+    color: #fff !important;
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 8px 20px rgba(18, 63, 42, .2) !important;
+    text-shadow: none !important;
+    transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.about-page a.btn:hover,
+.about-page a.btn:focus-visible,
+.about-page button.btn:hover,
+.about-page button.btn:focus-visible {
+    color: #17251d !important;
+    background: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+    box-shadow: 0 8px 20px rgba(178, 123, 13, .2) !important;
+    text-shadow: none !important;
+}
+
+html[data-theme="dark"] .about-page a.btn,
+html[data-theme="dark"] .about-page button.btn {
+    color: #fff !important;
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .22) !important;
+}
+
+html[data-theme="dark"] .about-page a.btn:hover,
+html[data-theme="dark"] .about-page a.btn:focus-visible,
+html[data-theme="dark"] .about-page button.btn:hover,
+html[data-theme="dark"] .about-page button.btn:focus-visible {
+    color: #17251d !important;
+    background: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+    box-shadow: 0 8px 20px rgba(178, 123, 13, .2) !important;
+}
+
+/* Explicit final CTA button states override legacy dark-mode CTA rules. */
+.about-page .about-cta-section .cta-inner a.btn-primary,
+html[data-theme="dark"] body.about-page .about-cta-section .cta-inner a.btn-primary {
+    color: #fff !important;
+    background: var(--primary) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 8px 20px rgba(18, 63, 42, .2) !important;
+}
+
+.about-page .about-cta-section .cta-inner a.btn-primary:hover,
+.about-page .about-cta-section .cta-inner a.btn-primary:focus-visible,
+html[data-theme="dark"] body.about-page .about-cta-section .cta-inner a.btn-primary:hover,
+html[data-theme="dark"] body.about-page .about-cta-section .cta-inner a.btn-primary:focus-visible {
+    color: #17251d !important;
+    background: var(--secondary) !important;
+    border-color: var(--secondary) !important;
+    box-shadow: 0 8px 20px rgba(178, 123, 13, .2) !important;
+}

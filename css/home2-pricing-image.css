@@ -1,0 +1,10 @@
+/* Full-width editorial photo for Home 2's pricing teaser. */
+.h2-pricing-card{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(320px,.92fr);align-items:stretch;gap:clamp(20px,4vw,46px);overflow:hidden;padding:14px;text-align:center}
+.h2-pricing-copy{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:clamp(24px,4vw,52px)}
+.h2-pricing-copy p{max-width:600px}
+.h2-pricing-copy .btn{margin-top:22px}
+.h2-pricing-image{min-height:310px;overflow:hidden;border-radius:calc(var(--radius-lg) - 7px);background:var(--surface)}
+.h2-pricing-image img{width:100%;height:100%;min-height:310px;object-fit:cover;object-position:center 54%}
+html[data-theme="dark"] .h2-pricing-card{background:var(--surface-2);border-color:var(--border)}
+@media(max-width:800px){.h2-pricing-card{grid-template-columns:minmax(0,1fr) minmax(250px,.8fr)}.h2-pricing-image,.h2-pricing-image img{min-height:290px}}
+@media(max-width:620px){.h2-pricing-card{grid-template-columns:1fr;gap:8px;padding:10px}.h2-pricing-copy{padding:22px 14px 24px}.h2-pricing-image,.h2-pricing-image img{width:100%;height:clamp(190px,58vw,280px);min-height:0}.h2-pricing-image{order:-1}.h2-pricing-copy .btn{margin-top:16px}}

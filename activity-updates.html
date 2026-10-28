@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Daily Activity Updates | Paw Haven Pet Portal</title>
+<link href="images/paw-haven-logo.png" rel="icon" type="image/png"/>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<link href="css/global.css" rel="stylesheet"/>
+<link href="css/dashboard.css" rel="stylesheet"/>
+<link href="css/activity-updates.css" rel="stylesheet"/>
+<link href="css/migrated-inline.css" rel="stylesheet"/>    <link href="css/responsive-fixes.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/requested-refinements.css">
+    <link rel="stylesheet" href="css/rtl-shared-layout.css?v=20261026-box-buttons-v2">
+    <link rel="stylesheet" href="css/dashboard-visibility-fixes.css">
+    <link rel="stylesheet" href="css/dashboard-interactions.css">
+</head>
+<body class="dashboard-body">
+<div class="dash-shell">
+<aside class="sidebar" data-sidebar="">
+<a aria-label="Paw Haven home" class="brand" href="index.html">
+<img alt="Paw Haven logo" class="brand-mark" src="images/paw-haven-logo.png"/>
+<span class="brand-text brand-text-stacked">
+<span class="brand-name"><span class="brand-first">Paw</span> <span class="brand-second">Haven</span></span>
+<small class="brand-tagline">Pet Boarding &amp; Daycare</small>
+</span>
+</a>
+<nav class="side-nav">
+<a href="dashboard.html">
+<i aria-hidden="true" data-lucide="layout-dashboard"></i>
+<span>Overview</span>
+</a>
+<a href="bookings.html">
+<i aria-hidden="true" data-lucide="calendar"></i>
+<span>Book Boarding Stay</span>
+</a>
+<a class="selected" href="activity-updates.html">
+<i aria-hidden="true" data-lucide="activity"></i>
+<span>Daily Activity Updates</span>
+</a>
+<a href="payment-history.html">
+<i aria-hidden="true" data-lucide="receipt"></i>
+<span>Payment History &amp; Invoices</span>
+</a>
+<a href="profile.html">
+<i aria-hidden="true" data-lucide="user"></i>
+<span>Pet &amp; Owner Profile</span>
+</a>
+</nav>
+<a class="side-logout" href="login.html">
+<i aria-hidden="true" data-lucide="log-out"></i>
+<span>Log Out</span>
+</a>
+</aside>
+<div class="mobile-sidebar-backdrop" data-sidebar-backdrop=""></div>
+<main class="dashboard-main">
+<header class="dash-topbar">
+<div class="migrated-style-3a15c0f97f">
+<button aria-label="Open dashboard navigation" class="sidebar-toggle" data-sidebar-toggle="" type="button">
+<i aria-hidden="true" data-lucide="menu"></i>
+</button>
+<div class="dash-topbar-title">
+<h2 class="migrated-style-0d170054c2">
+                                Pet Owner Dashboard
+                            </h2>
+</div>
+</div>
+<div class="dash-topbar-right">
+<!-- Theme Toggle (Rule 2: 40px) -->
+<button aria-label="Switch to dark mode" class="theme-toggle" data-theme-toggle="" title="Toggle dark mode" type="button">
+<span aria-hidden="true" data-theme-icon="">
+<i aria-hidden="true" data-lucide="moon"></i>
+</span>
+</button>
+<!-- RTL Toggle (Rule 2: 40px) -->
+<button aria-label="Switch to right-to-left layout" class="direction-toggle" data-direction-toggle="" title="Switch to right-to-left layout" type="button">
+<i aria-hidden="true" data-lucide="arrow-left-right"></i>
+</button>
+<!-- Notifications Dropdown (Rule 10) -->
+<div class="dash-notifications-wrap">
+<button aria-label="Notifications" class="theme-toggle migrated-style-d461c96de5" id="notif-toggle" title="3 unread notifications" type="button">
+<i aria-hidden="true" data-lucide="bell"></i>
+<span class="notif-badge">3</span>
+</button>
+<div class="notif-dropdown" id="notif-dropdown">
+<div class="notif-dropdown-header">
+<strong>Notifications</strong>
+<span class="notif-unread-count">3 New</span>
+</div>
+<div class="notif-list">
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="camera"></i></div>
+<div>
+<p><strong>Meadow Run:</strong> 4 new photos &amp; video clip uploaded for Buddy.</p>
+<small>22 minutes ago</small>
+</div>
+</div>
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="check-circle-2"></i></div>
+<div>
+<p><strong>Boarding Confirmed:</strong> Diwali Classic Suite stay confirmed for Nov 10–15.</p>
+<small>2 hours ago</small>
+</div>
+</div>
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="receipt"></i></div>
+<div>
+<p><strong>Invoice #PH-9824:</strong> Payment receipt ready for download.</p>
+<small>Yesterday</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Pill (Rule 10) -->
+<div class="dash-profile-menu-wrap">
+<button aria-label="Open Ananya Rao's account menu" aria-controls="profile-dropdown" aria-expanded="false" aria-haspopup="true" class="dash-profile-pill" id="profile-menu-toggle" title="Ananya Rao · Account menu" type="button">
+<span aria-hidden="true" class="dash-avatar">AR</span>
+<span class="dash-user-meta"><span class="dash-user-name">Ananya Rao</span><span class="dash-pet-name">Buddy’s Parent</span></span>
+<i aria-hidden="true" data-lucide="chevron-down"></i>
+</button>
+<div class="dash-profile-dropdown" hidden id="profile-dropdown">
+<div class="dash-profile-dropdown-heading"><span aria-hidden="true" class="dash-avatar">AR</span><span><strong>Ananya Rao</strong><small>Buddy’s Parent</small></span></div>
+<a href="profile.html"><i aria-hidden="true" data-lucide="user-round"></i><span>My Profile</span></a>
+<a href="activity-updates.html"><i aria-hidden="true" data-lucide="bell"></i><span>Notifications</span></a>
+<a class="dash-profile-logout" href="index.html"><i aria-hidden="true" data-lucide="log-out"></i><span>Log Out</span></a>
+</div>
+</div>
+<!-- Logout Button (Rule 10) -->
+</div>
+</header>
+<div class="dash-content">
+<!-- SECTION 1: HEADER -->
+<section class="dash-welcome" data-aos="fade-up">
+<div>
+<span class="eyebrow">Real-Time Daily Moments</span>
+<h1>Buddy’s Day at Paw Haven</h1>
+<p>Here are today’s verified activities, meal milestones, playtime photos, and wellness notes logged by our on-duty caregivers.</p>
+</div>
+<div class="dash-welcome-media activity-hero-media">
+<img alt="Two dogs enjoying playful time together with a toy" loading="lazy" src="https://images.unsplash.com/photo-1691719602246-f640439d02ba?auto=format&amp;fit=crop&amp;w=1600&amp;q=90"/>
+</div>
+</section>
+<!-- SECTION 2: WELLNESS & MOOD SCORECARD -->
+<section class="dash-stats" data-aos="fade-up">
+<div class="dash-stat">
+<div class="dash-stat-top">
+<span>Mood &amp; Spirits</span>
+<div class="dash-stat-icon"><i aria-hidden="true" data-lucide="smile"></i></div>
+</div>
+<strong class="migrated-style-93f5237e3f">Playful</strong>
+<small class="status-pill">High wag frequency</small>
+</div>
+<div class="dash-stat">
+<div class="dash-stat-top">
+<span>Appetite Log</span>
+<div class="dash-stat-icon"><i aria-hidden="true" data-lucide="utensils"></i></div>
+</div>
+<strong>100%</strong>
+<small class="status-pill active">Clean Bowl</small>
+</div>
+<div class="dash-stat">
+<div class="dash-stat-top">
+<span>Hydration</span>
+<div class="dash-stat-icon"><i aria-hidden="true" data-lucide="droplet"></i></div>
+</div>
+<strong class="migrated-style-93f5237e3f">Optimal</strong>
+<small class="status-pill">Fresh bowls logged</small>
+</div>
+<div class="dash-stat">
+<div class="dash-stat-top">
+<span>Rest &amp; Sleep</span>
+<div class="dash-stat-icon"><i aria-hidden="true" data-lucide="moon"></i></div>
+</div>
+<strong>2.5 hrs</strong>
+<small class="status-pill">Peaceful nap taken</small>
+</div>
+</section>
+<!-- SECTION 3: TIMELINE FEED -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>Chronological Activity Feed · Today</h2>
+<span class="status-pill active">Live Updates</span>
+</div>
+<div class="activity-feed-grid">
+<article class="activity-feed-item">
+<span class="activity-feed-time">04:30 PM · Meadow</span>
+<div class="activity-feed-body">
+<h4>Agility Ramp Challenge &amp; Scent Puzzles</h4>
+<p>Buddy aced the soft agility ramp and found all 4 hidden salmon treats in the puzzle sniffing box. Tail wagging vigorously throughout!</p>
+</div>
+<img alt="Dog in meadow" class="activity-feed-thumb" loading="lazy" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&amp;fit=crop&amp;w=300&amp;q=88"/>
+</article>
+<article class="activity-feed-item">
+<span class="activity-feed-time">01:30 PM · Suite 4B</span>
+<div class="activity-feed-body">
+<h4>Aromatherapy Snooze &amp; Relaxing Strings</h4>
+<p>After an active morning, Buddy enjoyed a 2-hour restorative snooze on his memory foam orthopedic mattress with gentle classical harp music playing.</p>
+</div>
+<img alt="Dog resting" class="activity-feed-thumb" loading="lazy" src="https://images.unsplash.com/photo-1633722715463-d30f4f325e24?auto=format&amp;fit=crop&amp;w=300&amp;q=88"/>
+</article>
+<article class="activity-feed-item">
+<span class="activity-feed-time">10:45 AM · Splash Pool</span>
+<div class="activity-feed-body">
+<h4>Splash Pool Romp &amp; Tennis Ball Fetch</h4>
+<p>Cooling off in our zero-depth canine splash pool! Buddy loved chasing the floating orange ball with caregiver Arjun cheering him on.</p>
+</div>
+<img alt="Dog swimming" class="activity-feed-thumb" loading="lazy" src="https://images.unsplash.com/photo-1530281700549-e82e7bf110d6?auto=format&amp;fit=crop&amp;w=300&amp;q=88"/>
+</article>
+<article class="activity-feed-item">
+<span class="activity-feed-time">08:15 AM · Suite 4B</span>
+<div class="activity-feed-body">
+<h4>Morning Breakfast &amp; Glucosamine Chew</h4>
+<p>Fed 2 scoops Salmon &amp; Sweet Potato kibble with warm bone broth drizzle. Finished quickly with a joyful post-breakfast stretch.</p>
+</div>
+<img alt="Dog with bowl" class="activity-feed-thumb" loading="lazy" src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&amp;fit=crop&amp;w=300&amp;q=88"/>
+</article>
+</div>
+</section>
+<!-- SECTION 4: TODAY'S PHOTO SNAPSHOT GALLERY -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>Photo &amp; Video Memories Logged Today</h2>
+<button class="btn btn-outline migrated-style-b71b4393e3" type="button">Download All Photos (.ZIP)</button>
+</div>
+<div class="migrated-style-0c3fdfab19">
+<div class="migrated-style-3ef4c54e38">
+<img alt="Buddy smiling" class="migrated-style-feb0efbb14" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&amp;fit=crop&amp;w=600&amp;q=88"/>
+<div class="migrated-style-6e02a2822e">10:45 AM · Outdoor Meadow</div>
+</div>
+<div class="migrated-style-3ef4c54e38">
+<img alt="Buddy playing" class="migrated-style-feb0efbb14" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&amp;fit=crop&amp;w=600&amp;q=88"/>
+<div class="migrated-style-6e02a2822e">11:20 AM · Playgroup with Leo</div>
+</div>
+<div class="migrated-style-3ef4c54e38">
+<img alt="Buddy relaxing" class="migrated-style-feb0efbb14" src="https://images.unsplash.com/photo-1633722715463-d30f4f325e24?auto=format&amp;fit=crop&amp;w=600&amp;q=88"/>
+<div class="migrated-style-6e02a2822e">02:15 PM · Cozy Suite Nap</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: CAREGIVER SHIFT NOTES -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>Caregiver Shift Observation</h2>
+<small class="migrated-style-57f9e31d78">Shift: Day (07:00 AM – 03:30 PM)</small>
+</div>
+<div class="migrated-style-838db8b0a1">
+<p class="migrated-style-b1387216cd">
+                                “Buddy has had a wonderful, highly social day! He loved playing tag with Leo the Beagle in the shaded play lawn and happily dipped his paws into the splash pool. Zero anxiety symptoms observed; he drank plenty of water and curled right up on his blanket for nap time. Tomorrow morning we have his brushing and ear check scheduled!”
+                            </p>
+<strong class="migrated-style-b405c442ac">— Sneha Reddy, Certified Feline &amp; Canine Caregiver</strong>
+</div>
+</section>
+<!-- SECTION 6: REQUEST LIVE UPDATE CALLBACK -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="migrated-style-6d83ee3ea0">
+<div>
+<h3 class="migrated-style-e42b744bcd">Have a question about Buddy’s day?</h3>
+<p class="migrated-style-cf55cffaac">Our on-duty kennel concierge is available on WhatsApp or direct voice call.</p>
+</div>
+<a class="btn btn-primary" href="tel:+919000000000">
+<i aria-hidden="true" data-lucide="phone-call"></i>
+                                Call Caregiver on Duty
+                            </a>
+</div>
+</section>
+</div>
+</main>
+</div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script defer="" src="js/main.js"></script>
+<script defer="" src="js/dashboard-profile-menu.js"></script>
+</body>
+</html>
+
+
+
+
+

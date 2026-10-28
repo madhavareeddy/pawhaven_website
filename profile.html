@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Pet &amp; Owner Profile | Paw Haven Pet Portal</title>
+<link href="images/paw-haven-logo.png" rel="icon" type="image/png"/>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<link href="css/global.css" rel="stylesheet"/>
+<link href="css/dashboard.css" rel="stylesheet"/>
+<link href="css/profile.css" rel="stylesheet"/>
+<link href="css/migrated-inline.css" rel="stylesheet"/>    <link href="css/responsive-fixes.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/requested-refinements.css">
+    <link rel="stylesheet" href="css/rtl-shared-layout.css?v=20261026-box-buttons-v2">
+    <link rel="stylesheet" href="css/dashboard-visibility-fixes.css">
+    <link rel="stylesheet" href="css/dashboard-interactions.css">
+</head>
+<body class="dashboard-body">
+<div class="dash-shell">
+<aside class="sidebar" data-sidebar="">
+<a aria-label="Paw Haven home" class="brand" href="index.html">
+<img alt="Paw Haven logo" class="brand-mark" src="images/paw-haven-logo.png"/>
+<span class="brand-text brand-text-stacked">
+<span class="brand-name"><span class="brand-first">Paw</span> <span class="brand-second">Haven</span></span>
+<small class="brand-tagline">Pet Boarding &amp; Daycare</small>
+</span>
+</a>
+<nav class="side-nav">
+<a href="dashboard.html">
+<i aria-hidden="true" data-lucide="layout-dashboard"></i>
+<span>Overview</span>
+</a>
+<a href="bookings.html">
+<i aria-hidden="true" data-lucide="calendar"></i>
+<span>Book Boarding Stay</span>
+</a>
+<a href="activity-updates.html">
+<i aria-hidden="true" data-lucide="activity"></i>
+<span>Daily Activity Updates</span>
+</a>
+<a href="payment-history.html">
+<i aria-hidden="true" data-lucide="receipt"></i>
+<span>Payment History &amp; Invoices</span>
+</a>
+<a class="selected" href="profile.html">
+<i aria-hidden="true" data-lucide="user"></i>
+<span>Pet &amp; Owner Profile</span>
+</a>
+</nav>
+<a class="side-logout" href="login.html">
+<i aria-hidden="true" data-lucide="log-out"></i>
+<span>Log Out</span>
+</a>
+</aside>
+<div class="mobile-sidebar-backdrop" data-sidebar-backdrop=""></div>
+<main class="dashboard-main">
+<header class="dash-topbar">
+<div class="migrated-style-3a15c0f97f">
+<button aria-label="Open dashboard navigation" class="sidebar-toggle" data-sidebar-toggle="" type="button">
+<i aria-hidden="true" data-lucide="menu"></i>
+</button>
+<div class="dash-topbar-title">
+<h2 class="migrated-style-0d170054c2">
+                                Pet Owner Dashboard
+                            </h2>
+</div>
+</div>
+<div class="dash-topbar-right">
+<!-- Theme Toggle (Rule 2: 40px) -->
+<button aria-label="Switch to dark mode" class="theme-toggle" data-theme-toggle="" title="Toggle dark mode" type="button">
+<span aria-hidden="true" data-theme-icon="">
+<i aria-hidden="true" data-lucide="moon"></i>
+</span>
+</button>
+<!-- RTL Toggle (Rule 2: 40px) -->
+<button aria-label="Switch to right-to-left layout" class="direction-toggle" data-direction-toggle="" title="Switch to right-to-left layout" type="button">
+<i aria-hidden="true" data-lucide="arrow-left-right"></i>
+</button>
+<!-- Notifications Dropdown (Rule 10) -->
+<div class="dash-notifications-wrap">
+<button aria-label="Notifications" class="theme-toggle migrated-style-d461c96de5" id="notif-toggle" title="3 unread notifications" type="button">
+<i aria-hidden="true" data-lucide="bell"></i>
+<span class="notif-badge">3</span>
+</button>
+<div class="notif-dropdown" id="notif-dropdown">
+<div class="notif-dropdown-header">
+<strong>Notifications</strong>
+<span class="notif-unread-count">3 New</span>
+</div>
+<div class="notif-list">
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="camera"></i></div>
+<div>
+<p><strong>Meadow Run:</strong> 4 new photos &amp; video clip uploaded for Buddy.</p>
+<small>22 minutes ago</small>
+</div>
+</div>
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="check-circle-2"></i></div>
+<div>
+<p><strong>Boarding Confirmed:</strong> Diwali Classic Suite stay confirmed for Nov 10–15.</p>
+<small>2 hours ago</small>
+</div>
+</div>
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="receipt"></i></div>
+<div>
+<p><strong>Invoice #PH-9824:</strong> Payment receipt ready for download.</p>
+<small>Yesterday</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Pill (Rule 10) -->
+<div class="dash-profile-menu-wrap">
+<button aria-label="Open Ananya Rao's account menu" aria-controls="profile-dropdown" aria-expanded="false" aria-haspopup="true" class="dash-profile-pill" id="profile-menu-toggle" title="Ananya Rao · Account menu" type="button">
+<span aria-hidden="true" class="dash-avatar">AR</span>
+<span class="dash-user-meta"><span class="dash-user-name">Ananya Rao</span><span class="dash-pet-name">Buddy’s Parent</span></span>
+<i aria-hidden="true" data-lucide="chevron-down"></i>
+</button>
+<div class="dash-profile-dropdown" hidden id="profile-dropdown">
+<div class="dash-profile-dropdown-heading"><span aria-hidden="true" class="dash-avatar">AR</span><span><strong>Ananya Rao</strong><small>Buddy’s Parent</small></span></div>
+<a href="profile.html"><i aria-hidden="true" data-lucide="user-round"></i><span>My Profile</span></a>
+<a href="activity-updates.html"><i aria-hidden="true" data-lucide="bell"></i><span>Notifications</span></a>
+<a class="dash-profile-logout" href="index.html"><i aria-hidden="true" data-lucide="log-out"></i><span>Log Out</span></a>
+</div>
+</div>
+<!-- Logout Button (Rule 10) -->
+</div>
+</header>
+<div class="dash-content">
+<!-- SECTION 1: HEADER -->
+<section class="dash-welcome" data-aos="fade-up">
+<div>
+<span class="eyebrow">Personalized Profile</span>
+<h1>Buddy &amp; Bella’s Care Profiles</h1>
+<p>Manage your household contacts, veterinary clinic connections, vaccine records, and custom bedtime rituals in one secure place.</p>
+</div>
+<div class="dash-welcome-media">
+<img alt="Buddy the golden dog" loading="lazy" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&amp;fit=crop&amp;w=1400&amp;q=88"/>
+</div>
+</section>
+<!-- SECTION 2: OWNER CONTACT INFORMATION -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>1. Pet Parent Contact Details</h2>
+</div>
+<form class="form-grid" data-demo-form="">
+<label>
+                                Full Legal Name
+                                <input class="form-control" name="name" required="" value="Ananya Rao"/>
+</label>
+<label>
+                                Email Address (Login &amp; Receipts)
+                                <input class="form-control" name="email" required="" type="email" value="ananya.rao@example.com"/>
+</label>
+<label>
+                                Primary Mobile (WhatsApp Updates)
+                                <input class="form-control" name="phone" value="+91 90000 00000"/>
+</label>
+<label>
+                                Residential Address
+                                <input class="form-control" name="address" value="Demo Address, Madhapur, Hyderabad, Telangana 500000"/>
+</label>
+<div class="full">
+<button class="btn btn-primary" type="submit">Update Contact Information</button>
+<p class="form-status" role="status"></p>
+</div>
+</form>
+</section>
+<!-- SECTION 3: PRIMARY PET PROFILE (BUDDY) -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>2. Companion Profile: Buddy (Dog)</h2>
+<span class="status-pill">Active Guest</span>
+</div>
+<form class="form-grid" data-demo-form="">
+<label>
+                                Pet Name
+                                <input class="form-control" value="Buddy"/>
+</label>
+<label>
+                                Breed &amp; Size
+                                <input class="form-control" value="Golden Retriever (Large · 28.5 kg)"/>
+</label>
+<label>
+                                Age &amp; Gender
+                                <input class="form-control" value="3.5 Years · Male (Neutered)"/>
+</label>
+<label>
+                                Microchip ID
+                                <input class="form-control" value="985141002349182"/>
+</label>
+<label class="full">
+                                Temperament &amp; Playgroup Notes
+                                <textarea class="form-control" rows="2">Extremely friendly with other dogs and gentle with humans. Loves playing in water and chasing tennis balls. Can be cautious around loud thunder.</textarea>
+</label>
+<div class="full">
+<button class="btn btn-outline" type="submit">Save Buddy’s Profile</button>
+<p class="form-status" role="status"></p>
+</div>
+</form>
+</section>
+<!-- SECTION 4: SECONDARY PET PROFILE (BELLA) -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>3. Companion Profile: Bella (Cat)</h2>
+<span class="status-pill active">Feline Guest</span>
+</div>
+<form class="form-grid" data-demo-form="">
+<label>
+                                Pet Name
+                                <input class="form-control" value="Bella"/>
+</label>
+<label>
+                                Breed &amp; Coat
+                                <input class="form-control" value="Persian Cat (Longhair · 4.2 kg)"/>
+</label>
+<label>
+                                Age &amp; Gender
+                                <input class="form-control" value="2 Years · Female (Spayed)"/>
+</label>
+<label>
+                                Preferred Room
+                                <input class="form-control" value="Whisker Wing · Window Sun Condo"/>
+</label>
+<label class="full">
+                                Whisker Wing Notes
+                                <textarea class="form-control" rows="2">Prefers high climbing perches. Loves gentle chin and cheek rubs with soft grooming brush. Keep strictly separate from dog areas.</textarea>
+</label>
+<div class="full">
+<button class="btn btn-outline" type="submit">Save Bella’s Profile</button>
+<p class="form-status" role="status"></p>
+</div>
+</form>
+</section>
+<!-- SECTION 5: VETERINARY & VACCINATION DETAILS -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>4. Veterinary Records &amp; Medical Contacts</h2>
+</div>
+<div class="migrated-style-c0839a6039">
+<div class="migrated-style-f117c8ede4">
+<strong class="migrated-style-90f257acdb">Primary Clinic &amp; Vet</strong>
+<p class="migrated-style-1fc2a57847">
+<strong>Dr. Priya Rao, BVSc</strong><br/>
+                                    Apex Pet Hospital &amp; Surgical Center<br/>
+                                    Demo Address, Madhapur, Hyderabad<br/>
+                                    Tel: +91 98765 00099
+                                </p>
+</div>
+<div class="migrated-style-f117c8ede4">
+<strong class="migrated-style-90f257acdb">Vaccination Expirations</strong>
+<p class="migrated-style-1fc2a57847">
+                                    Rabies 3-Yr: Valid till May 2027<br/>
+                                    DHPP Booster: Valid till Aug 2027<br/>
+                                    Bordetella Oral: Valid till Nov 2026<br/>
+<span class="migrated-style-18dc0207f8">Status: Verified by Paw Haven</span>
+</p>
+</div>
+</div>
+</section>
+<!-- SECTION 6: EMERGENCY GUARDIAN PICKUP -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>5. Authorized Emergency Guardian</h2>
+<small class="migrated-style-57f9e31d78">Permitted to pick up your pet in an emergency</small>
+</div>
+<div class="migrated-style-e4a3b3e53b">
+<div>
+<strong class="migrated-style-59613530da">Rajesh Rao (Brother)</strong>
+<span class="migrated-style-ed5bb17b05">Phone: +91 90000 00001 · Demo Address, Madhapur, Hyderabad</span>
+</div>
+<button class="btn btn-outline migrated-style-251daf72fb" type="button">Edit Guardian</button>
+</div>
+</section>
+</div>
+</main>
+</div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script defer="" src="js/main.js"></script>
+<script defer="" src="js/dashboard-profile-menu.js"></script>
+</body>
+</html>
+
+
+
+
+

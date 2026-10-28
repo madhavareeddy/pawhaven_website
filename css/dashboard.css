@@ -1,0 +1,883 @@
+/* ==================================================
+   PAW HAVEN — PET OWNER DASHBOARD STYLESHEET
+   Dedicated stylesheet for dashboard.html & portal pages
+   Shared design tokens & globals are in css/global.css
+================================================== */
+
+.dashboard-body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    margin: 0;
+    min-height: 100vh;
+}
+
+[data-theme="dark"] .dashboard-body {
+    background: var(--paper);
+}
+
+.dash-shell {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --------------------------------------------------
+   1. DASHBOARD SIDEBAR
+-------------------------------------------------- */
+.sidebar {
+    width: 280px;
+    background: var(--white);
+    border-right: 1px solid var(--line);
+    padding: 28px 20px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 110;
+}
+
+[dir="rtl"] .sidebar {
+    border-right: none;
+    border-left: 1px solid var(--line);
+}
+
+.owner-mini {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 14px;
+    background: var(--soft);
+    border-radius: 16px;
+    margin: 24px 0 28px;
+}
+
+.avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--amber);
+    color: #fff;
+    font-weight: 800;
+    display: grid;
+    place-items: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.owner-mini strong {
+    display: block;
+    font-size: 0.95rem;
+    color: var(--forest);
+}
+
+.owner-mini small {
+    color: var(--muted);
+    font-size: 0.78rem;
+}
+
+.side-nav {
+    display: grid;
+    gap: 6px;
+    flex: 1;
+}
+
+.side-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--forest);
+    transition: background 0.2s, color 0.2s;
+}
+
+.side-nav a:hover,
+.side-nav a.selected {
+    background: var(--soft);
+    color: var(--amber);
+}
+
+.side-nav a i {
+    width: 18px;
+    height: 18px;
+}
+
+.side-logout {
+    margin-top: auto;
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: #b03a2e;
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.2s;
+}
+
+.side-logout:hover {
+    background: #fde8e8;
+}
+
+/* --------------------------------------------------
+   2. DASHBOARD MAIN CONTENT & TOPBAR
+-------------------------------------------------- */
+.dashboard-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.dash-topbar {
+    min-height: 74px;
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+    padding: 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.sidebar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--forest);
+    cursor: pointer;
+    padding: 6px;
+}
+
+.dash-content {
+    padding: 36px 32px 60px;
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    gap: 36px;
+}
+
+/* --------------------------------------------------
+   3. SECTION 1: WELCOME BANNER
+-------------------------------------------------- */
+.dash-welcome {
+    background: linear-gradient(135deg, #f0f5ec 0%, #fbfaf6 60%, #f8eed7 100%);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 34px 38px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 30px;
+    box-shadow: var(--shadow);
+}
+
+[data-theme="dark"] .dash-welcome {
+    background: linear-gradient(135deg, #102117 0%, #15261d 60%, #1e3327 100%);
+}
+
+.dash-welcome h1 {
+    font-size: 2.1rem;
+    margin: 8px 0 12px;
+}
+
+.dash-welcome p {
+    color: var(--muted);
+    font-size: 0.98rem;
+    margin-bottom: 22px;
+    line-height: 1.65;
+}
+
+.dash-welcome-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.dash-welcome-media {
+    position: relative;
+}
+
+.dash-welcome-media img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* --------------------------------------------------
+   4. SECTION 2: STATS METRICS ROW
+-------------------------------------------------- */
+.dash-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.dash-stat {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 24px 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 20px rgba(18, 63, 42, 0.04);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.dash-stat:hover {
+    transform: translateY(-4px);
+    border-color: var(--amber);
+}
+
+.dash-stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.dash-stat-top span {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+.dash-stat-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--soft);
+    color: var(--forest);
+    display: grid;
+    place-items: center;
+}
+
+.dash-stat-icon i {
+    width: 18px;
+    height: 18px;
+}
+
+.dash-stat strong {
+    font: 900 2.2rem var(--display);
+    color: var(--forest);
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.dash-stat small {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 800;
+    background: #e2f4ea;
+    color: #123f2a;
+    align-self: flex-start;
+}
+
+.status-pill.active {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+/* --------------------------------------------------
+   5. DASH PANELS & TWO-COLUMN GRIDS
+-------------------------------------------------- */
+.dash-panel {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    padding: 32px 30px;
+    box-shadow: var(--shadow);
+}
+
+.dash-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.dash-panel-header h2 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.dash-panel-header a {
+    color: var(--amber);
+    font-size: 0.88rem;
+    font-weight: 800;
+}
+
+/* Upcoming Stay Card */
+.upcoming-stay-card {
+    display: grid;
+    grid-template-columns: 240px 1fr auto;
+    gap: 26px;
+    align-items: center;
+    background: var(--soft);
+    border-radius: 20px;
+    padding: 22px;
+}
+
+.upcoming-stay-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.upcoming-stay-details h3 {
+    font-size: 1.3rem;
+    margin: 0 0 8px;
+}
+
+.upcoming-stay-details p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin: 0 0 12px;
+}
+
+.stay-meta-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.meta-tag {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 5px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--forest);
+}
+
+/* --------------------------------------------------
+   6. SECTION 4: LIVE DAILY ACTIVITY FEED
+-------------------------------------------------- */
+.activity-feed-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.activity-feed-item {
+    display: grid;
+    grid-template-columns: 110px 1fr auto;
+    gap: 20px;
+    align-items: center;
+    padding: 16px 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--paper);
+    transition: transform 0.25s ease;
+}
+
+.activity-feed-item:hover {
+    transform: translateX(4px);
+}
+
+[dir="rtl"] .activity-feed-item:hover {
+    transform: translateX(-4px);
+}
+
+.activity-feed-time {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--amber);
+}
+
+.activity-feed-body h4 {
+    margin: 0 0 4px;
+    font-size: 1.05rem;
+}
+
+.activity-feed-body p {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--muted);
+}
+
+.activity-feed-thumb {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* --------------------------------------------------
+   7. SECTION 5: LIVE HD WEBCAM VIEWER
+-------------------------------------------------- */
+.webcam-viewer {
+    position: relative;
+    background: #000;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 420px;
+    box-shadow: var(--shadow);
+}
+
+.webcam-feed-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.webcam-top-overlay {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.live-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(220, 38, 38, 0.9);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.live-indicator::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.cam-switch-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: rgba(18, 63, 42, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    z-index: 2;
+}
+
+.cam-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.cam-btn {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.cam-btn.active,
+.cam-btn:hover {
+    background: var(--amber);
+    border-color: var(--amber);
+    color: #fff;
+}
+
+/* --------------------------------------------------
+   8. SECTION 7: RECENT PAYMENT TRANSACTIONS TABLE
+-------------------------------------------------- */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.92rem;
+}
+
+th {
+    background: var(--soft);
+    padding: 14px 18px;
+    text-align: left;
+    font-weight: 800;
+    color: var(--forest);
+    border-bottom: 2px solid var(--line);
+}
+
+[dir="rtl"] th {
+    text-align: right;
+}
+
+td {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+}
+
+/* --------------------------------------------------
+   9. RESPONSIVE BREAKPOINTS
+-------------------------------------------------- */
+@media (max-width: 992px) {
+    .dash-shell {
+        flex-direction: column;
+    }
+    .sidebar {
+        position: fixed;
+        left: -300px;
+        top: 0;
+        bottom: 0;
+        transition: transform 0.3s ease;
+    }
+    .sidebar.open {
+        transform: translateX(300px);
+    }
+    .sidebar-toggle {
+        display: block;
+    }
+    .dash-welcome {
+        grid-template-columns: 1fr;
+    }
+    .dash-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .upcoming-stay-card {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .dash-stats {
+        grid-template-columns: 1fr;
+    }
+    .dash-content {
+        padding: 24px 16px;
+    }
+    .dash-topbar {
+        padding: 0 16px;
+    }
+    .activity-feed-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* ==================================================
+   PAW HAVEN DASHBOARD — FINAL OVERRIDES
+   Primary: #123F2A
+   Secondary: #B27B0D
+================================================== */
+
+/* Brand logo: remove sticker-style appearance */
+.sidebar .brand {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.sidebar .brand-mark {
+    display: block;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.sidebar .brand-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.sidebar .brand-name {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.25em;
+    white-space: nowrap;
+    font-family: var(--serif, "Playfair Display", serif);
+    font-size: 1.35rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.sidebar .brand-first {
+    color: var(--forest, #123F2A);
+}
+
+.sidebar .brand-second {
+    color: var(--amber, #B27B0D);
+}
+
+.sidebar .brand-tagline {
+    display: block;
+    margin-top: 5px;
+    color: var(--muted, #6F786F);
+    font-family: var(--serif, "Playfair Display", serif);
+    font-size: 0.68rem;
+    line-height: 1.4;
+    white-space: normal;
+}
+
+/* Remove spacing left by deleted owner card */
+.sidebar .side-nav {
+    margin-top: 28px;
+}
+
+/* Welcome heading */
+.dash-welcome h1 {
+    color: var(--forest, #123F2A);
+}
+
+[data-theme="dark"] .dash-welcome h1 {
+    color: #F5F3EA;
+}
+
+/* Topbar buttons stay visible in dark mode */
+[data-theme="dark"] .dash-topbar .theme-toggle,
+[data-theme="dark"] .dash-topbar .direction-toggle,
+[data-theme="dark"] .sidebar-toggle {
+    color: var(--ink, #F5F3EA);
+    background: var(--white, #1C2921);
+    border: 1px solid var(--line, #435247);
+}
+
+/* Dark mode panels and cards */
+[data-theme="dark"] .dash-panel,
+[data-theme="dark"] .dash-stat,
+[data-theme="dark"] .dash-topbar,
+[data-theme="dark"] .sidebar {
+    background: var(--white, #1C2921);
+    color: var(--ink, #F5F3EA);
+    border-color: var(--line, #435247);
+}
+
+[data-theme="dark"] .dash-panel h2,
+[data-theme="dark"] .dash-panel h3,
+[data-theme="dark"] .dash-stat strong,
+[data-theme="dark"] .dash-stat-top span,
+[data-theme="dark"] .dash-topbar-title h2,
+[data-theme="dark"] .dash-topbar-title small,
+[data-theme="dark"] .dash-user-name,
+[data-theme="dark"] .dash-pet-name,
+[data-theme="dark"] .side-nav a {
+    color: var(--ink, #F5F3EA);
+}
+
+/* Primary button */
+[data-theme="dark"] .btn.btn-primary {
+    color: #FFFFFF;
+    background: var(--forest, #123F2A);
+    border-color: var(--amber, #B27B0D);
+}
+
+[data-theme="dark"] .btn.btn-primary:hover,
+[data-theme="dark"] .btn.btn-primary:focus-visible {
+    color: #FFFFFF;
+    background: var(--amber, #B27B0D);
+    border-color: var(--amber, #B27B0D);
+}
+
+/* Outline buttons */
+[data-theme="dark"] .btn.btn-outline {
+    color: var(--ink, #F5F3EA);
+    background: var(--white, #1C2921);
+    border-color: var(--line, #435247);
+}
+
+[data-theme="dark"] .btn.btn-outline:hover,
+[data-theme="dark"] .btn.btn-outline:focus-visible {
+    color: #FFFFFF;
+    background: var(--amber, #B27B0D);
+    border-color: var(--amber, #B27B0D);
+}
+
+/* Profile pill */
+[data-theme="dark"] .dash-profile-pill {
+    color: var(--ink, #F5F3EA);
+    background: var(--white, #1C2921);
+    border-color: var(--line, #435247);
+}
+
+[data-theme="dark"] .dash-profile-pill:hover {
+    border-color: var(--amber, #B27B0D);
+}
+
+/* Form controls */
+[data-theme="dark"] .form-control {
+    color: var(--ink, #F5F3EA);
+    background: var(--white, #1C2921);
+    border-color: var(--line, #435247);
+}
+
+[data-theme="dark"] .form-control::placeholder {
+    color: var(--muted, #B7C0B7);
+}
+
+[data-theme="dark"] .form-control:focus {
+    border-color: var(--amber, #B27B0D);
+}
+
+/* Tables */
+[data-theme="dark"] table th {
+    color: var(--ink, #F5F3EA);
+    background: var(--soft, #26372C);
+    border-color: var(--line, #435247);
+}
+
+[data-theme="dark"] table td {
+    color: var(--ink, #F5F3EA);
+    border-color: var(--line, #435247);
+}
+
+[data-theme="dark"] .dash-panel-header a {
+    color: var(--amber, #B27B0D);
+}
+
+/* Keep the webcam controls readable */
+[data-theme="dark"] .cam-switch-bar {
+    background: rgba(12, 30, 20, 0.95);
+    color: #FFFFFF;
+}
+
+[data-theme="dark"] .cam-btn {
+    color: #FFFFFF;
+}
+
+/* Responsive brand sizing */
+@media (max-width: 600px) {
+    .sidebar .brand-mark {
+        flex-basis: 40px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .sidebar .brand-name {
+        font-size: 1.15rem;
+    }
+
+    .sidebar .brand-tagline {
+        font-size: 0.62rem;
+    }
+
+    .dash-topbar {
+        gap: 8px;
+    }
+
+    .dash-topbar-right {
+        gap: 6px;
+    }
+
+    .dash-user-meta {
+        display: none;
+    }
+}
+
+/* Reduce Pet Owner Dashboard header title */
+.dash-topbar-title h2 {
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+    font-weight: 700;
+    margin: 0 0 4px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .dash-topbar-title h2 {
+        font-size: 1.05rem !important;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+    .dash-topbar-title h2 {
+        font-size: 0.95rem !important;
+    }
+}
+
+
+
+/* Requested final brand consistency: larger logo on every page */
+.site-header .brand-mark,
+.site-header .brand-logo-image,
+.site-header .brand-symbol img,
+.site-footer .brand-mark,
+.site-footer .brand-logo-image,
+.site-footer .brand-symbol img,
+body .sidebar .brand-mark,
+body .sidebar .brand-logo-image,
+body.login-page .brand-logo,
+body.signup-page .signup-logo {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    flex: 0 0 56px !important;
+    object-fit: contain !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* RTL: wordmark reads Haven Paw and the logo image sits on its right */
+html[dir="rtl"] body .brand,
+html[dir="rtl"] body .signup-brand,
+html[dir="rtl"] body .site-header .brand,
+html[dir="rtl"] body .site-footer .brand-logo {
+    flex-direction: row-reverse !important;
+}
+
+/* Preserve the original brand colors in both directions */
+body .brand-name .brand-first,
+body .signup-brand-name .brand-first { color: #123F2A !important; }
+body .brand-name .brand-second,
+body .signup-brand-name .brand-second { color: #B27B0D !important; }
+
+/* Smooth transitions for brand and controls */
+body .brand, body .signup-brand, body .brand-logo, body .signup-logo,
+body .brand-name, body .signup-brand-name,
+body [data-theme-toggle], body [data-direction-toggle] {
+    transition: color 350ms ease, background-color 350ms ease, border-color 350ms ease, transform 350ms ease;
+}

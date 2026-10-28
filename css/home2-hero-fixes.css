@@ -1,0 +1,96 @@
+/* Home 2 hero-only fixes: marker spacing, RTL English copy, and dark video contrast. */
+.home2-page .home2-hero-content > .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7em;
+}
+
+.home2-page .home2-hero-content > .eyebrow::before {
+    flex: 0 0 20px;
+    margin-inline: 0;
+}
+
+html[dir="rtl"] .home2-page .home2-hero .home2-hero-grid {
+    direction: rtl;
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .home2-page .home2-hero-content {
+    direction: ltr;
+    margin: 0;
+    text-align: right;
+}
+
+html[dir="rtl"] .home2-page .home2-hero-content > .eyebrow {
+    direction: rtl;
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] .home2-page .home2-hero-content h1,
+html[dir="rtl"] .home2-page .home2-hero-content p,
+html[dir="rtl"] .home2-page .home2-hero-content .hero-caption {
+    direction: ltr;
+    unicode-bidi: isolate;
+    text-align: right;
+}
+
+html[data-theme="dark"] .home2-page .home2-hero-overlay {
+    background: linear-gradient(90deg, rgba(4, 13, 9, 0.9) 0%, rgba(4, 13, 9, 0.78) 52%, rgba(4, 13, 9, 0.58) 100%) !important;
+}
+
+@media (max-width: 768px) {
+    html[data-theme="dark"] .home2-page .home2-hero-overlay {
+        background: linear-gradient(90deg, rgba(4, 13, 9, 0.84) 0%, rgba(4, 13, 9, 0.68) 100%) !important;
+    }
+}
+/* Home 2 dark mode: improve icon contrast and keep button colors distinct. */
+html[data-theme="dark"] body.home2-page main .h2-card-icon {
+    color: #f7f4ec !important;
+    background-color: #29362d !important;
+    border-color: #46564b;
+}
+
+html[data-theme="dark"] body.home2-page main .h2-review-card:not(.h2-review-featured) .h2-review-avatar {
+    color: #f7f4ec !important;
+    background-color: #26332b !important;
+    border-color: #536257 !important;
+}
+
+html[data-theme="dark"] body.home2-page main .h2-review-card:not(.h2-review-featured) .h2-review-avatar svg {
+    color: #f7f4ec !important;
+    stroke: currentColor;
+}
+
+html[dir="rtl"] body.home2-page .h2-review-card-top {
+    direction: ltr;
+}
+
+/* The shared button preset uses a flex basis that made this column CTA square. */
+body.home2-page .h2-pricing-copy > .btn {
+    flex: 0 0 auto !important;
+}
+
+html[data-theme="dark"] body.home2-page .btn-primary,
+html[data-theme="dark"] body.home2-page .btn-primary:hover,
+html[data-theme="dark"] body.home2-page .btn-primary:focus-visible {
+    color: #ffffff !important;
+    background: #123f2a !important;
+    border-color: #123f2a !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] body.home2-page .btn-secondary,
+html[data-theme="dark"] body.home2-page .btn-secondary:hover,
+html[data-theme="dark"] body.home2-page .btn-secondary:focus-visible {
+    color: #ffffff !important;
+    background: #b27b0d !important;
+    border-color: #b27b0d !important;
+    box-shadow: none !important;
+}
+
+
+/* Keep each testimonial avatar at the card's left edge instead of auto-centering it. */
+.home2-page .h2-review-card-top .h2-review-avatar {
+    margin: 0 !important;
+    align-self: flex-start;
+}

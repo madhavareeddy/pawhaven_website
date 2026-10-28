@@ -1,0 +1,186 @@
+/* Dashboard-only refinements for the hero controls and owner menu. */
+.dashboard-body .dash-welcome-actions > .btn.btn-outline,
+.dashboard-body .dash-welcome-actions > .btn.btn-outline:visited {
+    color: #fff !important;
+    background: var(--secondary, #b27b0d) !important;
+    border-color: var(--secondary, #b27b0d) !important;
+}
+
+.dashboard-body .dash-welcome-actions > .btn.btn-outline:hover,
+.dashboard-body .dash-welcome-actions > .btn.btn-outline:focus-visible {
+    color: #fff !important;
+    background: var(--primary, #123f2a) !important;
+    border-color: var(--primary, #123f2a) !important;
+}
+
+.dashboard-body .dash-welcome-media img {
+    height: 260px;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.dashboard-body .dash-profile-menu-wrap {
+    position: relative;
+}
+
+.dashboard-body button.dash-profile-pill {
+    color: var(--text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.dashboard-body .dash-profile-pill > [data-lucide="chevron-down"] {
+    width: 15px;
+    height: 15px;
+    flex: 0 0 auto;
+    transition: transform 180ms ease;
+}
+
+.dashboard-body .dash-profile-pill[aria-expanded="true"] > [data-lucide="chevron-down"] {
+    transform: rotate(180deg);
+}
+
+.dashboard-body .dash-profile-dropdown[hidden] {
+    display: none;
+}
+
+.dashboard-body .dash-profile-dropdown {
+    position: absolute;
+    z-index: 150;
+    top: calc(100% + 10px);
+    right: 0;
+    width: 250px;
+    padding: 8px;
+    color: var(--text, #20342a);
+    background: var(--surface, #fff);
+    border: 1px solid var(--border, #e5ddce);
+    border-radius: 16px;
+    box-shadow: 0 14px 34px rgba(20, 43, 31, .16);
+}
+
+.dashboard-body .dash-profile-dropdown-heading {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 10px 13px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid var(--border, #e5ddce);
+}
+
+.dashboard-body .dash-profile-dropdown-heading > span:last-child {
+    display: grid;
+    gap: 3px;
+    min-width: 0;
+}
+
+.dashboard-body .dash-profile-dropdown-heading strong {
+    color: var(--text, #20342a);
+    font-size: .9rem;
+}
+
+.dashboard-body .dash-profile-dropdown-heading small {
+    color: var(--muted, #68786e);
+    font-size: .76rem;
+}
+
+.dashboard-body .dash-profile-dropdown > a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: 42px;
+    padding: 9px 10px;
+    color: var(--text, #20342a);
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: .86rem;
+    transition: background-color 160ms ease, color 160ms ease;
+}
+
+.dashboard-body .dash-profile-dropdown > a svg {
+    width: 17px;
+    height: 17px;
+    color: var(--secondary, #b27b0d);
+}
+
+.dashboard-body .dash-profile-dropdown > a:hover,
+.dashboard-body .dash-profile-dropdown > a:focus-visible {
+    color: var(--primary, #123f2a);
+    background: var(--surface-2, #f3eee4);
+    outline: none;
+}
+
+.dashboard-body .dash-profile-dropdown > a.dash-profile-logout {
+    margin-top: 4px;
+    border-top: 1px solid var(--border, #e5ddce);
+    border-radius: 0 0 10px 10px;
+    color: #a83a32;
+}
+
+.dashboard-body .dash-profile-dropdown > a.dash-profile-logout svg {
+    color: currentColor;
+}
+
+html[data-theme="dark"] .dashboard-body .dash-profile-dropdown {
+    color: #f3f6f3;
+    background: #18201c;
+    border-color: #2c3931;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, .38);
+}
+
+html[data-theme="dark"] .dashboard-body .dash-profile-dropdown-heading {
+    border-color: #2c3931;
+}
+
+html[data-theme="dark"] .dashboard-body .dash-profile-dropdown-heading strong,
+html[data-theme="dark"] .dashboard-body .dash-profile-dropdown > a {
+    color: #f3f6f3;
+}
+
+html[data-theme="dark"] .dashboard-body .dash-profile-dropdown-heading small {
+    color: #a1b2a6;
+}
+
+html[data-theme="dark"] .dashboard-body .dash-profile-dropdown > a:hover,
+html[data-theme="dark"] .dashboard-body .dash-profile-dropdown > a:focus-visible {
+    color: #fff;
+    background: #293a2e;
+}
+
+html[data-theme="dark"] .dashboard-body .dash-profile-dropdown > a.dash-profile-logout {
+    color: #ffaaa3;
+    border-color: #2c3931;
+}
+
+@media (max-width: 600px) {
+    .dashboard-body .dash-profile-dropdown {
+        right: 0;
+        width: min(250px, calc(100vw - 24px));
+    }
+
+    .dashboard-body .dash-welcome-media img {
+        height: 240px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dashboard-body .dash-profile-pill > [data-lucide="chevron-down"],
+    .dashboard-body .dash-profile-dropdown > a {
+        transition: none;
+    }
+}
+
+
+/* Overview: keep the stay-details action primary, with a secondary hover state. */
+.dashboard-body .overview-stay-details,
+.dashboard-body .overview-stay-details:visited {
+    color: #fff !important;
+    background-color: #123f2a !important;
+    border-color: #123f2a !important;
+}
+
+.dashboard-body .overview-stay-details:hover,
+.dashboard-body .overview-stay-details:focus-visible {
+    color: #fff !important;
+    background-color: #b27b0d !important;
+    border-color: #b27b0d !important;
+}

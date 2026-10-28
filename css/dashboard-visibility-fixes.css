@@ -1,0 +1,228 @@
+/* Dashboard portal only: compact navigation and readable dark theme. */
+.dashboard-body .sidebar .side-nav {
+    align-content: start;
+    gap: 4px;
+    margin-top: 18px;
+}
+
+.dashboard-body .sidebar .side-nav a {
+    min-height: 48px;
+    padding-block: 10px;
+}
+
+html[data-theme="dark"] body.dashboard-body {
+    --dashboard-dark-bg: #111613;
+    --dashboard-dark-surface: #18201c;
+    --dashboard-dark-raised: #212b25;
+    --dashboard-dark-text: #f3f6f3;
+    --dashboard-dark-muted: #a1b2a6;
+    --dashboard-dark-line: #2c3931;
+    background: var(--dashboard-dark-bg) !important;
+    color: var(--dashboard-dark-text) !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .dashboard-main,
+html[data-theme="dark"] body.dashboard-body .dash-content {
+    background: var(--dashboard-dark-bg) !important;
+    color: var(--dashboard-dark-text) !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .sidebar,
+html[data-theme="dark"] body.dashboard-body .dash-topbar,
+html[data-theme="dark"] body.dashboard-body .dash-panel,
+html[data-theme="dark"] body.dashboard-body .dash-stat,
+html[data-theme="dark"] body.dashboard-body .dash-profile-pill,
+html[data-theme="dark"] body.dashboard-body .owner-mini,
+html[data-theme="dark"] body.dashboard-body .activity-feed-item,
+html[data-theme="dark"] body.dashboard-body .upcoming-stay-card,
+html[data-theme="dark"] body.dashboard-body .notif-dropdown,
+html[data-theme="dark"] body.dashboard-body .notif-item {
+    background: var(--dashboard-dark-surface) !important;
+    border-color: var(--dashboard-dark-line) !important;
+    color: var(--dashboard-dark-text) !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .dash-welcome {
+    background: linear-gradient(135deg, #18291e, #1b2c22 62%, #302b1c) !important;
+    border-color: var(--dashboard-dark-line) !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .dash-content :is(h1, h2, h3, h4, p, label, th, td, li, dt, dd, strong, b, span, small, legend, figcaption),
+html[data-theme="dark"] body.dashboard-body .dash-topbar :is(h1, h2, h3, p, label, strong, span, small),
+html[data-theme="dark"] body.dashboard-body .sidebar :is(a, span, small, strong) {
+    color: var(--dashboard-dark-text) !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .dash-content :is(p, small, .muted, .dash-stat-top span, .dash-stat small, .dash-welcome p, .activity-feed-time, .form-hint),
+html[data-theme="dark"] body.dashboard-body .dash-topbar .dash-pet-name,
+html[data-theme="dark"] body.dashboard-body .sidebar .brand-tagline {
+    color: var(--dashboard-dark-muted) !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .sidebar .brand-name .brand-first {
+    color: #f0f5f0 !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .sidebar .brand-name .brand-second,
+html[data-theme="dark"] body.dashboard-body .dash-content .eyebrow,
+html[data-theme="dark"] body.dashboard-body .dash-panel-header a {
+    color: #e0ad43 !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .form-control,
+html[data-theme="dark"] body.dashboard-body input,
+html[data-theme="dark"] body.dashboard-body select,
+html[data-theme="dark"] body.dashboard-body textarea,
+html[data-theme="dark"] body.dashboard-body table th {
+    color: var(--dashboard-dark-text) !important;
+    background: var(--dashboard-dark-raised) !important;
+    border-color: var(--dashboard-dark-line) !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .form-control::placeholder,
+html[data-theme="dark"] body.dashboard-body input::placeholder,
+html[data-theme="dark"] body.dashboard-body textarea::placeholder {
+    color: var(--dashboard-dark-muted) !important;
+    opacity: 1;
+}
+
+html[data-theme="dark"] body.dashboard-body table td,
+html[data-theme="dark"] body.dashboard-body table th {
+    border-color: var(--dashboard-dark-line) !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .status-pill {
+    color: #d9f4e2 !important;
+    background: #234c35 !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .status-pill.active {
+    color: #d8eaff !important;
+    background: #24425a !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .side-logout {
+    color: #ffaaa3 !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .side-nav a.selected,
+html[data-theme="dark"] body.dashboard-body .side-nav a:hover {
+    background: #293a2e !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .dash-stat-icon,
+html[data-theme="dark"] body.dashboard-body .notif-icon {
+    background: #293a2e !important;
+    color: #f0f5f0 !important;
+}
+html[data-theme="dark"] body.dashboard-body .migrated-style-f117c8ede4,
+html[data-theme="dark"] body.dashboard-body .migrated-style-e4a3b3e53b,
+html[data-theme="dark"] body.dashboard-body .migrated-style-0f92849dc1,
+html[data-theme="dark"] body.dashboard-body .migrated-style-81e1d7ddc2 {
+    background: var(--dashboard-dark-raised) !important;
+    border-color: var(--dashboard-dark-line) !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .dash-content a:not(.btn) {
+    color: #e0ad43 !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .dash-content svg,
+html[data-theme="dark"] body.dashboard-body .dash-topbar svg,
+html[data-theme="dark"] body.dashboard-body .sidebar svg {
+    color: currentColor;
+    stroke: currentColor;
+}
+.dashboard-body .sidebar .brand {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 10px;
+    min-width: 0;
+}
+
+.dashboard-body .sidebar .brand-text {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    gap: 3px;
+}
+
+.dashboard-body .sidebar .brand-name {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    gap: 0.22em;
+    white-space: nowrap;
+    line-height: 1.1;
+}
+
+.dashboard-body .sidebar .brand-tagline {
+    display: block;
+    max-width: 100%;
+    margin: 0;
+    font-size: 0.62rem;
+    line-height: 1.25;
+}
+
+html[data-theme="dark"] body.dashboard-body .sidebar .brand-name .brand-first {
+    color: #4f9b70 !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .sidebar .brand-tagline {
+    color: #a1b2a6 !important;
+}
+/* Match Home 1's dark palette across every pet-owner dashboard page. */
+html[data-theme="dark"] body.dashboard-body {
+    --dashboard-dark-bg: #0E1410;
+    --dashboard-dark-surface: #171F1A;
+    --dashboard-dark-raised: #1B2720;
+    --dashboard-dark-text: #F4F0E8;
+    --dashboard-dark-muted: #C2C9C1;
+    --dashboard-dark-line: #35483A;
+    background: var(--dashboard-dark-bg) !important;
+    color: var(--dashboard-dark-text) !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .dash-welcome {
+    background: #171F1A !important;
+    border-color: #35483A !important;
+}
+
+/* Keep primary and outline buttons consistent with Home 1 in dark mode. */
+html[data-theme="dark"] body.dashboard-body .btn-primary {
+    color: #FFFFFF !important;
+    background: #123F2A !important;
+    border-color: #123F2A !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .btn-primary:hover,
+html[data-theme="dark"] body.dashboard-body .btn-primary:focus-visible {
+    color: #FFFFFF !important;
+    background: #1A563B !important;
+    border-color: #1A563B !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .btn-outline {
+    color: #F4F0E8 !important;
+    background: #171F1A !important;
+    border-color: #B27B0D !important;
+    box-shadow: none !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .btn-outline:hover,
+html[data-theme="dark"] body.dashboard-body .btn-outline:focus-visible {
+    color: #FFFFFF !important;
+    background: #B27B0D !important;
+    border-color: #B27B0D !important;
+}
+
+html[data-theme="dark"] body.dashboard-body .side-nav a.selected,
+html[data-theme="dark"] body.dashboard-body .side-nav a:hover,
+html[data-theme="dark"] body.dashboard-body .dash-stat-icon,
+html[data-theme="dark"] body.dashboard-body .notif-icon {
+    background: #1B2720 !important;
+}

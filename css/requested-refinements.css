@@ -1,0 +1,383 @@
+/* Paw Haven — requested refinements. External CSS only. */
+:root { --ph-primary: #123F2A; --ph-secondary: #B27B0D; --ph-light-bg: #F8F6F0; --ph-dark-bg: #111613; }
+html, body, body *, button, input, select, textarea { font-family: 'Playfair Display', Georgia, serif !important; }
+body { background-color: var(--bg, var(--ph-light-bg)); }
+/* Primary buttons use forest green; hover uses warm amber. */
+.btn-primary, button.btn-primary, .login-submit, .signup-submit, .submit-button, .form-submit, .auth-submit {
+  background: var(--ph-primary) !important; border-color: var(--ph-primary) !important; color: #fff !important;
+  transition: background-color .25s ease, border-color .25s ease, color .25s ease, transform .25s ease;
+}
+.btn-primary:hover, button.btn-primary:hover, .login-submit:hover, .signup-submit:hover, .submit-button:hover, .form-submit:hover, .auth-submit:hover {
+  background: var(--ph-secondary) !important; border-color: var(--ph-secondary) !important; color: #fff !important; transform: translateY(-1px);
+}
+/* Home 2: editorial, premium layout and sharper video presentation. */
+.home2-hero { min-height: min(880px, calc(100svh - 72px)); }
+.home2-hero-video { filter: none !important; opacity: 1 !important; object-fit: cover; object-position: center 48%; image-rendering: auto; transform: translateZ(0); }
+.home2-hero-overlay { background: linear-gradient(90deg, rgba(8,29,19,.78) 0%, rgba(8,29,19,.48) 46%, rgba(8,29,19,.12) 100%) !important; }
+.home2-hero-content { max-width: 700px; }
+.home2-hero-content h1 { max-width: 760px; line-height: 1.04; letter-spacing: -.045em; text-wrap: balance; }
+.home2-hero-content p { max-width: 560px; font-size: clamp(1rem,1.25vw,1.15rem); line-height: 1.9; }
+.home2-care, .home2-alternating-section, .home2-manifesto-section { padding-block: clamp(76px, 9vw, 132px); }
+.home2-care .section-heading h2, .home2-alternating-section h2 { text-wrap: balance; }
+.home2-care article, .home2-care .care-card { transition: transform .3s ease, box-shadow .3s ease; }
+.home2-care article:hover, .home2-care .care-card:hover { transform: translateY(-5px); }
+/* Six-image service gallery. */
+.services-gallery { padding: clamp(64px, 8vw, 108px) 0; background: var(--bg, #f8f6f0); color: var(--text, #203629); }
+.services-gallery-heading { max-width: 760px; margin: 0 auto 38px; text-align: center; }
+.services-gallery-heading .eyebrow { color: var(--ph-secondary); }
+.services-gallery-heading h2 { margin: 12px 0 14px; }
+.services-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 24px; }
+.services-gallery-card { min-width: 0; overflow: hidden; border: 1px solid var(--border, #e1e5dc); border-radius: 22px; background: var(--surface, #fff); box-shadow: 0 14px 36px rgba(18,63,42,.07); transition: transform .28s ease, box-shadow .28s ease; }
+.services-gallery-card:hover { transform: translateY(-6px); box-shadow: 0 20px 42px rgba(18,63,42,.13); }
+.services-gallery-card img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.services-gallery-copy { padding: 22px 22px 24px; }
+.services-gallery-copy h3 { margin: 0 0 9px; color: var(--text, #203629); font-size: clamp(1.15rem,1.7vw,1.45rem); }
+.services-gallery-copy p { margin: 0; color: var(--muted, #66756b); line-height: 1.75; }
+html[data-theme="dark"] .services-gallery { background: var(--bg, #111613); color: var(--text, #f3f6f3); }
+html[data-theme="dark"] .services-gallery-card { background: var(--surface, #18201c); border-color: var(--border, #2c3931); }
+html[data-theme="dark"] .services-gallery-copy h3 { color: var(--text, #f3f6f3); }
+html[data-theme="dark"] .services-gallery-copy p { color: var(--muted, #a1b2a6); }
+/* Auth and owner dashboard must follow the same theme as Home 1. */
+html[data-theme="dark"] body.login-page, html[data-theme="dark"] body.signup-page,
+html[data-theme="dark"] body.dashboard-body { background: #111613 !important; color: #f3f6f3 !important; }
+html[data-theme="dark"] .login-screen, html[data-theme="dark"] .signup-screen,
+html[data-theme="dark"] .login-card, html[data-theme="dark"] .signup-card,
+html[data-theme="dark"] .dash-content, html[data-theme="dark"] .dash-main { background-color: #111613; color: #f3f6f3; }
+html[data-theme="dark"] .login-card, html[data-theme="dark"] .signup-card { background: #18201c !important; border-color: #2c3931 !important; }
+html[data-theme="dark"] .login-card h1, html[data-theme="dark"] .signup-card h1,
+html[data-theme="dark"] .login-card h2, html[data-theme="dark"] .signup-card h2,
+html[data-theme="dark"] .login-card label, html[data-theme="dark"] .signup-card label { color: #f3f6f3 !important; }
+html[data-theme="dark"] .login-card input, html[data-theme="dark"] .signup-card input,
+html[data-theme="dark"] .login-card select, html[data-theme="dark"] .signup-card select { background: #212b25 !important; color: #f3f6f3 !important; border-color: #39483e !important; }
+html[data-theme="dark"] .sidebar, html[data-theme="dark"] .dash-topbar,
+html[data-theme="dark"] .dash-panel, html[data-theme="dark"] .dash-stat-card,
+html[data-theme="dark"] .activity-feed-item, html[data-theme="dark"] .upcoming-stay-card { background: #18201c !important; color: #f3f6f3 !important; border-color: #2c3931 !important; }
+html[data-theme="dark"] .sidebar a, html[data-theme="dark"] .dash-topbar *, html[data-theme="dark"] .dash-panel h2,
+html[data-theme="dark"] .dash-stat-card *, html[data-theme="dark"] .activity-feed-item * { color: #f3f6f3; }
+@media (max-width: 1024px) { .services-gallery-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; } }
+@media (max-width: 768px) { .services-gallery-grid { grid-template-columns: minmax(0,1fr); } .services-gallery-card { display: grid; grid-template-columns: minmax(110px,.85fr) minmax(0,1.15fr); } .services-gallery-card img { height: 100%; min-height: 170px; aspect-ratio: auto; } .services-gallery-copy { padding: 17px; } .home2-hero { min-height: 76svh; } .home2-hero-overlay { background: linear-gradient(90deg,rgba(8,29,19,.72),rgba(8,29,19,.30)) !important; } }
+@media (max-width: 420px) { .services-gallery-card { grid-template-columns: 1fr; } .services-gallery-card img { min-height: 0; aspect-ratio: 4/3; } .services-gallery-copy { padding: 18px; } }
+
+/* Shared brand lockup sizing across every site page and auth/dashboard view. */
+.site-header .brand-mark,
+.site-footer .brand-mark,
+.site-header .brand-logo-image,
+.site-footer .brand-logo-image,
+.site-header .brand-symbol img,
+.site-footer .brand-symbol img,
+body .sidebar .brand-mark,
+body .sidebar .brand-logo-image,
+body.login-page .brand-logo,
+body.signup-page .signup-logo {
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  flex: 0 0 64px !important;
+  object-fit: contain !important;
+}
+@media (max-width: 768px) {
+  .site-header .brand-mark,
+  .site-footer .brand-mark,
+  .site-header .brand-logo-image,
+  .site-footer .brand-logo-image,
+  .site-header .brand-symbol img,
+  .site-footer .brand-symbol img,
+  body .sidebar .brand-mark,
+  body .sidebar .brand-logo-image,
+  body.login-page .brand-logo,
+  body.signup-page .signup-logo {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    flex-basis: 56px !important;
+  }
+}
+@media (max-width: 420px) {
+  .site-header .brand-mark,
+  .site-footer .brand-mark,
+  .site-header .brand-logo-image,
+  .site-footer .brand-logo-image,
+  .site-header .brand-symbol img,
+  .site-footer .brand-symbol img,
+  body .sidebar .brand-mark,
+  body .sidebar .brand-logo-image,
+  body.login-page .brand-logo,
+  body.signup-page .signup-logo {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    flex-basis: 50px !important;
+  }
+}
+
+/* Login lockup matches the site's image-and-wordmark brand treatment. */
+body.login-page .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 auto 12px;
+}
+body.login-page .login-brand-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  text-align: left;
+}
+body.login-page .login-brand-copy .brand-name {
+  display: inline-flex;
+  align-items: baseline;
+  gap: .24em;
+}
+body.login-page .login-eyebrow {
+  display: block;
+  margin: 0;
+  color: var(--muted, #5F6E64);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .045em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+/* Auth and dashboard dark mode use the same shared palette as Home and About. */
+html[data-theme="dark"] body.login-page,
+html[data-theme="dark"] body.signup-page,
+html[data-theme="dark"] body.dashboard-body {
+  --bg: #111613;
+  --surface: #18201C;
+  --surface-2: #212B25;
+  --surface-card: #18201C;
+  --text: #F3F6F3;
+  --muted: #A1B2A6;
+  --border: #2C3931;
+  --line: #2C3931;
+  --paper: #111613;
+  --soft: #212B25;
+  --white: #18201C;
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+html[data-theme="dark"] body.login-page .login-screen,
+html[data-theme="dark"] body.signup-page .signup-screen,
+html[data-theme="dark"] body.dashboard-body .dashboard-main,
+html[data-theme="dark"] body.dashboard-body .dash-content {
+  background: var(--bg) !important;
+  color: var(--text) !important;
+}
+html[data-theme="dark"] body.login-page .login-card,
+html[data-theme="dark"] body.signup-page .signup-card,
+html[data-theme="dark"] body.dashboard-body .sidebar,
+html[data-theme="dark"] body.dashboard-body .dash-topbar,
+html[data-theme="dark"] body.dashboard-body .dash-panel,
+html[data-theme="dark"] body.dashboard-body .dash-stat,
+html[data-theme="dark"] body.dashboard-body .dash-profile-pill,
+html[data-theme="dark"] body.dashboard-body .dash-welcome {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+html[data-theme="dark"] body.login-page .input-wrapper,
+html[data-theme="dark"] body.signup-page .signup-input-wrap,
+html[data-theme="dark"] body.dashboard-body .form-control,
+html[data-theme="dark"] body.dashboard-body table th {
+  background: var(--surface-2) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+html[data-theme="dark"] body.login-page .login-card h1,
+html[data-theme="dark"] body.login-page .form-field > label,
+html[data-theme="dark"] body.signup-page .signup-intro h1,
+html[data-theme="dark"] body.signup-page .signup-field > label,
+html[data-theme="dark"] body.dashboard-body .dash-content h1,
+html[data-theme="dark"] body.dashboard-body .dash-content h2,
+html[data-theme="dark"] body.dashboard-body .dash-content h3,
+html[data-theme="dark"] body.dashboard-body .dash-content p,
+html[data-theme="dark"] body.dashboard-body .dash-content label,
+html[data-theme="dark"] body.dashboard-body .dash-content th,
+html[data-theme="dark"] body.dashboard-body .dash-content td,
+html[data-theme="dark"] body.dashboard-body .dash-topbar-title,
+html[data-theme="dark"] body.dashboard-body .side-nav a {
+  color: var(--text) !important;
+}
+html[data-theme="dark"] body.login-page .login-description,
+html[data-theme="dark"] body.login-page .remember-label,
+html[data-theme="dark"] body.login-page .signup-text,
+html[data-theme="dark"] body.signup-page .signup-intro p,
+html[data-theme="dark"] body.signup-page .signup-brand-tagline,
+html[data-theme="dark"] body.dashboard-body .dash-content small {
+  color: var(--muted) !important;
+}
+html[data-theme="dark"] body.login-page .login-eyebrow,
+html[data-theme="dark"] body.signup-page .signup-brand-tagline {
+  color: var(--muted) !important;
+}
+html[data-theme="dark"] body .brand-name .brand-first,
+html[data-theme="dark"] body .signup-brand-name .brand-first {
+  color: #F3F6F3 !important;
+}
+html[data-theme="dark"] body .brand-name .brand-second,
+html[data-theme="dark"] body .signup-brand-name .brand-second {
+  color: #B27B0D !important;
+}
+html[data-theme="dark"] body.login-page .input-wrapper input,
+html[data-theme="dark"] body.signup-page .signup-input-wrap input,
+html[data-theme="dark"] body.signup-page .signup-input-wrap select,
+html[data-theme="dark"] body.dashboard-body .form-control::placeholder {
+  color: var(--text) !important;
+}
+html[data-theme="dark"] body.login-page .tool-button,
+html[data-theme="dark"] body.signup-page .signup-tool,
+html[data-theme="dark"] body.dashboard-body .theme-toggle,
+html[data-theme="dark"] body.dashboard-body .direction-toggle {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+html[data-theme="dark"] body.login-page .login-button,
+html[data-theme="dark"] body.signup-page .signup-submit,
+html[data-theme="dark"] body.dashboard-body .btn-primary {
+  background: #123F2A !important;
+  border-color: #123F2A !important;
+  color: #fff !important;
+}
+html[data-theme="dark"] body.login-page .social-button,
+html[data-theme="dark"] body.signup-page .social-button {
+  background: var(--surface) !important;
+  border-color: var(--border) !important;
+  color: var(--text) !important;
+}
+
+/* One logo mark and wordmark scale for all pages, including auth and portal. */
+body .brand-mark,
+body .brand-logo-image,
+body .brand-symbol img,
+body .brand-logo,
+body .signup-logo {
+  box-sizing: border-box !important;
+  width: 64px !important;
+  height: 64px !important;
+  min-width: 64px !important;
+  flex: 0 0 64px !important;
+  object-fit: contain !important;
+}
+body .brand-name,
+body .signup-brand-name {
+  font-size: 1.5rem !important;
+  line-height: 1.1;
+}
+@media (max-width: 768px) {
+  body .brand-mark,
+  body .brand-logo-image,
+  body .brand-symbol img,
+  body .brand-logo,
+  body .signup-logo {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    flex-basis: 56px !important;
+  }
+  body .brand-name,
+body .signup-brand-name { font-size: 1.3rem !important; }
+}
+@media (max-width: 420px) {
+  body .brand-mark,
+  body .brand-logo-image,
+  body .brand-symbol img,
+  body .brand-logo,
+  body .signup-logo {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    flex-basis: 50px !important;
+  }
+  body .brand-name,
+body .signup-brand-name { font-size: 1.12rem !important; }
+}
+
+/* Auth pages share the Home and About dark palette through the same tokens. */
+html[data-theme="dark"] body.login-page {
+  --login-page-bg: var(--bg);
+  --login-card-bg: var(--surface);
+  --login-text: var(--text);
+  --login-muted: var(--muted);
+  --login-border: var(--border);
+  --login-input-bg: var(--surface-2);
+}
+html[data-theme="dark"] body.signup-page {
+  --signup-background: var(--bg);
+  --signup-card: var(--surface);
+  --signup-text: var(--text);
+  --signup-muted: var(--muted);
+  --signup-border: var(--border);
+  --signup-input: var(--surface-2);
+}
+
+/* Preserve the English Paw Haven wordmark when the page layout is RTL. */
+body .brand-name,
+body .signup-brand-name {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+}
+
+/* Login RTL: align the form to the right while isolating English copy. */
+html[dir="rtl"] body.login-page .login-card h1,
+html[dir="rtl"] body.login-page .login-description {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+  text-align: center !important;
+}
+html[dir="rtl"] body.login-page #owner-login-form {
+  direction: rtl !important;
+  text-align: right !important;
+}
+html[dir="rtl"] body.login-page .login-options {
+  direction: rtl !important;
+  flex-direction: row !important;
+}
+html[dir="rtl"] body.login-page .remember-label {
+  direction: ltr !important;
+  flex-direction: row-reverse !important;
+}
+html[dir="rtl"] body.login-page .forgot-link {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+  text-align: left !important;
+}
+html[dir="rtl"] body.login-page .input-wrapper {
+  direction: rtl !important;
+  flex-direction: row !important;
+}
+html[dir="rtl"] body.login-page .input-wrapper input {
+  direction: ltr !important;
+  text-align: right !important;
+  unicode-bidi: plaintext;
+}
+html[dir="rtl"] body.login-page .login-button {
+  direction: ltr !important;
+  flex-direction: row-reverse !important;
+}
+html[dir="rtl"] body.login-page .divider {
+  direction: ltr !important;
+  flex-direction: row !important;
+}
+html[dir="rtl"] body.login-page .signup-text {
+  direction: ltr !important;
+  unicode-bidi: isolate;
+  text-align: center !important;
+}
+html[dir="rtl"] body.login-page .social-buttons {
+  direction: rtl !important;
+}
+html[dir="rtl"] body.login-page .social-button {
+  direction: rtl !important;
+  flex-direction: row !important;
+}
+
+/* The login stylesheet has a more specific dark-green wordmark rule; override it for contrast. */
+html[data-theme="dark"] body.login-page .login-brand-copy .brand-name .brand-first {
+  color: #F3F6F3 !important;
+}
+html[data-theme="dark"] body.login-page .login-brand-copy .brand-name .brand-second {
+  color: #B27B0D !important;
+}

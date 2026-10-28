@@ -1,0 +1,1688 @@
+/* Shared RTL header and footer: match the Home 1 reading order on every page. */
+html[dir="rtl"] body .site-header .nav-wrap,
+html[dir="rtl"] body .site-header .main-nav,
+html[dir="rtl"] body .site-header .header-actions,
+html[dir="rtl"] body .site-footer .footer-grid,
+html[dir="rtl"] body .site-footer .footer-bottom {
+    direction: rtl !important;
+}
+
+html[dir="rtl"] body .site-header .brand,
+html[dir="rtl"] body .site-footer .brand,
+html[dir="rtl"] body .site-footer .brand-logo {
+    direction: ltr !important;
+    flex-direction: row-reverse !important;
+    unicode-bidi: isolate;
+}
+
+html[dir="rtl"] body .site-header .brand-text,
+html[dir="rtl"] body .site-footer .brand-text {
+    direction: ltr !important;
+    align-items: flex-end;
+    text-align: right;
+}
+
+html[dir="rtl"] body .site-footer .footer-grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, 1.1fr) !important;
+}
+
+html[dir="rtl"] body .site-footer .footer-grid > *,
+html[dir="rtl"] body .site-footer .footer-brand {
+    min-width: 0;
+    max-width: 100%;
+}
+
+html[dir="rtl"] body .site-footer .footer-brand .brand-logo {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 8px;
+    max-width: 100%;
+}
+
+html[dir="rtl"] body .site-footer .footer-brand .brand-tagline,
+html[dir="rtl"] body .site-footer .footer-brand > p {
+    max-width: 100%;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    text-align: right;
+}
+
+@media (max-width: 1024px) {
+    html[dir="rtl"] body .site-footer .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    html[dir="rtl"] body .site-footer .footer-brand {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    html[dir="rtl"] body .site-footer .footer-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    html[dir="rtl"] body .site-footer .footer-brand {
+        grid-column: auto;
+    }
+}
+
+/* Mirror the wordmark order with the logo lockup in RTL. */
+html[dir="rtl"] body .site-header .brand-name,
+html[dir="rtl"] body .site-footer .brand-name {
+    flex-direction: row-reverse !important;
+    direction: ltr !important;
+}
+
+/* Match the Home 1 RTL brand: Paw Haven wordmark, logo at the right, tagline below. */
+html[dir="rtl"] body .site-header .brand-name,
+html[dir="rtl"] body .site-footer .brand-name,
+html[dir="rtl"] body .brand-name,
+html[dir="rtl"] body .signup-brand-name {
+    flex-direction: row !important;
+    direction: ltr !important;
+    justify-content: flex-end;
+    white-space: nowrap;
+}
+
+/* Explicit item order prevents flex direction from reversing the English name. */
+html[dir="rtl"] body .brand-name .brand-first,
+html[dir="rtl"] body .signup-brand-name .brand-first {
+    order: 0 !important;
+}
+
+html[dir="rtl"] body .brand-name .brand-second,
+html[dir="rtl"] body .signup-brand-name .brand-second {
+    order: 1 !important;
+}
+
+html[dir="rtl"] body .site-header .brand-tagline,
+html[dir="rtl"] body .site-footer .brand-tagline,
+html[dir="rtl"] body .signup-brand-tagline {
+    direction: ltr !important;
+    text-align: right;
+    white-space: nowrap !important;
+}
+
+/* Give the RTL brand column the same usable width as Home 1. */
+html[dir="rtl"] body .site-footer .footer-grid {
+    grid-template-columns: minmax(280px, 1.2fr) minmax(180px, 1fr) minmax(180px, 1fr) minmax(220px, 1fr) !important;
+}
+
+html[dir="rtl"] body .site-footer .footer-brand {
+    width: 100%;
+    min-width: 0;
+}
+
+html[dir="rtl"] body .site-footer .footer-brand .brand-logo {
+    width: 100%;
+    min-width: 0;
+    justify-content: flex-start;
+}
+
+html[dir="rtl"] body .site-footer .footer-brand .brand-text {
+    flex: 1 1 200px;
+    min-width: 200px !important;
+}
+
+@media (max-width: 1024px) {
+    html[dir="rtl"] body .site-footer .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html[dir="rtl"] body .site-footer .footer-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+    }
+
+    html[dir="rtl"] body .site-footer .footer-brand .brand-text {
+        min-width: 180px !important;
+    }
+}
+
+/* Responsive brand lockup: keep the English wordmark and its subtitle intact. */
+@media (max-width: 1024px) {
+    html[dir="rtl"] body .brand-name,
+    html[dir="rtl"] body .signup-brand-name {
+        direction: ltr !important;
+        flex-direction: row !important;
+        white-space: nowrap !important;
+    }
+
+    .site-header .brand-mark,
+    .site-header .brand-logo-image,
+    .site-footer .brand-mark,
+    .site-footer .brand-logo-image,
+    body .sidebar .brand-mark,
+    body.login-page .brand-logo,
+    body.signup-page .signup-logo {
+        width: 50px !important;
+        height: 50px !important;
+        min-width: 50px !important;
+        flex: 0 0 50px !important;
+    }
+
+    .site-header .brand-tagline,
+    body.signup-page .signup-brand-tagline,
+    body.login-page .login-eyebrow {
+        display: block !important;
+        max-width: 150px;
+        font-size: .58rem;
+        line-height: 1.15;
+        letter-spacing: .035em;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header .brand-mark,
+    .site-header .brand-logo-image,
+    .site-footer .brand-mark,
+    .site-footer .brand-logo-image,
+    body .sidebar .brand-mark,
+    body.login-page .brand-logo,
+    body.signup-page .signup-logo {
+        width: 46px !important;
+        height: 46px !important;
+        min-width: 46px !important;
+        flex: 0 0 46px !important;
+    }
+
+    .site-header .brand,
+    .site-footer .brand,
+    .sidebar .brand,
+    body.login-page .brand,
+    body.signup-page .signup-brand {
+        gap: 7px;
+        min-width: 0;
+    }
+
+    .site-header .brand-text,
+    .site-footer .brand-text,
+    .sidebar .brand-text,
+    body.login-page .login-brand-copy,
+    body.signup-page .signup-brand-text {
+        min-width: 0;
+    }
+
+    .site-header .brand-name,
+    .site-footer .brand-name,
+    .sidebar .brand-name,
+    body.login-page .brand-name,
+    body.signup-page .signup-brand-name {
+        font-size: 1.04rem !important;
+        line-height: 1.05;
+    }
+
+    .site-header .brand-tagline,
+    body.signup-page .signup-brand-tagline,
+    body.login-page .login-eyebrow {
+        display: block !important;
+        max-width: 140px;
+        font-size: .54rem;
+        line-height: 1.12;
+        letter-spacing: .025em;
+        white-space: normal !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .site-header .brand-mark,
+    .site-header .brand-logo-image,
+    .site-footer .brand-mark,
+    .site-footer .brand-logo-image,
+    body .sidebar .brand-mark,
+    body.login-page .brand-logo,
+    body.signup-page .signup-logo {
+        width: 40px !important;
+        height: 40px !important;
+        min-width: 40px !important;
+        flex: 0 0 40px !important;
+    }
+
+    .site-header .brand,
+    .site-footer .brand,
+    .sidebar .brand,
+    body.login-page .brand,
+    body.signup-page .signup-brand {
+        gap: 5px;
+    }
+
+    .site-header .brand-name,
+    .site-footer .brand-name,
+    .sidebar .brand-name,
+    body.login-page .brand-name,
+    body.signup-page .signup-brand-name {
+        font-size: .96rem !important;
+    }
+
+    .site-header .brand-tagline,
+    body.signup-page .signup-brand-tagline,
+    body.login-page .login-eyebrow {
+        display: block !important;
+        max-width: 112px;
+        font-size: .48rem;
+        line-height: 1.08;
+        letter-spacing: .015em;
+        white-space: normal !important;
+    }
+}
+
+/* Site-wide control alignment and consistent action-button sizing. */
+body .site-header .nav-wrap,
+body .site-header .main-nav,
+body .site-header .header-actions {
+    align-items: center !important;
+}
+
+body .site-header .theme-toggle,
+body .site-header .direction-toggle,
+body .site-header .nav-dropdown-toggle,
+body .site-header .icon-btn,
+body .dashboard-header [data-theme-toggle],
+body .dashboard-header [data-direction-toggle],
+body .dashboard-header .sidebar-toggle,
+body .login-tools .tool-button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+body .site-header .theme-toggle > svg,
+body .site-header .theme-toggle > i,
+body .site-header .direction-toggle > svg,
+body .site-header .direction-toggle > i,
+body .site-header .nav-dropdown-toggle > svg,
+body .site-header .nav-dropdown-toggle > i,
+body .site-header .icon-btn > svg,
+body .site-header .icon-btn > i,
+body .dashboard-header [data-theme-toggle] > svg,
+body .dashboard-header [data-theme-toggle] > i,
+body .dashboard-header [data-direction-toggle] > svg,
+body .dashboard-header [data-direction-toggle] > i,
+body .dashboard-header .sidebar-toggle > svg,
+body .dashboard-header .sidebar-toggle > i,
+body .login-tools .tool-button > svg,
+body .login-tools .tool-button > i {
+    display: block !important;
+    flex: 0 0 auto;
+    margin: 0 !important;
+    vertical-align: middle;
+}
+
+body .site-footer .footer-icons a,
+body .site-footer .footer-icons .social-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+body .site-footer .footer-icons a > svg,
+body .site-footer .footer-icons a > i,
+body .site-footer .footer-icons .social-link > svg,
+body .site-footer .footer-icons .social-link > i {
+    display: block !important;
+    flex: 0 0 auto;
+    margin: 0 !important;
+    vertical-align: middle;
+}
+
+body .site-footer .footer-links a,
+body .site-footer .footer-contact a,
+body .site-footer .footer-contact span {
+    align-items: center !important;
+}
+
+body .site-footer .footer-links a > svg,
+body .site-footer .footer-links a > i,
+body .site-footer .footer-contact a > svg,
+body .site-footer .footer-contact a > i,
+body .site-footer .footer-contact span > svg,
+body .site-footer .footer-contact span > i {
+    flex: 0 0 auto;
+    vertical-align: middle;
+}
+
+/* Keep all labeled action buttons on a consistent 48px control height. */
+body :is(a.btn, button.btn, input.btn, button.login-button, button.social-button) {
+    box-sizing: border-box;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 48px !important;
+    min-height: 48px !important;
+    padding-block: 0 !important;
+    line-height: 1.15 !important;
+}
+
+/* Keep header login actions aligned with the square utility controls. */
+body .site-header .header-actions > .btn {
+    height: 44px !important;
+    min-height: 44px !important;
+}
+/* Dashboard and account-page icon controls use the same centered alignment. */
+body :is([data-theme-toggle], [data-direction-toggle], .sidebar-toggle, .tool-button, #notif-toggle) {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1 !important;
+}
+
+body :is([data-theme-toggle], [data-direction-toggle], .sidebar-toggle, .tool-button, #notif-toggle) > svg,
+body :is([data-theme-toggle], [data-direction-toggle], .sidebar-toggle, .tool-button, #notif-toggle) > i {
+    display: block !important;
+    flex: 0 0 auto;
+    margin: 0 !important;
+    vertical-align: middle;
+}
+/* Center footer social glyphs precisely within each icon button. */
+body .site-footer .footer-icons a,
+body .site-footer .footer-icons .social-link {
+    display: grid !important;
+    place-items: center !important;
+    padding: 0 !important;
+    text-align: center !important;
+}
+
+body .site-footer .footer-icons a > svg,
+body .site-footer .footer-icons a > i,
+body .site-footer .footer-icons .social-link > svg,
+body .site-footer .footer-icons .social-link > i {
+    place-self: center !important;
+}
+
+/* Home 1 hero CTA finish: secondary Explore, shared action size, and right arrows. */
+body .hero-actions .btn-outline {
+    background: var(--secondary, #B27B0D) !important;
+    border-color: var(--secondary, #B27B0D) !important;
+    color: #fff !important;
+}
+
+body .hero-actions .btn-outline:hover,
+body .hero-actions .btn-outline:focus-visible {
+    background: var(--primary, #123F2A) !important;
+    border-color: var(--primary, #123F2A) !important;
+    color: #fff !important;
+}
+
+/* Use the Home 1 "Book a meet & greet" 56px height for labeled buttons site-wide. */
+body :is(a.btn, button.btn, input.btn, button.login-button, button.social-button) {
+    box-sizing: border-box;
+    height: 56px !important;
+    min-height: 56px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    line-height: 1.15 !important;
+}
+
+body :is(a.btn, button.btn, input.btn) {
+    padding-block: 0 !important;
+}
+
+body .site-header .header-actions > .btn {
+    height: 56px !important;
+    min-height: 56px !important;
+}
+
+/* Add a right arrow to labeled action buttons that do not already contain one. */
+body :is(a.btn, button.btn, input.btn):not(.has-right-arrow):not(:has(.arrow-icon, [data-lucide^="arrow-"], .lucide-arrow-right, .lucide-arrow-up-right))::after {
+    content: "→";
+    display: inline-block;
+    flex: 0 0 auto;
+    margin-inline-start: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 1.15em;
+    font-weight: 700;
+    line-height: 1;
+}
+
+html[dir="rtl"] body :is(a.btn, button.btn, input.btn):not(.has-right-arrow):not(:has(.arrow-icon, [data-lucide^="arrow-"], .lucide-arrow-right, .lucide-arrow-up-right))::after {
+    order: -1;
+    margin-inline-start: 0;
+    margin-inline-end: 10px;
+}
+
+/* Keep every footer social glyph centered within its circle. */
+body .footer-icons a,
+body .footer-icons .social-link {
+    display: grid !important;
+    place-items: center !important;
+    padding: 0 !important;
+    text-align: center !important;
+    line-height: 1 !important;
+}
+
+body .footer-icons a > svg,
+body .footer-icons a > i,
+body .footer-icons .social-link > svg,
+body .footer-icons .social-link > i {
+    display: block !important;
+    place-self: center !important;
+    margin: 0 !important;
+    line-height: 1 !important;
+}
+/* Final button consistency: squared corners, shared dimensions and matched arrows. */
+:root {
+    --ph-action-button-width: 238px;
+    --ph-action-button-height: 56px;
+    --ph-action-button-radius: 12px;
+    --ph-action-arrow-size: 20px;
+}
+
+body :is(a.btn, button.btn, input.btn, button.login-button, button.signup-submit, button.form-submit, button.submit-button, button.auth-submit) {
+    box-sizing: border-box;
+    width: min(var(--ph-action-button-width), 100%) !important;
+    max-width: 100% !important;
+    height: var(--ph-action-button-height) !important;
+    min-height: var(--ph-action-button-height) !important;
+    flex: 0 1 var(--ph-action-button-width);
+    border-radius: var(--ph-action-button-radius) !important;
+    padding-inline: 18px !important;
+    justify-content: center !important;
+    align-items: center !important;
+    line-height: 1.1 !important;
+}
+
+/* Header Login follows the shared button size until a narrow viewport needs a compact fit. */
+body .site-header .header-actions > .btn {
+    width: var(--ph-action-button-width) !important;
+    max-width: 100% !important;
+    flex: 0 1 var(--ph-action-button-width) !important;
+    padding-inline: 18px !important;
+}
+
+@media (max-width: 700px) {
+    body .site-header .header-actions > .btn {
+        width: auto !important;
+        max-width: none !important;
+        flex: 0 0 auto !important;
+    }
+}
+
+body :is(a.btn, button.btn, input.btn, button.login-button, button.signup-submit, button.form-submit, button.submit-button, button.auth-submit) :is(.arrow-icon, .button-arrow) {
+    display: inline-flex !important;
+    flex: 0 0 var(--ph-action-arrow-size) !important;
+    width: var(--ph-action-arrow-size) !important;
+    height: var(--ph-action-arrow-size) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    font-family: Arial, sans-serif !important;
+    font-size: var(--ph-action-arrow-size) !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+}
+
+body :is(a.btn, button.btn, input.btn, button.login-button, button.signup-submit, button.form-submit, button.submit-button, button.auth-submit) :is(svg.lucide-arrow-right, svg.lucide-arrow-up-right, [data-lucide="arrow-right"], [data-lucide="arrow-up-right"]) {
+    display: block !important;
+    flex: 0 0 var(--ph-action-arrow-size) !important;
+    width: var(--ph-action-arrow-size) !important;
+    height: var(--ph-action-arrow-size) !important;
+    min-width: var(--ph-action-arrow-size) !important;
+    min-height: var(--ph-action-arrow-size) !important;
+    margin: 0 !important;
+}
+
+body :is(a.btn, button.btn, input.btn, button.login-button, button.signup-submit, button.form-submit, button.submit-button, button.auth-submit):not(.has-right-arrow):not(:has(.arrow-icon, .button-arrow, [data-lucide^="arrow-"], .lucide-arrow-right, .lucide-arrow-up-right))::after {
+    content: "→";
+    display: inline-flex;
+    flex: 0 0 var(--ph-action-arrow-size);
+    width: var(--ph-action-arrow-size);
+    height: var(--ph-action-arrow-size);
+    align-items: center;
+    justify-content: center;
+    margin-inline-start: 10px;
+    font-family: Arial, sans-serif;
+    font-size: var(--ph-action-arrow-size);
+    font-weight: 700;
+    line-height: 1;
+}
+
+html[dir="rtl"] body :is(a.btn, button.btn, input.btn, button.login-button, button.signup-submit, button.form-submit, button.submit-button, button.auth-submit):not(.has-right-arrow):not(:has(.arrow-icon, .button-arrow, [data-lucide^="arrow-"], .lucide-arrow-right, .lucide-arrow-up-right))::after {
+    order: -1;
+    margin-inline-start: 0;
+    margin-inline-end: 10px;
+}
+
+@media (max-width: 600px) {
+    body :is(a.btn, button.btn, input.btn, button.login-button, button.signup-submit, button.form-submit, button.submit-button, button.auth-submit) {
+        width: min(var(--ph-action-button-width), 100%) !important;
+        flex-basis: min(var(--ph-action-button-width), 100%);
+    }
+}
+
+/* Keep the login submit control sized like a form field, not a site CTA. */
+body.login-page #owner-login-form > .login-button {
+    grid-column: 1 / -1 !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: 46px !important;
+    min-height: 46px !important;
+    flex: none !important;
+    border-radius: 14px !important;
+}
+
+/* Restore signup's full-width form action and strengthen page-local text contrast. */
+body.signup-page .signup-submit {
+    width: 100% !important;
+    max-width: none !important;
+    height: 49px !important;
+    min-height: 49px !important;
+    flex: none !important;
+    border-radius: 13px !important;
+}
+
+body.signup-page {
+    --signup-text: #19372a;
+    --signup-muted: #3f5146;
+}
+
+body.signup-page .signup-intro p,
+body.signup-page .signup-brand-tagline,
+body.signup-page .signup-divider p,
+body.signup-page .signup-back-link,
+body.signup-page .signup-status {
+    color: #3f5146 !important;
+}
+
+body.signup-page .signup-field > label,
+body.signup-page .signup-terms label,
+body.signup-page .signup-social-options .social-button {
+    color: #19372a !important;
+}
+
+body.signup-page .signup-input-wrap input::placeholder,
+body.signup-page .signup-input-wrap select:invalid {
+    color: #46594d !important;
+    opacity: 1 !important;
+}
+
+html[data-theme="dark"] body.signup-page {
+    --signup-text: #f3f6f3;
+    --signup-muted: #d0d9d2;
+}
+
+html[data-theme="dark"] body.signup-page .signup-intro p,
+html[data-theme="dark"] body.signup-page .signup-brand-tagline,
+html[data-theme="dark"] body.signup-page .signup-divider p,
+html[data-theme="dark"] body.signup-page .signup-back-link,
+html[data-theme="dark"] body.signup-page .signup-status,
+html[data-theme="dark"] body.signup-page .signup-input-wrap input::placeholder,
+html[data-theme="dark"] body.signup-page .signup-input-wrap select:invalid {
+    color: #d0d9d2 !important;
+}
+
+html[data-theme="dark"] body.signup-page .signup-field > label,
+html[data-theme="dark"] body.signup-page .signup-terms label,
+html[data-theme="dark"] body.signup-page .signup-social-options .social-button {
+    color: #f3f6f3 !important;
+}
+
+html[data-theme="dark"] body.signup-page .signup-terms a {
+    color: #e2b553 !important;
+}
+
+@media (max-height: 760px) and (min-width: 769px) {
+    body.signup-page .signup-intro p,
+    body.signup-page .signup-field > label,
+    body.signup-page .signup-input-wrap input,
+    body.signup-page .signup-input-wrap select,
+    body.signup-page .signup-terms label {
+        font-size: 12px !important;
+    }
+
+    body.signup-page .signup-brand-tagline {
+        font-size: 9px !important;
+    }
+
+    body.signup-page .signup-divider p,
+    body.signup-page .signup-login-link {
+        font-size: 11px !important;
+    }
+
+    body.signup-page .signup-submit {
+        height: 44px !important;
+        min-height: 44px !important;
+        font-size: 13px !important;
+    }
+}
+
+html[data-theme="dark"] body.signup-page .signup-submit {
+    background: var(--signup-primary, #2f6b4b) !important;
+    border-color: var(--signup-primary, #2f6b4b) !important;
+}
+
+html[data-theme="dark"] body.signup-page .signup-submit:hover,
+html[data-theme="dark"] body.signup-page .signup-submit:focus-visible {
+    background: var(--signup-secondary, #d9aa4d) !important;
+    border-color: var(--signup-secondary, #d9aa4d) !important;
+}
+
+/* Login page text contrast: dark readable copy in light mode, bright in dark mode. */
+body.login-page {
+    --login-text: #173c2a;
+    --login-muted: #435248;
+}
+
+body.login-page .login-description,
+body.login-page .remember-label,
+body.login-page .divider p,
+body.login-page .signup-text {
+    color: #435248 !important;
+}
+
+body.login-page .input-wrapper input::placeholder {
+    color: #526258 !important;
+    opacity: 1 !important;
+}
+
+body.login-page .social-button {
+    color: #19372a !important;
+}
+
+html[data-theme="dark"] body.login-page .login-description,
+html[data-theme="dark"] body.login-page .remember-label,
+html[data-theme="dark"] body.login-page .divider p,
+html[data-theme="dark"] body.login-page .signup-text {
+    color: #d0d9d2 !important;
+}
+
+html[data-theme="dark"] body.login-page .input-wrapper input::placeholder {
+    color: #bdc9c1 !important;
+}
+
+html[data-theme="dark"] body.login-page .social-button {
+    color: #f3f6f3 !important;
+}
+
+/* Login: slow, soft-focus color orbits behind the card. */
+body.login-page .login-screen,
+body.signup-page .signup-screen {
+    isolation: isolate;
+}
+
+body.login-page .login-screen::before,
+body.login-page .login-screen::after,
+body.signup-page .signup-screen::before,
+body.signup-page .signup-screen::after {
+    position: absolute;
+    z-index: -1;
+    display: block;
+    pointer-events: none;
+    content: "";
+}
+
+body.login-page .login-screen::before {
+    inset: -24%;
+    background:
+        radial-gradient(ellipse at 20% 28%, rgba(18, 63, 42, .12), transparent 28%),
+        radial-gradient(ellipse at 78% 68%, rgba(178, 123, 13, .13), transparent 30%),
+        radial-gradient(ellipse at 55% 12%, rgba(18, 63, 42, .06), transparent 24%);
+    filter: blur(16px);
+    animation: login-glow-drift 22s ease-in-out infinite alternate;
+}
+
+body.login-page .login-screen::after {
+    top: 9%;
+    left: 8%;
+    width: clamp(250px, 34vw, 480px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(178, 123, 13, .14);
+    border-radius: 50%;
+    box-shadow: 0 0 0 38px rgba(18, 63, 42, .025), 0 0 0 82px rgba(178, 123, 13, .025);
+    animation: login-orbit-float 30s ease-in-out infinite alternate;
+}
+
+/* Signup: a quietly drifting paw-print field with warm green and amber light. */
+body.signup-page .signup-screen::before {
+    inset: -12%;
+    background:
+        radial-gradient(ellipse 18px 22px at 50% 58%, rgba(18, 63, 42, .09) 96%, transparent 100%),
+        radial-gradient(ellipse 11px 15px at 34% 39%, rgba(178, 123, 13, .11) 96%, transparent 100%),
+        radial-gradient(ellipse 11px 15px at 47% 31%, rgba(178, 123, 13, .11) 96%, transparent 100%),
+        radial-gradient(ellipse 11px 15px at 62% 34%, rgba(178, 123, 13, .11) 96%, transparent 100%),
+        radial-gradient(ellipse 11px 15px at 74% 45%, rgba(178, 123, 13, .11) 96%, transparent 100%),
+        radial-gradient(ellipse at 80% 18%, rgba(178, 123, 13, .1), transparent 25%),
+        radial-gradient(ellipse at 12% 78%, rgba(18, 63, 42, .08), transparent 28%);
+    background-size: 320px 280px, 320px 280px, 320px 280px, 320px 280px, 320px 280px, auto, auto;
+    background-repeat: repeat, repeat, repeat, repeat, repeat, no-repeat, no-repeat;
+    animation: signup-paw-drift 38s linear infinite;
+}
+
+body.signup-page .signup-screen::after {
+    right: -9%;
+    bottom: -38%;
+    width: clamp(320px, 50vw, 680px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(18, 63, 42, .08);
+    border-radius: 50%;
+    box-shadow: 0 0 0 42px rgba(178, 123, 13, .025), 0 0 0 86px rgba(18, 63, 42, .025);
+    animation: signup-ring-float 24s ease-in-out infinite alternate;
+}
+
+html[data-theme="dark"] body.login-page .login-screen::before {
+    background:
+        radial-gradient(ellipse at 20% 28%, rgba(73, 139, 101, .2), transparent 28%),
+        radial-gradient(ellipse at 78% 68%, rgba(214, 168, 77, .13), transparent 30%),
+        radial-gradient(ellipse at 55% 12%, rgba(73, 139, 101, .1), transparent 24%);
+}
+
+html[data-theme="dark"] body.login-page .login-screen::after {
+    border-color: rgba(214, 168, 77, .15);
+    box-shadow: 0 0 0 38px rgba(111, 168, 137, .035), 0 0 0 82px rgba(214, 168, 77, .03);
+}
+
+html[data-theme="dark"] body.signup-page .signup-screen::before {
+    background:
+        radial-gradient(ellipse 18px 22px at 50% 58%, rgba(111, 168, 137, .15) 96%, transparent 100%),
+        radial-gradient(ellipse 11px 15px at 34% 39%, rgba(214, 168, 77, .15) 96%, transparent 100%),
+        radial-gradient(ellipse 11px 15px at 47% 31%, rgba(214, 168, 77, .15) 96%, transparent 100%),
+        radial-gradient(ellipse 11px 15px at 62% 34%, rgba(214, 168, 77, .15) 96%, transparent 100%),
+        radial-gradient(ellipse 11px 15px at 74% 45%, rgba(214, 168, 77, .15) 96%, transparent 100%),
+        radial-gradient(ellipse at 80% 18%, rgba(214, 168, 77, .1), transparent 25%),
+        radial-gradient(ellipse at 12% 78%, rgba(73, 139, 101, .12), transparent 28%);
+}
+
+html[data-theme="dark"] body.signup-page .signup-screen::after {
+    border-color: rgba(214, 168, 77, .13);
+    box-shadow: 0 0 0 42px rgba(214, 168, 77, .025), 0 0 0 86px rgba(111, 168, 137, .035);
+}
+
+@keyframes login-glow-drift {
+    from { transform: translate3d(-.6%, -.4%, 0) scale(1); }
+    to { transform: translate3d(1.5%, 1%, 0) scale(1.06); }
+}
+
+@keyframes login-orbit-float {
+    from { transform: translate3d(0, 0, 0) rotate(-8deg); }
+    to { transform: translate3d(28px, 18px, 0) rotate(8deg); }
+}
+
+@keyframes signup-paw-drift {
+    from { background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0, 0 0; }
+    to { background-position: 320px 280px, 320px 280px, 320px 280px, 320px 280px, 320px 280px, 0 0, 0 0; }
+}
+
+@keyframes signup-ring-float {
+    from { transform: translate3d(0, 0, 0) rotate(0deg); }
+    to { transform: translate3d(-24px, -18px, 0) rotate(12deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        animation: none !important;
+    }
+}
+
+/* Keep the decorative paws outside the auth cards at tablet and phone widths. */
+@media (max-width: 1300px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: 16px;
+        width: 160px;
+        height: 170px;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 8px;
+        width: 100px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 1100px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: 4px;
+        width: 72px;
+        height: 82px;
+        opacity: .48;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 4px;
+        width: 72px;
+        height: 82px;
+        opacity: .48;
+    }
+}
+
+@media (max-width: 767px) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        animation: none !important;
+        will-change: auto;
+    }
+}
+
+/* Final responsive guard: keep the 3D paw art clear of auth cards. */
+@media (max-width: 1300px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: 16px;
+        width: 160px;
+        height: 170px;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 8px;
+        width: 100px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 1100px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: 4px;
+        width: 72px;
+        height: 82px;
+        opacity: .48;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 4px;
+        width: 72px;
+        height: 82px;
+        opacity: .48;
+    }
+}
+
+@media (max-width: 767px) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        display: none;
+    }
+}
+
+@media (max-width: 1300px) {
+    body.login-page .login-screen::before {
+        left: 16px;
+        width: 160px;
+        height: 170px;
+    }
+
+    body.signup-page .signup-screen::before {
+        left: 20px;
+        width: 220px;
+        height: 230px;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 8px;
+        width: 100px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 1100px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: 4px;
+        width: 108px;
+        height: 120px;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 4px;
+        width: 82px;
+        height: 92px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        animation: none !important;
+    }
+}
+
+/* Final auth-only art direction: floating 3D paw forms, kept clear of each card. */
+body.login-page .login-screen::before {
+    inset: auto;
+    top: 28%;
+    left: clamp(24px, 5vw, 78px);
+    width: clamp(220px, 22vw, 310px);
+    height: clamp(220px, 22vw, 300px);
+    border: 0;
+    border-radius: 0;
+    background:
+        radial-gradient(ellipse 31% 31% at 51% 72%, rgba(255,255,255,.88) 0 18%, rgba(121,174,143,.9) 34%, #236342 67%, rgba(18,63,42,0) 76%),
+        radial-gradient(ellipse 20% 22% at 21% 43%, rgba(255,255,255,.86) 0 17%, #9fc9ac 35%, #317450 68%, rgba(18,63,42,0) 78%),
+        radial-gradient(ellipse 20% 22% at 40% 27%, rgba(255,255,255,.9) 0 17%, #a9d0b3 35%, #347a52 68%, rgba(18,63,42,0) 78%),
+        radial-gradient(ellipse 20% 22% at 63% 28%, rgba(255,255,255,.9) 0 17%, #a9d0b3 35%, #347a52 68%, rgba(18,63,42,0) 78%),
+        radial-gradient(ellipse 20% 22% at 82% 45%, rgba(255,255,255,.86) 0 17%, #9fc9ac 35%, #317450 68%, rgba(18,63,42,0) 78%);
+    background-size: auto;
+    background-repeat: no-repeat;
+    filter: drop-shadow(17px 25px 12px rgba(18,63,42,.22));
+    animation: login-paw-3d 7s ease-in-out infinite alternate;
+}
+
+body.login-page .login-screen::after {
+    top: auto;
+    right: clamp(22px, 8vw, 128px);
+    bottom: 16%;
+    left: auto;
+    width: clamp(112px, 12vw, 164px);
+    height: clamp(112px, 12vw, 164px);
+    border: 0;
+    border-radius: 0;
+    background:
+        radial-gradient(ellipse 31% 31% at 51% 72%, rgba(255,255,255,.9) 0 18%, #e6bd5b 36%, #b27b0d 68%, rgba(112,76,6,0) 78%),
+        radial-gradient(ellipse 20% 22% at 21% 43%, rgba(255,255,255,.9) 0 17%, #f4d988 35%, #b27b0d 68%, rgba(112,76,6,0) 78%),
+        radial-gradient(ellipse 20% 22% at 40% 27%, rgba(255,255,255,.92) 0 17%, #f6df9d 35%, #bd8716 68%, rgba(112,76,6,0) 78%),
+        radial-gradient(ellipse 20% 22% at 63% 28%, rgba(255,255,255,.92) 0 17%, #f6df9d 35%, #bd8716 68%, rgba(112,76,6,0) 78%),
+        radial-gradient(ellipse 20% 22% at 82% 45%, rgba(255,255,255,.9) 0 17%, #f4d988 35%, #b27b0d 68%, rgba(112,76,6,0) 78%);
+    background-size: auto;
+    background-repeat: no-repeat;
+    filter: drop-shadow(12px 18px 9px rgba(83,56,8,.22));
+    animation: login-paw-3d-small 5.5s ease-in-out infinite alternate;
+}
+
+body.signup-page .signup-screen::before {
+    inset: auto;
+    top: 26%;
+    left: clamp(14px, 3.2vw, 52px);
+    width: clamp(215px, 21vw, 292px);
+    height: clamp(230px, 23vw, 310px);
+    border: 0;
+    border-radius: 0;
+    background:
+        radial-gradient(ellipse 32% 31% at 51% 72%, rgba(255,255,255,.9) 0 18%, #e8c46b 35%, #b27b0d 68%, rgba(112,76,6,0) 78%),
+        radial-gradient(ellipse 20% 22% at 21% 43%, rgba(255,255,255,.88) 0 17%, #f6dda0 35%, #bd8716 68%, rgba(112,76,6,0) 78%),
+        radial-gradient(ellipse 20% 22% at 40% 27%, rgba(255,255,255,.92) 0 17%, #f8e5b3 35%, #bd8716 68%, rgba(112,76,6,0) 78%),
+        radial-gradient(ellipse 20% 22% at 63% 28%, rgba(255,255,255,.92) 0 17%, #f8e5b3 35%, #bd8716 68%, rgba(112,76,6,0) 78%),
+        radial-gradient(ellipse 20% 22% at 82% 45%, rgba(255,255,255,.88) 0 17%, #f6dda0 35%, #bd8716 68%, rgba(112,76,6,0) 78%);
+    background-size: auto;
+    background-repeat: no-repeat;
+    filter: drop-shadow(19px 27px 13px rgba(18,63,42,.2));
+    animation: signup-paw-3d 8s ease-in-out infinite alternate;
+}
+
+body.signup-page .signup-screen::after {
+    right: clamp(16px, 4.5vw, 72px);
+    bottom: 16%;
+    width: clamp(112px, 12vw, 164px);
+    height: clamp(120px, 13vw, 174px);
+    border: 0;
+    border-radius: 0;
+    background:
+        radial-gradient(ellipse 32% 31% at 51% 72%, rgba(255,255,255,.9) 0 18%, #83b591 35%, #236342 68%, rgba(18,63,42,0) 78%),
+        radial-gradient(ellipse 20% 22% at 21% 43%, rgba(255,255,255,.9) 0 17%, #c4dfc8 35%, #317450 68%, rgba(18,63,42,0) 78%),
+        radial-gradient(ellipse 20% 22% at 40% 27%, rgba(255,255,255,.92) 0 17%, #d3e8d5 35%, #347a52 68%, rgba(18,63,42,0) 78%),
+        radial-gradient(ellipse 20% 22% at 63% 28%, rgba(255,255,255,.92) 0 17%, #d3e8d5 35%, #347a52 68%, rgba(18,63,42,0) 78%),
+        radial-gradient(ellipse 20% 22% at 82% 45%, rgba(255,255,255,.9) 0 17%, #c4dfc8 35%, #317450 68%, rgba(18,63,42,0) 78%);
+    background-size: auto;
+    background-repeat: no-repeat;
+    filter: drop-shadow(13px 19px 10px rgba(18,63,42,.2));
+    animation: signup-paw-3d-small 6s ease-in-out infinite alternate;
+}
+
+html[data-theme="dark"] body.login-page .login-screen::before,
+html[data-theme="dark"] body.signup-page .signup-screen::before {
+    background:
+        radial-gradient(ellipse 31% 31% at 51% 72%, rgba(238,247,239,.9) 0 18%, #73a887 35%, #22593a 68%, rgba(8,27,18,0) 78%),
+        radial-gradient(ellipse 20% 22% at 21% 43%, rgba(238,247,239,.86) 0 17%, #91bf9e 35%, #286844 68%, rgba(8,27,18,0) 78%),
+        radial-gradient(ellipse 20% 22% at 40% 27%, rgba(238,247,239,.9) 0 17%, #a6cdb0 35%, #2e704a 68%, rgba(8,27,18,0) 78%),
+        radial-gradient(ellipse 20% 22% at 63% 28%, rgba(238,247,239,.9) 0 17%, #a6cdb0 35%, #2e704a 68%, rgba(8,27,18,0) 78%),
+        radial-gradient(ellipse 20% 22% at 82% 45%, rgba(238,247,239,.86) 0 17%, #91bf9e 35%, #286844 68%, rgba(8,27,18,0) 78%);
+}
+
+html[data-theme="dark"] body.login-page .login-screen::after,
+html[data-theme="dark"] body.signup-page .signup-screen::after {
+    filter: drop-shadow(12px 20px 12px rgba(0,0,0,.42));
+}
+
+@keyframes login-paw-3d {
+    from { transform: perspective(850px) rotateX(20deg) rotateY(24deg) rotateZ(-18deg) translate3d(0,0,0); }
+    to { transform: perspective(850px) rotateX(-12deg) rotateY(-20deg) rotateZ(10deg) translate3d(16px,-18px,34px); }
+}
+
+@keyframes login-paw-3d-small {
+    from { transform: perspective(650px) rotateX(18deg) rotateY(-22deg) rotateZ(12deg) translate3d(0,0,0); }
+    to { transform: perspective(650px) rotateX(-14deg) rotateY(20deg) rotateZ(-8deg) translate3d(-12px,-16px,25px); }
+}
+
+@keyframes signup-paw-3d {
+    from { transform: perspective(850px) rotateX(18deg) rotateY(26deg) rotateZ(-15deg) translate3d(0,0,0); }
+    to { transform: perspective(850px) rotateX(-12deg) rotateY(-18deg) rotateZ(9deg) translate3d(14px,-17px,32px); }
+}
+
+@keyframes signup-paw-3d-small {
+    from { transform: perspective(650px) rotateX(-16deg) rotateY(20deg) rotateZ(-9deg) translate3d(0,0,0); }
+    to { transform: perspective(650px) rotateX(14deg) rotateY(-22deg) rotateZ(12deg) translate3d(-14px,-18px,24px); }
+}
+
+@media (max-width: 1100px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: 4px;
+        width: 108px;
+        height: 120px;
+        opacity: .55;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 4px;
+        width: 82px;
+        height: 92px;
+        opacity: .55;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        animation: none !important;
+    }
+}
+
+/* Stronger 3D auth backdrops: these sit outside and behind the form cards. */
+body.login-page .login-card,
+body.signup-page .signup-card {
+    position: relative;
+    z-index: 2;
+}
+
+body.login-page .login-screen::before,
+body.login-page .login-screen::after,
+body.signup-page .signup-screen::before,
+body.signup-page .signup-screen::after {
+    z-index: 0;
+    will-change: transform;
+}
+
+body.login-page .login-screen::before {
+    inset: auto;
+    top: 13%;
+    left: clamp(18px, 7vw, 118px);
+    width: clamp(230px, 28vw, 390px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(255, 255, 255, .75);
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 34% 26%, rgba(255, 255, 255, .95) 0 1.5%, transparent 15%),
+        radial-gradient(circle at 34% 26%, rgba(255, 250, 227, .84), rgba(207, 224, 208, .7) 22%, rgba(34, 102, 69, .58) 52%, rgba(18, 63, 42, .28) 72%, rgba(255, 255, 255, .08) 100%);
+    box-shadow: inset -28px -32px 54px rgba(10, 35, 23, .28), inset 17px 16px 40px rgba(255, 255, 255, .65), 26px 34px 52px rgba(23, 51, 37, .22), 0 0 60px rgba(178, 123, 13, .16);
+    filter: none;
+    transform-style: preserve-3d;
+    animation: login-glass-orb-3d 9s ease-in-out infinite alternate;
+}
+
+body.login-page .login-screen::after {
+    top: auto;
+    right: clamp(24px, 9vw, 150px);
+    bottom: 13%;
+    left: auto;
+    width: clamp(96px, 12vw, 168px);
+    border: 1px solid rgba(255, 255, 255, .82);
+    background: radial-gradient(circle at 32% 25%, #fff9e7 0 3%, #e8c66f 18%, #b27b0d 55%, #75510e 100%);
+    box-shadow: inset -15px -19px 27px rgba(60, 38, 4, .34), inset 9px 8px 21px rgba(255, 255, 255, .74), 19px 25px 34px rgba(40, 46, 34, .2);
+    transform-style: preserve-3d;
+    animation: login-satellite-3d 7s ease-in-out infinite alternate;
+}
+
+body.signup-page .signup-screen::before {
+    inset: auto;
+    top: 23%;
+    left: clamp(14px, 6vw, 102px);
+    width: clamp(210px, 25vw, 350px);
+    height: clamp(210px, 25vw, 350px);
+    border: 1px solid rgba(255, 255, 255, .68);
+    border-radius: 47% 53% 57% 43%;
+    background:
+        radial-gradient(ellipse 27% 31% at 50% 71%, rgba(255, 251, 231, .92) 0 55%, rgba(178, 123, 13, .58) 70%, transparent 78%),
+        radial-gradient(ellipse 20% 24% at 24% 42%, rgba(255, 247, 219, .92) 0 56%, rgba(178, 123, 13, .58) 72%, transparent 79%),
+        radial-gradient(ellipse 20% 24% at 42% 27%, rgba(255, 247, 219, .92) 0 56%, rgba(178, 123, 13, .58) 72%, transparent 79%),
+        radial-gradient(ellipse 20% 24% at 63% 28%, rgba(255, 247, 219, .92) 0 56%, rgba(178, 123, 13, .58) 72%, transparent 79%),
+        radial-gradient(ellipse 20% 24% at 81% 45%, rgba(255, 247, 219, .92) 0 56%, rgba(178, 123, 13, .58) 72%, transparent 79%),
+        radial-gradient(ellipse at 34% 25%, rgba(255, 255, 255, .78), rgba(209, 228, 212, .7) 32%, rgba(34, 102, 69, .52) 70%, rgba(18, 63, 42, .18));
+    background-size: auto;
+    background-repeat: no-repeat;
+    box-shadow: inset -24px -28px 42px rgba(10, 35, 23, .25), inset 14px 14px 34px rgba(255, 255, 255, .66), 28px 36px 50px rgba(23, 51, 37, .2), 0 0 50px rgba(178, 123, 13, .12);
+    transform-style: preserve-3d;
+    animation: signup-paw-sculpture-3d 10s ease-in-out infinite alternate;
+}
+
+body.signup-page .signup-screen::after {
+    right: clamp(10px, 7vw, 112px);
+    bottom: 12%;
+    width: clamp(100px, 13vw, 180px);
+    border: 1px solid rgba(255, 255, 255, .8);
+    background: radial-gradient(circle at 31% 25%, #ffffff 0 3%, #c8dfca 20%, #4f9069 58%, #194a33 100%);
+    box-shadow: inset -16px -20px 28px rgba(10, 35, 23, .32), inset 9px 8px 20px rgba(255, 255, 255, .72), 18px 25px 34px rgba(23, 51, 37, .18);
+    transform-style: preserve-3d;
+    animation: signup-orb-3d 8s ease-in-out infinite alternate;
+}
+
+html[data-theme="dark"] body.login-page .login-screen::before,
+html[data-theme="dark"] body.signup-page .signup-screen::before {
+    border-color: rgba(226, 240, 229, .42);
+    background-color: #204c36;
+    background:
+        radial-gradient(ellipse 27% 31% at 50% 71%, rgba(202, 225, 207, .84) 0 55%, rgba(111, 168, 137, .62) 70%, transparent 78%),
+        radial-gradient(ellipse 20% 24% at 24% 42%, rgba(236, 209, 143, .88) 0 56%, rgba(214, 168, 77, .65) 72%, transparent 79%),
+        radial-gradient(ellipse 20% 24% at 42% 27%, rgba(236, 209, 143, .88) 0 56%, rgba(214, 168, 77, .65) 72%, transparent 79%),
+        radial-gradient(ellipse 20% 24% at 63% 28%, rgba(236, 209, 143, .88) 0 56%, rgba(214, 168, 77, .65) 72%, transparent 79%),
+        radial-gradient(ellipse 20% 24% at 81% 45%, rgba(236, 209, 143, .88) 0 56%, rgba(214, 168, 77, .65) 72%, transparent 79%),
+        radial-gradient(ellipse at 34% 25%, rgba(240, 246, 238, .38), rgba(55, 108, 76, .8) 42%, rgba(12, 35, 24, .88));
+    background-size: auto;
+    background-repeat: no-repeat;
+    box-shadow: inset -28px -32px 54px rgba(0, 0, 0, .45), inset 17px 16px 40px rgba(216, 241, 224, .28), 26px 34px 54px rgba(0, 0, 0, .45), 0 0 64px rgba(214, 168, 77, .16);
+}
+
+html[data-theme="dark"] body.login-page .login-screen::before {
+    background:
+        radial-gradient(circle at 34% 26%, rgba(255, 255, 255, .82) 0 1.5%, transparent 15%),
+        radial-gradient(circle at 34% 26%, rgba(210, 232, 215, .72), rgba(111, 168, 137, .62) 24%, rgba(27, 81, 54, .8) 57%, rgba(8, 27, 18, .6) 100%);
+}
+
+html[data-theme="dark"] body.login-page .login-screen::after {
+    background: radial-gradient(circle at 32% 25%, #fff9e7 0 3%, #d8ad50 18%, #95670d 55%, #543b0b 100%);
+}
+
+html[data-theme="dark"] body.signup-page .signup-screen::after {
+    background: radial-gradient(circle at 31% 25%, #ffffff 0 3%, #acd0b4 20%, #397451 58%, #123d2b 100%);
+}
+
+@keyframes login-glass-orb-3d {
+    0% { transform: perspective(900px) translate3d(0, 0, 0) rotateX(12deg) rotateY(-18deg) rotateZ(-10deg); }
+    50% { transform: perspective(900px) translate3d(28px, -18px, 36px) rotateX(-8deg) rotateY(18deg) rotateZ(2deg); }
+    100% { transform: perspective(900px) translate3d(8px, 16px, 8px) rotateX(15deg) rotateY(-8deg) rotateZ(12deg); }
+}
+
+@keyframes login-satellite-3d {
+    from { transform: perspective(650px) translate3d(0, 8px, 0) rotateY(-22deg) rotateX(12deg); }
+    to { transform: perspective(650px) translate3d(-25px, -24px, 50px) rotateY(28deg) rotateX(-14deg); }
+}
+
+@keyframes signup-paw-sculpture-3d {
+    from { transform: perspective(900px) rotateX(18deg) rotateY(26deg) rotateZ(-16deg) translate3d(0, 0, 0); }
+    to { transform: perspective(900px) rotateX(-10deg) rotateY(-18deg) rotateZ(8deg) translate3d(24px, -20px, 42px); }
+}
+
+@keyframes signup-orb-3d {
+    from { transform: perspective(650px) translate3d(0, 5px, 0) rotateY(-18deg); }
+    to { transform: perspective(650px) translate3d(-20px, -25px, 46px) rotateY(24deg); }
+}
+
+@media (max-width: 768px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: -100px;
+        opacity: .48;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: -35px;
+        opacity: .55;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        animation: none !important;
+        will-change: auto;
+    }
+}
+
+/* Final responsive guard: keep the 3D paw art clear of auth cards. */
+@media (max-width: 1300px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: 16px;
+        width: 160px;
+        height: 170px;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 8px;
+        width: 100px;
+        height: 110px;
+    }
+}
+
+@media (max-width: 1100px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: 4px;
+        width: 72px;
+        height: 82px;
+        opacity: .48;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 4px;
+        width: 72px;
+        height: 82px;
+        opacity: .48;
+    }
+}
+
+@media (max-width: 767px) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        animation: none !important;
+        will-change: auto;
+    }
+}
+
+/* Login and signup: a new CSS-only dimensional paw treatment, safely outside the cards. */
+body.login-page .login-screen::before,
+body.signup-page .signup-screen::before {
+    inset: auto;
+    top: 29%;
+    left: 28px;
+    width: 248px;
+    height: 270px;
+    border: 0;
+    border-radius: 0;
+    background:
+        radial-gradient(ellipse 31% 29% at 51% 73%, #f7f1dc 0 15%, #b7d3b8 23%, #4d8864 47%, #17472f 70%, transparent 74%),
+        radial-gradient(ellipse 19% 22% at 20% 43%, #fff8e5 0 14%, #efd48b 24%, #b27b0d 53%, #75510e 70%, transparent 75%),
+        radial-gradient(ellipse 19% 22% at 40% 25%, #fff8e5 0 14%, #f0d993 24%, #b27b0d 53%, #75510e 70%, transparent 75%),
+        radial-gradient(ellipse 19% 22% at 64% 27%, #fff8e5 0 14%, #f0d993 24%, #b27b0d 53%, #75510e 70%, transparent 75%),
+        radial-gradient(ellipse 19% 22% at 83% 46%, #fff8e5 0 14%, #efd48b 24%, #b27b0d 53%, #75510e 70%, transparent 75%);
+    background-repeat: no-repeat;
+    filter: drop-shadow(12px 20px 8px rgba(25, 52, 36, .24));
+    animation: auth-paw-float 5.8s ease-in-out infinite;
+    transform-origin: 50% 65%;
+}
+
+body.login-page .login-screen::after,
+body.signup-page .signup-screen::after {
+    inset: auto 76px 17% auto;
+    width: 118px;
+    height: 128px;
+    border: 0;
+    border-radius: 0;
+    background:
+        radial-gradient(ellipse 31% 29% at 51% 73%, #fff8e5 0 15%, #e8c56d 23%, #b27b0d 48%, #75510e 70%, transparent 75%),
+        radial-gradient(ellipse 19% 22% at 20% 43%, #fff8e5 0 14%, #f2d991 24%, #bd8716 53%, #75510e 70%, transparent 75%),
+        radial-gradient(ellipse 19% 22% at 40% 25%, #fff8e5 0 14%, #f2d991 24%, #bd8716 53%, #75510e 70%, transparent 75%),
+        radial-gradient(ellipse 19% 22% at 64% 27%, #fff8e5 0 14%, #f2d991 24%, #bd8716 53%, #75510e 70%, transparent 75%),
+        radial-gradient(ellipse 19% 22% at 83% 46%, #fff8e5 0 14%, #f2d991 24%, #bd8716 53%, #75510e 70%, transparent 75%);
+    background-repeat: no-repeat;
+    filter: drop-shadow(8px 14px 6px rgba(25, 52, 36, .2));
+    animation: auth-paw-float-small 4.7s ease-in-out infinite;
+    transform-origin: 50% 65%;
+}
+
+html[data-theme="dark"] body.login-page .login-screen::before,
+html[data-theme="dark"] body.signup-page .signup-screen::before {
+    background:
+        radial-gradient(ellipse 31% 29% at 51% 73%, #e0ebdc 0 15%, #8dbb98 23%, #39724f 48%, #123c29 70%, transparent 74%),
+        radial-gradient(ellipse 19% 22% at 20% 43%, #fff3d2 0 14%, #ddc47d 24%, #a87817 53%, #59400f 70%, transparent 75%),
+        radial-gradient(ellipse 19% 22% at 40% 25%, #fff3d2 0 14%, #e3ca83 24%, #a87817 53%, #59400f 70%, transparent 75%),
+        radial-gradient(ellipse 19% 22% at 64% 27%, #fff3d2 0 14%, #e3ca83 24%, #a87817 53%, #59400f 70%, transparent 75%),
+        radial-gradient(ellipse 19% 22% at 83% 46%, #fff3d2 0 14%, #ddc47d 24%, #a87817 53%, #59400f 70%, transparent 75%);
+    filter: drop-shadow(12px 22px 10px rgba(0, 0, 0, .42));
+}
+
+html[data-theme="dark"] body.login-page .login-screen::after,
+html[data-theme="dark"] body.signup-page .signup-screen::after {
+    filter: drop-shadow(8px 16px 8px rgba(0, 0, 0, .42));
+}
+
+@keyframes auth-paw-float {
+    0%, 100% { transform: perspective(900px) rotateX(13deg) rotateY(-15deg) rotateZ(-7deg) translate3d(0, 0, 0); }
+    50% { transform: perspective(900px) rotateX(-5deg) rotateY(9deg) rotateZ(2deg) translate3d(7px, -9px, 16px); }
+}
+
+@keyframes auth-paw-float-small {
+    0%, 100% { transform: perspective(700px) rotateX(-9deg) rotateY(14deg) rotateZ(8deg) translate3d(0, 0, 0); }
+    50% { transform: perspective(700px) rotateX(7deg) rotateY(-8deg) rotateZ(-3deg) translate3d(-5px, -7px, 12px); }
+}
+
+@media (max-width: 1380px) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        animation: none !important;
+        will-change: auto;
+    }
+}
+
+/* Page-integrated auth motion: paw texture and soft light drift across the canvas. */
+body.login-page .login-screen,
+body.signup-page .signup-screen {
+    isolation: isolate;
+}
+
+body.login-page .login-card,
+body.signup-page .signup-card {
+    position: relative;
+    z-index: 2;
+}
+
+body.login-page .login-screen::before,
+body.signup-page .signup-screen::before {
+    inset: 0;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    background-image:
+        radial-gradient(ellipse 10% 12% at 50% 72%, rgba(18, 63, 42, .44) 0 48%, rgba(178, 123, 13, .2) 68%, transparent 74%),
+        radial-gradient(ellipse 7% 9% at 23% 42%, rgba(178, 123, 13, .42) 0 48%, transparent 74%),
+        radial-gradient(ellipse 7% 9% at 41% 27%, rgba(18, 63, 42, .4) 0 48%, transparent 74%),
+        radial-gradient(ellipse 7% 9% at 62% 28%, rgba(178, 123, 13, .38) 0 48%, transparent 74%),
+        radial-gradient(ellipse 7% 9% at 80% 45%, rgba(18, 63, 42, .4) 0 48%, transparent 74%);
+    background-size: 310px 280px;
+    background-repeat: repeat;
+    background-position: 0 0;
+    opacity: .19;
+    filter: blur(.2px);
+    animation: auth-paw-trail 44s cubic-bezier(.45, 0, .55, 1) infinite alternate;
+}
+
+body.login-page .login-screen::after,
+body.signup-page .signup-screen::after {
+    inset: -12%;
+    width: auto;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background:
+        radial-gradient(ellipse at 12% 24%, rgba(178, 123, 13, .11), transparent 29%),
+        radial-gradient(ellipse at 84% 72%, rgba(18, 63, 42, .11), transparent 33%),
+        radial-gradient(ellipse at 56% 4%, rgba(255, 255, 255, .48), transparent 25%);
+    filter: blur(18px);
+    opacity: .82;
+    animation: auth-page-glow 30s cubic-bezier(.45, 0, .55, 1) infinite alternate;
+}
+
+html[data-theme="dark"] body.login-page .login-screen::before,
+html[data-theme="dark"] body.signup-page .signup-screen::before {
+    background-image:
+        radial-gradient(ellipse 10% 12% at 50% 72%, rgba(129, 183, 145, .62) 0 48%, rgba(214, 168, 77, .28) 68%, transparent 74%),
+        radial-gradient(ellipse 7% 9% at 23% 42%, rgba(214, 168, 77, .6) 0 48%, transparent 74%),
+        radial-gradient(ellipse 7% 9% at 41% 27%, rgba(129, 183, 145, .58) 0 48%, transparent 74%),
+        radial-gradient(ellipse 7% 9% at 62% 28%, rgba(214, 168, 77, .55) 0 48%, transparent 74%),
+        radial-gradient(ellipse 7% 9% at 80% 45%, rgba(129, 183, 145, .58) 0 48%, transparent 74%);
+    opacity: .16;
+}
+
+html[data-theme="dark"] body.login-page .login-screen::after,
+html[data-theme="dark"] body.signup-page .signup-screen::after {
+    background:
+        radial-gradient(ellipse at 12% 24%, rgba(178, 123, 13, .13), transparent 29%),
+        radial-gradient(ellipse at 84% 72%, rgba(90, 148, 108, .17), transparent 33%),
+        radial-gradient(ellipse at 56% 4%, rgba(222, 235, 222, .07), transparent 25%);
+}
+
+@keyframes auth-paw-trail {
+    from { background-position: 0 0; }
+    to { background-position: 58px 52px; }
+}
+
+@keyframes auth-page-glow {
+    from { transform: translate3d(-.6%, -.4%, 0) scale(1); }
+    to { transform: translate3d(.6%, .4%, 0) scale(1.015); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        animation: none !important;
+    }
+}
+body.login-page .login-screen::before,
+body.login-page .login-screen::after,
+body.signup-page .signup-screen::before,
+body.signup-page .signup-screen::after {
+    display: block;
+}
+
+/* Auth background: two softly floating 3D bubbles, one at each side of the card. */
+body.login-page .login-screen::before,
+body.signup-page .signup-screen::before {
+    inset: auto auto 24% 6%;
+    width: clamp(118px, 15vw, 208px);
+    height: clamp(118px, 15vw, 208px);
+    border: 1px solid rgba(255, 255, 255, .78);
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 23%, rgba(255,255,255,.98) 0 2%, rgba(255,255,255,.58) 7%, transparent 19%),
+        radial-gradient(circle at 34% 28%, rgba(255,255,255,.8), rgba(221,237,225,.58) 18%, rgba(96,157,119,.32) 42%, rgba(31,92,58,.12) 68%, rgba(255,255,255,.04) 76%);
+    box-shadow: inset -18px -22px 34px rgba(22,67,43,.16), inset 12px 10px 28px rgba(255,255,255,.7), 0 20px 44px rgba(24,62,42,.13);
+    opacity: .76;
+    filter: saturate(.9);
+    transform-style: preserve-3d;
+    animation: auth-bubble-left 8s ease-in-out infinite alternate;
+}
+
+body.login-page .login-screen::after,
+body.signup-page .signup-screen::after {
+    inset: 18% 6% auto auto;
+    width: clamp(82px, 10vw, 142px);
+    height: clamp(82px, 10vw, 142px);
+    border: 1px solid rgba(255, 255, 255, .82);
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 30% 23%, rgba(255,255,255,.98) 0 2.5%, rgba(255,255,255,.62) 8%, transparent 21%),
+        radial-gradient(circle at 34% 28%, rgba(255,255,255,.86), rgba(255,239,195,.64) 20%, rgba(212,164,62,.34) 44%, rgba(178,123,13,.12) 68%, rgba(255,255,255,.04) 76%);
+    box-shadow: inset -14px -17px 26px rgba(83,56,8,.14), inset 9px 8px 20px rgba(255,255,255,.72), 0 16px 34px rgba(24,62,42,.12);
+    opacity: .78;
+    transform-style: preserve-3d;
+    animation: auth-bubble-right 7s ease-in-out infinite alternate;
+}
+
+html[data-theme="dark"] body.login-page .login-screen::before,
+html[data-theme="dark"] body.signup-page .signup-screen::before {
+    border-color: rgba(226, 240, 229, .55);
+    background:
+        radial-gradient(circle at 30% 23%, rgba(255,255,255,.92) 0 2%, rgba(255,255,255,.42) 7%, transparent 19%),
+        radial-gradient(circle at 34% 28%, rgba(216,239,220,.68), rgba(92,151,111,.48) 20%, rgba(29,83,53,.28) 48%, rgba(8,27,18,.1) 72%, rgba(255,255,255,.02) 78%);
+    box-shadow: inset -18px -22px 34px rgba(0,0,0,.32), inset 12px 10px 28px rgba(216,241,224,.22), 0 20px 48px rgba(0,0,0,.28);
+}
+
+html[data-theme="dark"] body.login-page .login-screen::after,
+html[data-theme="dark"] body.signup-page .signup-screen::after {
+    border-color: rgba(239, 225, 191, .48);
+    background:
+        radial-gradient(circle at 30% 23%, rgba(255,255,255,.92) 0 2.5%, rgba(255,255,255,.42) 8%, transparent 21%),
+        radial-gradient(circle at 34% 28%, rgba(249,232,190,.7), rgba(190,145,48,.5) 22%, rgba(116,78,12,.3) 50%, rgba(20,17,9,.12) 73%, rgba(255,255,255,.02) 78%);
+    box-shadow: inset -14px -17px 26px rgba(0,0,0,.3), inset 9px 8px 20px rgba(255,255,255,.18), 0 16px 36px rgba(0,0,0,.26);
+}
+
+@keyframes auth-bubble-left {
+    from { transform: perspective(800px) translate3d(0, 0, 0) rotateX(8deg) rotateY(-12deg) scale(1); }
+    to { transform: perspective(800px) translate3d(8px, -14px, 18px) rotateX(-6deg) rotateY(10deg) scale(1.035); }
+}
+
+@keyframes auth-bubble-right {
+    from { transform: perspective(700px) translate3d(0, 0, 0) rotateX(-8deg) rotateY(12deg) scale(1); }
+    to { transform: perspective(700px) translate3d(-7px, 12px, 14px) rotateX(6deg) rotateY(-9deg) scale(1.04); }
+}
+
+@media (max-width: 1380px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: 4%;
+        width: 116px;
+        height: 116px;
+        opacity: .56;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 4%;
+        width: 82px;
+        height: 82px;
+        opacity: .58;
+    }
+}
+
+@media (max-width: 767px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        left: 2%;
+        width: 64px;
+        height: 64px;
+        opacity: .28;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        right: 2%;
+        width: 54px;
+        height: 54px;
+        opacity: .3;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        animation: none !important;
+    }
+}
+
+/* Auth background revised to match the reference: two oversized corner spheres. */
+body.login-page .login-screen::before,
+body.signup-page .signup-screen::before {
+    inset: -150px auto auto -145px;
+    width: clamp(340px, 39vw, 560px);
+    height: clamp(340px, 39vw, 560px);
+    border: 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 35% 32%, rgba(255,255,255,.54), transparent 34%),
+        radial-gradient(circle at 42% 38%, #f4efdf 0%, #f5f0e4 60%, #eee8d8 100%);
+    box-shadow: inset -24px -26px 55px rgba(116, 99, 61, .035), 16px 22px 65px rgba(99, 85, 53, .035);
+    opacity: .92;
+    filter: none;
+    animation: auth-corner-sphere-left 20s ease-in-out infinite alternate;
+}
+
+body.login-page .login-screen::after,
+body.signup-page .signup-screen::after {
+    inset: auto -210px -245px auto;
+    width: clamp(390px, 43vw, 620px);
+    height: clamp(390px, 43vw, 620px);
+    border: 0;
+    border-radius: 50%;
+    background:
+        radial-gradient(circle at 38% 34%, rgba(255,255,255,.42), transparent 33%),
+        radial-gradient(circle at 43% 40%, #f1edeb 0%, #eee9e7 62%, #e7e1df 100%);
+    box-shadow: inset -24px -28px 58px rgba(77, 57, 67, .035), -14px -20px 62px rgba(77, 57, 67, .035);
+    opacity: .9;
+    filter: none;
+    animation: auth-corner-sphere-right 24s ease-in-out infinite alternate;
+}
+
+html[data-theme="dark"] body.login-page .login-screen::before,
+html[data-theme="dark"] body.signup-page .signup-screen::before {
+    background:
+        radial-gradient(circle at 35% 32%, rgba(228,242,230,.13), transparent 34%),
+        radial-gradient(circle at 42% 38%, #27382e 0%, #202e26 62%, #19241d 100%);
+    box-shadow: inset -24px -26px 55px rgba(0,0,0,.12), 16px 22px 65px rgba(0,0,0,.08);
+    opacity: .72;
+}
+
+html[data-theme="dark"] body.login-page .login-screen::after,
+html[data-theme="dark"] body.signup-page .signup-screen::after {
+    background:
+        radial-gradient(circle at 38% 34%, rgba(238,225,193,.1), transparent 33%),
+        radial-gradient(circle at 43% 40%, #302d2b 0%, #292624 62%, #211f1e 100%);
+    box-shadow: inset -24px -28px 58px rgba(0,0,0,.13), -14px -20px 62px rgba(0,0,0,.08);
+    opacity: .74;
+}
+
+@keyframes auth-corner-sphere-left {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(8px, 6px, 0) scale(1.012); }
+}
+
+@keyframes auth-corner-sphere-right {
+    from { transform: translate3d(0, 0, 0) scale(1); }
+    to { transform: translate3d(-7px, -5px, 0) scale(1.01); }
+}
+
+@media (max-width: 767px) {
+    body.login-page .login-screen::before,
+    body.signup-page .signup-screen::before {
+        inset: -180px auto auto -185px;
+        width: 340px;
+        height: 340px;
+    }
+
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::after {
+        inset: auto -205px -220px auto;
+        width: 380px;
+        height: 380px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.login-page .login-screen::before,
+    body.login-page .login-screen::after,
+    body.signup-page .signup-screen::before,
+    body.signup-page .signup-screen::after {
+        animation: none !important;
+    }
+}

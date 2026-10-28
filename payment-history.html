@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Payment History &amp; Invoices | Paw Haven Pet Portal</title>
+<link href="images/paw-haven-logo.png" rel="icon" type="image/png"/>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<link href="css/global.css" rel="stylesheet"/>
+<link href="css/dashboard.css" rel="stylesheet"/>
+<link href="css/payment-history.css" rel="stylesheet"/>
+<link href="css/migrated-inline.css" rel="stylesheet"/>    <link href="css/responsive-fixes.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="css/requested-refinements.css">
+    <link rel="stylesheet" href="css/rtl-shared-layout.css?v=20261026-box-buttons-v2">
+    <link rel="stylesheet" href="css/dashboard-visibility-fixes.css">
+    <link rel="stylesheet" href="css/dashboard-interactions.css">
+</head>
+<body class="dashboard-body">
+<div class="dash-shell">
+<aside class="sidebar" data-sidebar="">
+<a aria-label="Paw Haven home" class="brand" href="index.html">
+<img alt="Paw Haven logo" class="brand-mark" src="images/paw-haven-logo.png"/>
+<span class="brand-text brand-text-stacked">
+<span class="brand-name"><span class="brand-first">Paw</span> <span class="brand-second">Haven</span></span>
+<small class="brand-tagline">Pet Boarding &amp; Daycare</small>
+</span>
+</a>
+<nav class="side-nav">
+<a href="dashboard.html">
+<i aria-hidden="true" data-lucide="layout-dashboard"></i>
+<span>Overview</span>
+</a>
+<a href="bookings.html">
+<i aria-hidden="true" data-lucide="calendar"></i>
+<span>Book Boarding Stay</span>
+</a>
+<a href="activity-updates.html">
+<i aria-hidden="true" data-lucide="activity"></i>
+<span>Daily Activity Updates</span>
+</a>
+<a class="selected" href="payment-history.html">
+<i aria-hidden="true" data-lucide="receipt"></i>
+<span>Payment History &amp; Invoices</span>
+</a>
+<a href="profile.html">
+<i aria-hidden="true" data-lucide="user"></i>
+<span>Pet &amp; Owner Profile</span>
+</a>
+</nav>
+<a class="side-logout" href="login.html">
+<i aria-hidden="true" data-lucide="log-out"></i>
+<span>Log Out</span>
+</a>
+</aside>
+<div class="mobile-sidebar-backdrop" data-sidebar-backdrop=""></div>
+<main class="dashboard-main">
+<header class="dash-topbar">
+<div class="migrated-style-3a15c0f97f">
+<button aria-label="Open dashboard navigation" class="sidebar-toggle" data-sidebar-toggle="" type="button">
+<i aria-hidden="true" data-lucide="menu"></i>
+</button>
+<div class="dash-topbar-title">
+<h2 class="migrated-style-0d170054c2">
+                                Pet Owner Dashboard
+                            </h2>
+</div>
+</div>
+<div class="dash-topbar-right">
+<!-- Theme Toggle (Rule 2: 40px) -->
+<button aria-label="Switch to dark mode" class="theme-toggle" data-theme-toggle="" title="Toggle dark mode" type="button">
+<span aria-hidden="true" data-theme-icon="">
+<i aria-hidden="true" data-lucide="moon"></i>
+</span>
+</button>
+<!-- RTL Toggle (Rule 2: 40px) -->
+<button aria-label="Switch to right-to-left layout" class="direction-toggle" data-direction-toggle="" title="Switch to right-to-left layout" type="button">
+<i aria-hidden="true" data-lucide="arrow-left-right"></i>
+</button>
+<!-- Notifications Dropdown (Rule 10) -->
+<div class="dash-notifications-wrap">
+<button aria-label="Notifications" class="theme-toggle migrated-style-d461c96de5" id="notif-toggle" title="3 unread notifications" type="button">
+<i aria-hidden="true" data-lucide="bell"></i>
+<span class="notif-badge">3</span>
+</button>
+<div class="notif-dropdown" id="notif-dropdown">
+<div class="notif-dropdown-header">
+<strong>Notifications</strong>
+<span class="notif-unread-count">3 New</span>
+</div>
+<div class="notif-list">
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="camera"></i></div>
+<div>
+<p><strong>Meadow Run:</strong> 4 new photos &amp; video clip uploaded for Buddy.</p>
+<small>22 minutes ago</small>
+</div>
+</div>
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="check-circle-2"></i></div>
+<div>
+<p><strong>Boarding Confirmed:</strong> Diwali Classic Suite stay confirmed for Nov 10–15.</p>
+<small>2 hours ago</small>
+</div>
+</div>
+<div class="notif-item unread">
+<div class="notif-icon"><i data-lucide="receipt"></i></div>
+<div>
+<p><strong>Invoice #PH-9824:</strong> Payment receipt ready for download.</p>
+<small>Yesterday</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Profile Pill (Rule 10) -->
+<div class="dash-profile-menu-wrap">
+<button aria-label="Open Ananya Rao's account menu" aria-controls="profile-dropdown" aria-expanded="false" aria-haspopup="true" class="dash-profile-pill" id="profile-menu-toggle" title="Ananya Rao · Account menu" type="button">
+<span aria-hidden="true" class="dash-avatar">AR</span>
+<span class="dash-user-meta"><span class="dash-user-name">Ananya Rao</span><span class="dash-pet-name">Buddy’s Parent</span></span>
+<i aria-hidden="true" data-lucide="chevron-down"></i>
+</button>
+<div class="dash-profile-dropdown" hidden id="profile-dropdown">
+<div class="dash-profile-dropdown-heading"><span aria-hidden="true" class="dash-avatar">AR</span><span><strong>Ananya Rao</strong><small>Buddy’s Parent</small></span></div>
+<a href="profile.html"><i aria-hidden="true" data-lucide="user-round"></i><span>My Profile</span></a>
+<a href="activity-updates.html"><i aria-hidden="true" data-lucide="bell"></i><span>Notifications</span></a>
+<a class="dash-profile-logout" href="index.html"><i aria-hidden="true" data-lucide="log-out"></i><span>Log Out</span></a>
+</div>
+</div>
+<!-- Logout Button (Rule 10) -->
+</div>
+</header>
+<div class="dash-content">
+<!-- SECTION 1: HEADER BANNER -->
+<section class="dash-welcome" data-aos="fade-up">
+<div>
+<span class="eyebrow">Financial Transparency</span>
+<h1>Billing &amp; Payment History</h1>
+<p>Download official tax invoices, review transaction receipts, and manage your billing records. All amounts are displayed in Indian Rupees (₹) including 18% GST.</p>
+</div>
+<div class="dash-welcome-media payment-hero-media">
+<img alt="A happy puppy resting in the grass" loading="lazy" src="https://images.unsplash.com/photo-1649003592839-ce0bf1a804fa?auto=format&amp;fit=crop&amp;w=1200&amp;q=88"/>
+</div>
+</section>
+<!-- SECTION 2: FINANCIAL STATS -->
+<section class="dash-stats" data-aos="fade-up">
+<div class="dash-stat">
+<div class="dash-stat-top">
+<span>Total Paid (YTD)</span>
+<div class="dash-stat-icon"><i aria-hidden="true" data-lucide="receipt"></i></div>
+</div>
+<strong>₹8,900</strong>
+<small class="status-pill">3 Completed Stays</small>
+</div>
+<div class="dash-stat">
+<div class="dash-stat-top">
+<span>Active Deposit</span>
+<div class="dash-stat-icon"><i aria-hidden="true" data-lucide="calendar"></i></div>
+</div>
+<strong>₹3,700</strong>
+<small class="status-pill active">Booking #PH-2026-881</small>
+</div>
+<div class="dash-stat">
+<div class="dash-stat-top">
+<span>Outstanding Dues</span>
+<div class="dash-stat-icon"><i aria-hidden="true" data-lucide="check-circle"></i></div>
+</div>
+<strong>₹0</strong>
+<small class="status-pill">Account in Good Standing</small>
+</div>
+<div class="dash-stat">
+<div class="dash-stat-top">
+<span>Paw Rewards</span>
+<div class="dash-stat-icon"><i aria-hidden="true" data-lucide="award"></i></div>
+</div>
+<strong>1,250</strong>
+<small>Pts · Worth ₹1,250 discount</small>
+</div>
+</section>
+<!-- SECTION 3: INVOICES & TRANSACTIONS TABLE -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<div>
+<h2>Transaction History</h2>
+<p class="migrated-style-c51a493f52">Official GST tax receipts for pet boarding and daycare.</p>
+</div>
+<button class="btn btn-outline migrated-style-b11d9a1632" type="button">Export to CSV</button>
+</div>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th>Invoice #</th>
+<th>Date</th>
+<th>Service &amp; Description</th>
+<th>Tax (18% GST)</th>
+<th>Payment Method</th>
+<th>Amount</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PH-INV-2026-881</strong></td>
+<td>Oct 10, 2026</td>
+<td>Overnight Boarding Deposit (Oct 20-24, Suite 4B)</td>
+<td>₹564.40</td>
+<td>UPI · GPay (ananya.demo@okaxis)</td>
+<td><strong>₹3,700</strong></td>
+<td><span class="status-pill">Paid</span></td>
+<td><button class="btn btn-outline migrated-style-5272f97db6" type="button">Download PDF</button></td>
+</tr>
+<tr>
+<td><strong>PH-INV-2026-752</strong></td>
+<td>Sep 28, 2026</td>
+<td>Full Day Daycare + Hydrotherapy Bath</td>
+<td>₹228.81</td>
+<td>HDFC Credit Card (**** 4022)</td>
+<td><strong>₹1,500</strong></td>
+<td><span class="status-pill">Paid</span></td>
+<td><button class="btn btn-outline migrated-style-5272f97db6" type="button">Download PDF</button></td>
+</tr>
+<tr>
+<td><strong>PH-INV-2026-614</strong></td>
+<td>Sep 12, 2026</td>
+<td>Weekend Boarding Suite (2 Nights)</td>
+<td>₹564.40</td>
+<td>NetBanking (ICICI Bank)</td>
+<td><strong>₹3,700</strong></td>
+<td><span class="status-pill">Paid</span></td>
+<td><button class="btn btn-outline migrated-style-5272f97db6" type="button">Download PDF</button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- SECTION 4: SAVED PAYMENT METHODS -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>Saved Payment Methods</h2>
+<button class="btn btn-primary migrated-style-b71b4393e3" type="button">+ Add New Method</button>
+</div>
+<div class="migrated-style-6fc9947a8c">
+<div class="migrated-style-0f92849dc1">
+<div class="migrated-style-3a15c0f97f">
+<div class="migrated-style-e9877d3b64">UPI</div>
+<div>
+<strong class="migrated-style-9b7ad77765">ananya.demo@okaxis</strong>
+<small class="migrated-style-57f9e31d78">Default Payment Method · Instant</small>
+</div>
+</div>
+<span class="status-pill">Default</span>
+</div>
+<div class="migrated-style-0f92849dc1">
+<div class="migrated-style-3a15c0f97f">
+<div class="migrated-style-f1b7283e86">VISA</div>
+<div>
+<strong class="migrated-style-9b7ad77765">HDFC Visa **** 4022</strong>
+<small class="migrated-style-57f9e31d78">Expires 09/2028</small>
+</div>
+</div>
+<button class="migrated-style-74a6b6d660" type="button"><i aria-hidden="true" class="migrated-style-2979c99db9" data-lucide="trash-2"></i></button>
+</div>
+</div>
+</section>
+<!-- SECTION 5: GSTIN & COMPANY DETAILS -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="dash-panel-header">
+<h2>Tax Registration &amp; Commercial Info</h2>
+</div>
+<div class="migrated-style-dd5e0f8319">
+<div>
+<strong class="migrated-style-e2d4e06f07">Legal Registered Entity</strong>
+                                Paw Haven Pet Care Private Limited<br/>
+                                Plot 42, Hitech City Main Rd, Madhapur, Hyderabad, Telangana 500081
+                            </div>
+<div>
+<strong class="migrated-style-e2d4e06f07">GSTIN &amp; State Code</strong>
+                                36AAACP0123M1Z9 · State: 36 (Telangana)<br/>
+                                Applicable Tax: 9% CGST + 9% SGST (18% Total)
+                            </div>
+<div>
+<strong class="migrated-style-e2d4e06f07">HSN / SAC Code</strong>
+                                SAC 998399 · Other Pet Care, Boarding &amp; Grooming Services
+                            </div>
+</div>
+</section>
+<!-- SECTION 6: ANNUAL EXPENSE SUMMARY REPORT -->
+<section class="dash-panel" data-aos="fade-up">
+<div class="migrated-style-6d83ee3ea0">
+<div>
+<h3 class="migrated-style-e42b744bcd">Download Annual Pet Expense Statement</h3>
+<p class="migrated-style-cf55cffaac">Consolidated invoice statement for your pet records, personal accounting, or pet insurance claims.</p>
+</div>
+<button class="btn btn-outline" type="button">
+<i aria-hidden="true" data-lucide="file-text"></i>
+                                Generate 2026 Statement (PDF)
+                            </button>
+</div>
+</section>
+</div>
+</main>
+</div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script defer="" src="js/main.js"></script>
+<script defer="" src="js/dashboard-profile-menu.js"></script>
+</body>
+</html>
+
+
+
+
+
